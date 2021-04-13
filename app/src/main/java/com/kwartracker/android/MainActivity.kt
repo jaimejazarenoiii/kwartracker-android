@@ -2,8 +2,7 @@ package com.kwartracker.android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.*
 import androidx.navigation.ui.NavigationUI
 
 class MainActivity : AppCompatActivity() {

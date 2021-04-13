@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/sampleFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
-        android:id="@+id/sampleFragment"
-        android:name="com.kwartracker.android.SampleFragment"
-        android:label="Sample Fragment"
-        tools:layout="@layout/fragment_sample" />
+        android:id="@+id/loginFragment"
+        android:name="com.kwartracker.android.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
