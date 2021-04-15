@@ -1,8 +1,9 @@
-package com.kwartracker.android
+package com.kwartracker.android.login.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.*
+import com.kwartracker.android.R
 
 class LoginFragment : Fragment() {
 
