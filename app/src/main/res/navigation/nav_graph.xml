@@ -9,4 +9,10 @@
         android:name="com.kwartracker.android.login.ui.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.kwartracker.android.login.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_signup" />
 </navigation>
