@@ -17,16 +17,7 @@ class SignUpFragment : Fragment() {
     ): View? {
         signUpViewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_signup, container, false)
-        /*val textView: TextView = root.findViewById(R.id.text_slideshow)
-        signUpViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
 
         return root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 }
