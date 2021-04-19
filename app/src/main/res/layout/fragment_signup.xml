@@ -180,14 +180,14 @@
                 android:text="@string/already_have_an_account"
                 android:textColor="@color/dark_gray"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/text_sign_up"
+                app:layout_constraintEnd_toStartOf="@+id/tv_signin"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_divider" />
 
             <TextView
-                android:id="@+id/text_sign_up"
+                android:id="@+id/tv_signin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
