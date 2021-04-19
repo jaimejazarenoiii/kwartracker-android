@@ -17,8 +17,10 @@
     <string name="lbl_no_account_yet">No account yet?</string>
     <string name="lbl_sign_up"><u>Sign Up</u></string>
     <string name="lbl_or">or</string>
-    <string name="enter_password">Enter Password</string>
+
+    // Sign Up
     <string name="create_naccount">Create\nAccount</string>
+    <string name="enter_password">Enter Password</string>
     <string name="sign_in">Sign In</string>
     <string name="already_have_an_account">Already have an account?</string>
 
