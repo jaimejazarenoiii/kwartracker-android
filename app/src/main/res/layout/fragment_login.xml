@@ -13,7 +13,7 @@
         android:background="@color/app_color">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_k"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/text_kwartracker"
+            android:id="@+id/tv_kwartracker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -36,9 +36,9 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_k"
+            app:layout_constraintStart_toEndOf="@+id/tv_k"
+            app:layout_constraintTop_toTopOf="@+id/tv_k" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -48,10 +48,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/tv_k">
 
             <TextView
-                android:id="@+id/text_welcome"
+                android:id="@+id/tv_welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -65,18 +65,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_email"
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="@string/lbl_email"
                 android:textColor="@color/gray"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/text_welcome"
-                app:layout_constraintTop_toBottomOf="@+id/text_welcome" />
+                app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+                app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
 
             <EditText
-                android:id="@+id/input_email"
+                android:id="@+id/et_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
@@ -91,22 +91,22 @@
                 android:textColor="@color/dark_gray"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/text_email"
-                app:layout_constraintTop_toBottomOf="@+id/text_email" />
+                app:layout_constraintStart_toStartOf="@+id/tv_email"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
             <TextView
-                android:id="@+id/text_password"
+                android:id="@+id/tv_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="@string/lbl_password"
                 android:textColor="@color/gray"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/input_email"
-                app:layout_constraintTop_toBottomOf="@+id/input_email" />
+                app:layout_constraintStart_toStartOf="@+id/et_email"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
             <EditText
-                android:id="@+id/input_password"
+                android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -119,12 +119,12 @@
                 android:padding="14dp"
                 android:textColor="@color/dark_gray"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/input_email"
-                app:layout_constraintStart_toStartOf="@+id/text_password"
-                app:layout_constraintTop_toBottomOf="@+id/text_password" />
+                app:layout_constraintEnd_toEndOf="@+id/et_email"
+                app:layout_constraintStart_toStartOf="@+id/tv_password"
+                app:layout_constraintTop_toBottomOf="@+id/tv_password" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_sign_in"
+                android:id="@+id/btn_sign_in"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -133,24 +133,24 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/app_color"
-                app:layout_constraintEnd_toEndOf="@+id/input_password"
-                app:layout_constraintStart_toStartOf="@+id/input_password"
-                app:layout_constraintTop_toBottomOf="@+id/input_password" />
+                app:layout_constraintEnd_toEndOf="@+id/et_password"
+                app:layout_constraintStart_toStartOf="@+id/et_password"
+                app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tv_or"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/lbl_or"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/button_sign_in"
-                app:layout_constraintStart_toStartOf="@+id/button_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/button_sign_in" />
+                app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_google_sign_in"
+                android:id="@+id/btn_google_sign_in"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -163,30 +163,30 @@
                 app:iconGravity="textStart"
                 app:iconPadding="12dp"
                 app:iconSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/button_sign_in"
+                app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/button_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/tv_or" />
 
             <TextView
-                android:id="@+id/text_recover_password"
+                android:id="@+id/txt_recover_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/lbl_recover_password"
                 android:textColor="@color/gray"
-                app:layout_constraintStart_toStartOf="@+id/button_google_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/button_google_sign_in" />
+                app:layout_constraintStart_toStartOf="@+id/btn_google_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/btn_google_sign_in" />
 
             <TextView
-                android:id="@+id/text_guest_sign_in"
+                android:id="@+id/txt_guest_sign_in"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/lbl_sign_in_guest"
                 android:textColor="@color/gray"
-                app:layout_constraintEnd_toEndOf="@+id/button_google_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/button_google_sign_in" />
+                app:layout_constraintEnd_toEndOf="@+id/btn_google_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/btn_google_sign_in" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -197,7 +197,7 @@
                 app:drawableTint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_recover_password" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_recover_password" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -208,14 +208,14 @@
                 android:text="@string/lbl_no_account_yet"
                 android:textColor="@color/dark_gray"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/text_sign_up"
+                app:layout_constraintEnd_toStartOf="@+id/tv_sign_up"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TextView
-                android:id="@+id/text_sign_up"
+                android:id="@+id/tv_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
