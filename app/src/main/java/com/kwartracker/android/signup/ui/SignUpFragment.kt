@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.kwartracker.android.R
 
 class SignUpFragment : Fragment() {
-
     private lateinit var signUpViewModel: SignUpViewModel
 
     override fun onCreateView(
