@@ -12,16 +12,16 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:background="@android:color/transparent"
+            android:background="@color/app_color"
             app:elevation="0dp">
 
             <ImageView
                 android:id="@+id/img_logo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/ic_kwartracker_header" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
