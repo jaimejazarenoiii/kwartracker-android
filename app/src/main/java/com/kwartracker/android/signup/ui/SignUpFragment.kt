@@ -29,7 +29,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvSignin.setOnClickListener {
-            findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+            findNavController().popBackStack(R.id.loginFragment, false)
         }
     }
 }
