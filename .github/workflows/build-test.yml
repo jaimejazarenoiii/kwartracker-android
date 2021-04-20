@@ -1,0 +1,37 @@
+name: Kwartracker Build/Test
+
+on: [push]
+
+jobs:
+  build_test:
+    name: Build and Test
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set Up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+
+    - name: Grant Execute Permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew assemble
+
+    - name: Run Lint with Gradle
+      run: ./gradlew lint
+
+    - name: Unit Test with Gradle
+      run: ./gradlew test
+
+    - name: Instrumented Test with Gradle
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 29
+        arch: x86_64
+        script: ./gradlew connectedAndroidTest
