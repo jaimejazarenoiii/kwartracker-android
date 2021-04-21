@@ -1,13 +1,13 @@
 package com.kwartracker.android.login.ui
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.*
 import android.view.*
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
-import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentLoginBinding
-import javax.inject.Inject
+import android.widget.*
+import androidx.databinding.*
+import androidx.fragment.app.*
+import androidx.navigation.fragment.*
+import com.kwartracker.android.*
+import com.kwartracker.android.databinding.*
 
 class LoginFragment : Fragment() {
 
@@ -27,5 +27,14 @@ class LoginFragment : Fragment() {
         binding.tvSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.nsvContents.post {
+            binding.nsvContents.fling(0)
+            binding.nsvContents.fullScroll(ScrollView.FOCUS_UP)
+        }
+
     }
 }

@@ -1,12 +1,12 @@
 package com.kwartracker.android.main.ui
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import com.kwartracker.android.R
-import com.kwartracker.android.databinding.ActivityMainBinding
+import android.os.*
+import androidx.appcompat.app.*
+import androidx.databinding.*
+import androidx.navigation.*
+import androidx.navigation.fragment.*
+import com.kwartracker.android.*
+import com.kwartracker.android.databinding.*
 
 class MainActivity : AppCompatActivity() {
 
