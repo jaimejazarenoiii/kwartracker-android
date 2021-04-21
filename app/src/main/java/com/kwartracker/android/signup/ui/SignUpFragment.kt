@@ -1,12 +1,14 @@
 package com.kwartracker.android.signup.ui
 
-import android.os.*
-import android.view.*
-import androidx.databinding.*
-import androidx.fragment.app.*
-import androidx.navigation.fragment.*
-import com.kwartracker.android.*
-import com.kwartracker.android.databinding.*
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.kwartracker.android.R
+import com.kwartracker.android.databinding.FragmentSignupBinding
 
 class SignUpFragment : Fragment() {
 
@@ -14,9 +16,9 @@ class SignUpFragment : Fragment() {
     lateinit var binding: FragmentSignupBinding
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_signup, container, false)
         return binding.root

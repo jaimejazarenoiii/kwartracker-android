@@ -1,13 +1,15 @@
 package com.kwartracker.android.login.ui
 
-import android.os.*
-import android.view.*
-import android.widget.*
-import androidx.databinding.*
-import androidx.fragment.app.*
-import androidx.navigation.fragment.*
-import com.kwartracker.android.*
-import com.kwartracker.android.databinding.*
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ScrollView
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.kwartracker.android.R
+import com.kwartracker.android.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 

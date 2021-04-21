@@ -1,12 +1,12 @@
 package com.kwartracker.android.main.ui
 
-import android.os.*
-import androidx.appcompat.app.*
-import androidx.databinding.*
-import androidx.navigation.*
-import androidx.navigation.fragment.*
-import com.kwartracker.android.*
-import com.kwartracker.android.databinding.*
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.kwartracker.android.R
+import com.kwartracker.android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         )
     }
     private lateinit var navHostFragment: NavHostFragment
-    lateinit var navController : NavController
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupNavigation()
     }
 
-    private fun setupNavigation(){
+    private fun setupNavigation() {
         navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         navController = navHostFragment.navController
     }
