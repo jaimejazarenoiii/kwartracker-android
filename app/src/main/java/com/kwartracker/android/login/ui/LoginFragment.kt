@@ -37,6 +37,5 @@ class LoginFragment : Fragment() {
             binding.nsvContents.fling(0)
             binding.nsvContents.fullScroll(ScrollView.FOCUS_UP)
         }
-
     }
 }
