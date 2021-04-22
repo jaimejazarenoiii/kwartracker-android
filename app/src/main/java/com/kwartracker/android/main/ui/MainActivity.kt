@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         )
     }
     private lateinit var navHostFragment: NavHostFragment
-    lateinit var navController : NavController
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupNavigation()
     }
 
-    private fun setupNavigation(){
+    private fun setupNavigation() {
         navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         navController = navHostFragment.navController
     }
