@@ -28,4 +28,8 @@ class MainActivity : AppCompatActivity() {
         navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         navController = navHostFragment.navController
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
 }

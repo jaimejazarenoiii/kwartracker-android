@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.slidingpanelayout.widget.SlidingPaneLayout
+        android:id="@+id/sliding_pane_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/left"
+            android:name="com.kwartracker.android.home.ui.contents.SideMenuFragment"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"/>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/detail_container"
+            android:name="com.kwartracker.android.home.ui.contents.HomeFragment"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+
+
+</layout>
