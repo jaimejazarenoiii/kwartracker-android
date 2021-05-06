@@ -17,21 +17,36 @@ fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int)
                 R.drawable.non_active_dot
             )
         )
-        val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+        val params = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
         params.setMargins(5, 0, 5, 0)
         view.addView(dots[i], params)
     }
     dots[0]?.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.active_dots))
     addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-        override fun onPageScrolled(position: Int, positionOffset: Float,
+        override fun onPageScrolled(
+            position: Int, positionOffset: Float,
             positionOffsetPixels: Int
-        ) {}
+        ) {
+        }
 
         override fun onPageSelected(position: Int) {
             for (i in 0 until dotsCount) {
-                dots[i]?.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.non_active_dot))
+                dots[i]?.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        context,
+                        R.drawable.non_active_dot
+                    )
+                )
             }
-            dots[position]?.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.active_dots))
+            dots[position]?.setImageDrawable(
+                ContextCompat.getDrawable(
+                    context,
+                    R.drawable.active_dots
+                )
+            )
             onPageSelected(position)
 
         }

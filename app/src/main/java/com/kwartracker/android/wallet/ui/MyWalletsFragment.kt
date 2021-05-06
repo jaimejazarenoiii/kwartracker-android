@@ -18,7 +18,7 @@ class MyWalletsFragment : Fragment() {
 
     private lateinit var binding: FragmentWalletsBinding
     private lateinit var walletsAdapter: MyWalletViewPagerAdapter
-    val walletTransactionsAdapter = WalletTransactionsAdapter()
+    private val walletTransactionsAdapter = WalletTransactionsAdapter()
 
     private val transaction = listOf(
         WalletTransactions(
@@ -28,35 +28,40 @@ class MyWalletsFragment : Fragment() {
             trans_type = "Utang",
             trans_name = "Bayad ni Marites",
             date = ""
-        ),     WalletTransactions(
+        ),
+        WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
             trans_type = "Utang",
             trans_name = "Bayad ni Marites",
             date = ""
-        ),     WalletTransactions(
+        ),
+        WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
             trans_type = "Utang",
             trans_name = "Bayad ni Marites",
             date = ""
-        ),     WalletTransactions(
+        ),
+        WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
             trans_type = "Utang",
             trans_name = "Bayad ni Marites",
             date = ""
-        ),     WalletTransactions(
+        ),
+        WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
             trans_type = "Utang",
             trans_name = "Bayad ni Marites",
             date = ""
-        ),     WalletTransactions(
+        ),
+        WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
@@ -95,42 +100,50 @@ class MyWalletsFragment : Fragment() {
             balance = 500,
             type = "Budget"
 
-        ), Wallet(
+        ),
+        Wallet(
             id = 3,
             name = "Marvin",
             balance = 500,
             type = "Travel"
-        ), Wallet(
+        ),
+        Wallet(
             id = 4,
             name = "Jaime",
             balance = 500,
             type = "Alak"
-        ), Wallet(
+        ),
+        Wallet(
             id = 5,
             name = "Harry",
             balance = 500,
             type = "Savings"
-        ), Wallet(
+        ),
+        Wallet(
             id = 5,
             name = "Tyrone",
             balance = 500,
             type = "Savings"
-        ), Wallet(
+        ),
+        Wallet(
             id = 5,
             name = "Ellie",
             balance = 500,
             type = "Savings"
-        ), Wallet(
+        ),
+        Wallet(
             id = 5,
             name = "Jacob",
             balance = 500,
             type = "Savings"
-        ), Wallet(
+        ),
+        Wallet(
             id = 5,
             name = "Meng",
             balance = 500,
             type = "Savings"
-        ), Wallet(
+        ),
+        Wallet(
             id = 5,
             name = "Rexen",
             balance = 500,
