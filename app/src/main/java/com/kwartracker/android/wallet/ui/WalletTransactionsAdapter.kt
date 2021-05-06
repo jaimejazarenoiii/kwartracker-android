@@ -58,18 +58,14 @@ class WalletTransactionsAdapter :
         override fun getOldListSize(): Int {
             return oldShowResults.size
         }
-
         override fun getNewListSize(): Int {
             return newShowResults.size
         }
-
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             return oldShowResults[oldItemPosition].id == newShowResults[newItemPosition].id
         }
-
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             return oldShowResults[oldItemPosition] == newShowResults[newItemPosition]
         }
-
     }
 }
