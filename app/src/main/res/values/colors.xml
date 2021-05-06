@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="tranparent_white">#80FFFFFF</color>
 
     <color name="app_color">#03BED6</color>
     <color name="semi_white">#F1F3F6</color>
@@ -14,6 +15,19 @@
     <color name="dark_gray">#414141</color>
     <color name="gray">#BBC3C9</color>
     <color name="light_gray">#E4EAEF</color>
+    <color name="dark_blue">#48B4C3</color>
+    <color name="darker_blue">#22B2C6</color>
+
+    <color name="wallet_green">#4BCCBD</color>
+    <color name="wallet_green_mid">#48BFB0</color>
+    <color name="wallet_green_end">#47B6AA</color>
+
+    <color name="wallet_red">#FB8E8E</color>
+    <color name="wallet_red_mid">#F28080</color>
+    <color name="wallet_red_end">#ED7A7A</color>
 
     <color name="content_main">#f1f3f6</color>
+    <color name="light_green">#0EBCA7</color>
+    <color name="light_red">#E26767</color>
+
 </resources>
