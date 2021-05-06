@@ -163,9 +163,6 @@ class MyWalletsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         walletsAdapter = MyWalletViewPagerAdapter(requireContext())
-        binding.tvTitle.setOnClickListener {
-
-        }
 
         binding.walletLayout.viewPager.adapter = walletsAdapter
         binding.walletLayout.viewPager.setPadding(100, 0, 100, 0)
@@ -173,14 +170,11 @@ class MyWalletsFragment : Fragment() {
         binding.walletLayout.viewPager.onPageChange(
             binding.walletLayout.sliderDots,
             walletsAdapter.count
-        ) {
-
-        }
+        ) {}
         val linearLayoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
         binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
         binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
         walletTransactionsAdapter.setData(transaction)
     }
-
 }
 

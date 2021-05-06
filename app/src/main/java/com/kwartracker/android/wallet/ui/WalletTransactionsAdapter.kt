@@ -14,11 +14,12 @@ class WalletTransactionsAdapter :
 
     fun setData(result: List<WalletTransactions>) {
         val oldItem = this.results
-        val diffResult: DiffUtil.DiffResult = DiffUtil.calculateDiff(WalletTransactionDiffUtilCallback(oldItem, result))
+        val diffResult: DiffUtil.DiffResult =
+            DiffUtil.calculateDiff(WalletTransactionDiffUtilCallback(oldItem, result))
         this.results = result
         diffResult.dispatchUpdatesTo(this)
-
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletTransactionViewHolder {
         return WalletTransactionViewHolder.from(parent)
     }
@@ -50,7 +51,10 @@ class WalletTransactionsAdapter :
         }
     }
 
-    class WalletTransactionDiffUtilCallback(var oldShowResults: List<WalletTransactions>, var newShowResults: List<WalletTransactions>) : DiffUtil.Callback() {
+    class WalletTransactionDiffUtilCallback(
+        var oldShowResults: List<WalletTransactions>,
+        var newShowResults: List<WalletTransactions>
+    ) : DiffUtil.Callback() {
         override fun getOldListSize(): Int {
             return oldShowResults.size
         }
