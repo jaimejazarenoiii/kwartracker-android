@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="25dp" />
+            <solid android:color="@color/wallet_red" />
+            <size
+                android:width="300dp"
+                android:height="200dp" />
+            <gradient
+                android:angle="315"
+                android:centerColor="@color/wallet_red_mid"
+                android:endColor="@color/wallet_red_end"
+                android:startColor="@color/wallet_red" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="-50dp"
+        android:end="-55dp"
+        android:gravity="end|bottom">
+        <shape android:shape="oval">
+            <solid android:color="@color/tranparent_white" />
+            <size
+                android:width="160dp"
+                android:height="160dp" />
+        </shape>
+
+    </item>
+
+    <item
+        android:bottom="10dp"
+        android:end="45dp"
+        android:gravity="end|center">
+        <shape android:shape="oval">
+            <solid android:color="@color/tranparent_white" />
+            <size
+                android:width="50dp"
+                android:height="50dp" />
+        </shape>
+    </item>
+
+</layer-list>

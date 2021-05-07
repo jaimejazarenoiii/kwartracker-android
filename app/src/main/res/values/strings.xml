@@ -24,4 +24,14 @@
     <string name="sign_in">Sign In</string>
     <string name="already_have_an_account">Already have an account?</string>
 
+    //Titles
+    <string name="title_my_wallets">My Wallets</string>
+    <string name="title_edit_wallet">Edit Wallet</string>
+    <string name="title_add_transaction">Add Transaction</string>
+    <string name="title_transactions">Transactions</string>
+    <string name="title_view_all"><u>View All</u></string>
+    <string name="title_target_amount">to target amount</string>
+    <string name="title_target_date">to target date</string>
+
+
 </resources>

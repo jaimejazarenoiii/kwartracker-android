@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.kwartracker.android.widgets.WrapContentHeightViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:foregroundGravity="center"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/slider_dots"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/round_bg_ripple_white"
+            android:clickable="true"
+            android:elevation="20dp"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_pencil"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider_dots" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center|start"
+            android:letterSpacing="0.06"
+            android:text="@string/title_edit_wallet"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center|start"
+            android:letterSpacing="0.06"
+            android:text="@string/title_add_transaction"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageView2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/round_bg_ripple_white"
+            android:clickable="true"
+            android:elevation="20dp"
+            android:focusable="true"
+            android:padding="9dp"
+            android:src="@drawable/ic_btn_plus"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:tint="@color/gray" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_details"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <View
+                android:id="@+id/center"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_target_amount_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/title_target_amount"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/center"
+                app:layout_constraintEnd_toStartOf="@+id/center"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tv_target_amount"
+                app:layout_constraintTop_toBottomOf="@+id/tv_target_amount" />
+
+            <TextView
+                android:id="@+id/tv_target_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="10dp"
+                android:text="P10000"
+                android:textColor="@color/app_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_target_amount_label"
+                app:layout_constraintEnd_toStartOf="@+id/center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/center"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_target_date_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/title_target_date"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/center"
+                app:layout_constraintEnd_toEndOf="@+id/tv_date"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tv_date"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
+                android:text="1Y:10M:10D"
+                android:textColor="@color/app_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_target_date_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/center"
+                app:layout_constraintTop_toTopOf="@+id/center"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_transactions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/title_transactions"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_view_all"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <TextView
+            android:id="@+id/tv_view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center|end"
+            android:letterSpacing="0.06"
+            android:text="@string/title_view_all"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_transactions"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_transactions"
+            app:layout_constraintTop_toTopOf="@+id/tv_transactions" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyler_view_transactions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintEnd_toEndOf="@+id/tv_view_all"
+            app:layout_constraintStart_toStartOf="@+id/tv_transactions"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transactions" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -29,6 +29,9 @@ class LoginFragment : Fragment() {
         binding.tvSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
+        binding.btnSignIn.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_walletsFragment)
+        }
     }
 
     override fun onResume() {
