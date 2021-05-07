@@ -26,6 +26,7 @@ fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int)
     }
     dots[0]?.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.active_dots))
     addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,
