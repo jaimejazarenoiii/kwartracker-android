@@ -37,8 +37,8 @@ class WalletTransactionsAdapter :
         fun bind(item: WalletTransactions) {
             binding.apply {
                 tvAmount.text = item.amount.toString()
-                tvTransactionName.text = item.trans_name
-                tvTransactionType.text = item.trans_type
+                tvTransactionName.text = item.transName
+                tvTransactionType.text = item.transType
             }
         }
 
@@ -55,15 +55,19 @@ class WalletTransactionsAdapter :
         var oldShowResults: List<WalletTransactions>,
         var newShowResults: List<WalletTransactions>
     ) : DiffUtil.Callback() {
+
         override fun getOldListSize(): Int {
             return oldShowResults.size
         }
+
         override fun getNewListSize(): Int {
             return newShowResults.size
         }
+
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             return oldShowResults[oldItemPosition].id == newShowResults[newItemPosition].id
         }
+
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             return oldShowResults[oldItemPosition] == newShowResults[newItemPosition]
         }

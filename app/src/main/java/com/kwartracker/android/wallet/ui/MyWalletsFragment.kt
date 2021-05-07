@@ -25,64 +25,64 @@ class MyWalletsFragment : Fragment() {
             id = 1,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 1,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 2,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         ),
         WalletTransactions(
             id = 3,
             type = "Jufiel",
             amount = 500,
-            trans_type = "Utang",
-            trans_name = "Bayad ni Marites",
+            transType = "Utang",
+            transName = "Bayad ni Marites",
             date = ""
         )
     )

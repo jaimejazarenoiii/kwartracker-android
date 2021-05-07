@@ -31,6 +31,7 @@ fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int)
             positionOffset: Float,
             positionOffsetPixels: Int
         ) {}
+
         override fun onPageSelected(position: Int) {
             for (i in 0 until dotsCount) {
                 dots[i]?.setImageDrawable(
@@ -48,6 +49,7 @@ fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int)
             )
             onPageSelected(position)
         }
+
         override fun onPageScrollStateChanged(state: Int) {}
     })
 }

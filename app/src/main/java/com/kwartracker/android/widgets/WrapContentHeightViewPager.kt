@@ -4,12 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.viewpager.widget.ViewPager
 
-class WrapContentHeightViewPager : ViewPager {
-    constructor(context: Context) : super(context)
-    constructor(context: Context, attrs: AttributeSet) : super(
-        context,
-        attrs
-    )
+class WrapContentHeightViewPager @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : ViewPager(context, attrs) {
 
     override fun onMeasure(widthMeasureSpec: Int, measuredHeigt: Int) {
         val heightMeasureSpec: Int
