@@ -33,5 +33,17 @@
     <string name="title_target_amount">to target amount</string>
     <string name="title_target_date">to target date</string>
 
+    // Profile
+    <string name="lbl_profile">My Profile</string>
+    <string name="lbl_sample_name">Jupilot D. Great</string>
+    <string name="lbl_contact_number">Contact number</string>
+    <string name="lb_birthdate">Birthdate</string>
+    <string name="lbl_address">Address</string>
+    <string name="lbl_sample_number">09123456789</string>
+    <string name="lbl_sample_birthdate">January 01, 1998</string>
+    <string name="lbl_sample_address">2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000</string>
+    <string name="lbl_change_photo">Change photo</string>
+
+
 
 </resources>
