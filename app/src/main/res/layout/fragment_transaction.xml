@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_color">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/app_color"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                    <ImageView
+                        android:id="@+id/iv_toolbar_left"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_back_foreground" />
+
+                    <TextView
+                        android:id="@+id/tv_toolbar_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_toolbar_right"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="20dp"
+                        android:scaleType="centerInside"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_add_foreground" />
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp"
+                app:behavior_hideable="true"
+                app:layout_behavior="@string/bottom_sheet_behavior"
+                android:background="@drawable/bg_white_round_top">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/nav_host_fragment_transactions"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="50dp"
+                    app:defaultNavHost="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:navGraph="@navigation/nav_transactions" />
+
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nv_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="15dp"
+                app:behavior_hideable="true"
+                app:layout_behavior="@string/bottom_sheet_behavior"
+                android:background="@drawable/bg_white_round_top">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/nav_fragment_transactions_modal"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="50dp"/>
+            </com.google.android.material.navigation.NavigationView>
+
+            <FrameLayout
+                android:id="@+id/scrim"
+                android:visibility="gone"
+                android:elevation="2dp"
+                android:background="#CCFFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

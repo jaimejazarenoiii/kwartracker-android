@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/content_main">
+
+
+        <TextView
+            android:id="@+id/tv_date_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Default Date Range"
+            android:textColor="#414141"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ib_close"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ib_close"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_gray"
+            android:src="@drawable/ic_close_24"
+            android:elevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_close">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date Range"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#BBC3C9" />
+
+                <EditText
+                    android:id="@+id/et_date_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="25dp"
+                    android:autofillHints="Search"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="10dp"
+                    android:hint="This Week"
+                    android:inputType="textEmailAddress"
+                    android:padding="14dp"
+                    android:textColor="#414141"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/ib_date_range"
+                    android:elevation="11dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/roundsemi_gray"
+                    android:src="@drawable/ic_arrow_down_gray_24"
+                    android:text="Button" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wallet Type"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#BBC3C9" />
+                <EditText
+                    android:id="@+id/et_wallet_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="25dp"
+                    android:autofillHints="Search"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="10dp"
+                    android:hint="All Wallet"
+                    android:inputType="textEmailAddress"
+                    android:padding="14dp"
+                    android:textColor="#414141"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/ib_wallet_type"
+                    android:elevation="11dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/roundsemi_gray"
+                    android:src="@drawable/ic_arrow_down_gray_24"
+                    android:text="Button" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#BBC3C9" />
+                <EditText
+                    android:id="@+id/et_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="25dp"
+                    android:autofillHints="Search"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="10dp"
+                    android:hint="Select Category"
+                    android:inputType="textEmailAddress"
+                    android:padding="14dp"
+                    android:textColor="#414141"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/ib_category"
+                    android:elevation="11dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/roundsemi_gray"
+                    android:src="@drawable/ic_arrow_down_gray_24"
+                    android:text="Button" />
+            </RelativeLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edittext_bg_round_corner"
+                android:text="Apply"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/app_color"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

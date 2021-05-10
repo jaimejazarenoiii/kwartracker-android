@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/transactions_fragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.kwartracker.android.login.ui.LoginFragment"
@@ -32,4 +32,10 @@
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"
         android:label="Login"
         tools:layout="@layout/fragment_wallets" />
+
+    <fragment
+        android:id="@+id/transactions_fragment"
+        android:name="com.kwartracker.android.transactions.ui.main.TransactionFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_transaction" />
 </navigation>

@@ -32,6 +32,7 @@
     <string name="title_view_all"><u>View All</u></string>
     <string name="title_target_amount">to target amount</string>
     <string name="title_target_date">to target date</string>
+    <string name="search">Search</string>
 
 
 </resources>
