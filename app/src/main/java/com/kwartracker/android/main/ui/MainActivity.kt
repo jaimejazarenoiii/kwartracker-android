@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(
-            this,
-            R.layout.activity_main
+                this,
+                R.layout.activity_main
         )
     }
     private lateinit var navHostFragment: NavHostFragment

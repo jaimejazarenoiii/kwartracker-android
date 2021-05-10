@@ -8,14 +8,14 @@ import com.kwartracker.android.databinding.ItemTransactionBinding
 import com.kwartracker.android.wallet.model.WalletTransactions
 
 class WalletTransactionsAdapter :
-    RecyclerView.Adapter<WalletTransactionsAdapter.WalletTransactionViewHolder>() {
+        RecyclerView.Adapter<WalletTransactionsAdapter.WalletTransactionViewHolder>() {
 
     var results: List<WalletTransactions> = listOf()
 
     fun setData(result: List<WalletTransactions>) {
         val oldItem = this.results
         val diffResult: DiffUtil.DiffResult =
-            DiffUtil.calculateDiff(WalletTransactionDiffUtilCallback(oldItem, result))
+                DiffUtil.calculateDiff(WalletTransactionDiffUtilCallback(oldItem, result))
         this.results = result
         diffResult.dispatchUpdatesTo(this)
     }
@@ -32,7 +32,7 @@ class WalletTransactionsAdapter :
     override fun getItemCount(): Int = results.size
 
     class WalletTransactionViewHolder(val binding: ItemTransactionBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+            RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: WalletTransactions) {
             binding.apply {
@@ -52,8 +52,8 @@ class WalletTransactionsAdapter :
     }
 
     class WalletTransactionDiffUtilCallback(
-        var oldShowResults: List<WalletTransactions>,
-        var newShowResults: List<WalletTransactions>
+            var oldShowResults: List<WalletTransactions>,
+            var newShowResults: List<WalletTransactions>
     ) : DiffUtil.Callback() {
 
         override fun getOldListSize(): Int {
