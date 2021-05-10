@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSmoothScroller
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
@@ -43,23 +45,30 @@ class TransactionsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val rvTransaction = binding.rvTransactionList
         val fabBackToTop = binding.fabBackToTop
-        val svTransactionList = binding.svTransactionList
         val llTransactionFilter = binding.llTransactionFilter
 
-        svTransactionList.setOnScrollChangeListener { _, scrollX, scrollY, oldScrollX, oldScrollY ->
-            if(10 < scrollY) {
-                llTransactionFilter.background = AppCompatResources.getDrawable(view.context, R.drawable.border)
-                fabBackToTop.visibility = View.VISIBLE
+        rvTransaction.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                println(newState)
             }
 
-            if (scrollY == 0) {
-                llTransactionFilter.setBackgroundResource(0)
-                fabBackToTop.visibility = View.INVISIBLE
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                if (dy > 0) {
+                    llTransactionFilter.elevation = 20F
+                    fabBackToTop.visibility = View.VISIBLE
+                }
+                if (dy <= 0) {
+                    llTransactionFilter.elevation = 0F
+                    fabBackToTop.visibility = View.INVISIBLE
+                }
+                var xxx = recyclerView.scrollY
+                println("$dx $dy $xxx ")
             }
-        }
+        })
 
         fabBackToTop.setOnClickListener {
-            svTransactionList.scrollTo(0,0)
+            rvTransaction.smoothScrollToPosition(1)
         }
 
         binding.ibFilter.setOnClickListener {

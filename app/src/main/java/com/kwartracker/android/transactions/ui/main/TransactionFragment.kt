@@ -117,7 +117,6 @@ class TransactionFragment : Fragment() {
 
     private fun bottomMainSheetModal(fragment: Fragment) {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.navBackdrop)
-        bottomSheetBehavior.isDraggable = false
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
         Handler(Looper.getMainLooper()).postDelayed(
