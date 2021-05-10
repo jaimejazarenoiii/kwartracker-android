@@ -8,21 +8,25 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.*
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.view.View
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.*
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
+import com.kwartracker.android.transactions.ui.add.AddFragment
 import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
 import com.kwartracker.android.transactions.ui.filter.FilterFragment
 import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
-
 
 class TransactionFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
@@ -36,7 +40,7 @@ class TransactionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction, container, false)
-        transactionViewModel.backdrop.observe(viewLifecycleOwner, Observer {
+        transactionViewModel.backdrop.observe(viewLifecycleOwner, {
             println("test $it")
         })
         tbTitle = binding.tvToolbarTitle
@@ -47,7 +51,7 @@ class TransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivToolbarRight.setOnClickListener {
-            bottomMainSheetModal(TransactionDetailsFragment())
+            bottomMainSheetModal(AddFragment())
         }
 
         binding.ivToolbarLeft.setOnClickListener {
@@ -104,13 +108,13 @@ class TransactionFragment : Fragment() {
             }
         })
 
-        if(fragment != null) {
+        if (fragment != null) {
             scrim.visibility = View.VISIBLE
             Handler(Looper.getMainLooper()).postDelayed(
                 {
                     changeFragment(fragment, R.id.nav_fragment_transactions_modal)
                     bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-                },500
+                }, 500
             )
         }
     }
@@ -121,9 +125,9 @@ class TransactionFragment : Fragment() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                changeFragment(fragment,R.id.nav_host_fragment_transactions)
+                changeFragment(fragment, R.id.nav_host_fragment_transactions)
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-            },500
+            }, 500
         )
     }
 

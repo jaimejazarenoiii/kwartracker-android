@@ -6,4 +6,3 @@ data class Wallet(
     var balance: Int,
     var type: String
 )
-

@@ -11,7 +11,7 @@ import com.kwartracker.android.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy {
-        DataBindingUtil.setContentView<ActivityMainBinding>(
+        DataBindingUtil.setContentView(
             this,
             R.layout.activity_main
         )

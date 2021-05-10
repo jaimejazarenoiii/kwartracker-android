@@ -8,17 +8,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
 import com.kwartracker.android.transactions.ui.main.TransactionViewModel
-
 
 class TransactionsListFragment : Fragment() {
     private lateinit var binding: FragmentTransactionsListBinding
@@ -83,12 +79,11 @@ class TransactionsListFragment : Fragment() {
             adapter = transactionsListAdapter
         }
 
-        transactionViewModel.transactions.observe(viewLifecycleOwner, Observer { transactions ->
+        transactionViewModel.transactions.observe(viewLifecycleOwner, { transactions ->
             transactions?.let {
                 rvTransaction.visibility = View.VISIBLE
                 transactionsListAdapter.updateTransactions(it)
             }
         })
-
     }
 }

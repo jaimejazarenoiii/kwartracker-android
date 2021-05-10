@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.databinding.ItemTransactionBinding
-import com.kwartracker.android.transactions.ui.model.TransactionModel
+import com.kwartracker.android.transactions.model.TransactionModel
 
-class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>):
+class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>) :
     RecyclerView.Adapter<TransactionsListAdapter.TransactionViewHolder>() {
 
     fun updateTransactions(newTransactions: List<TransactionModel>) {
@@ -19,7 +19,8 @@ class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>):
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) = TransactionViewHolder(
         ItemTransactionBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
+            LayoutInflater.from(parent.context),
+            parent, false
         )
     )
 
@@ -29,7 +30,7 @@ class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>):
         holder.bind(transactions[position])
     }
 
-    class TransactionViewHolder(itemsTransactionBinding: ItemTransactionBinding):
+    class TransactionViewHolder(itemsTransactionBinding: ItemTransactionBinding) :
         RecyclerView.ViewHolder(itemsTransactionBinding.root) {
         private val tvTransactionType = itemsTransactionBinding.tvTransactionType
         private val ivDetails = itemsTransactionBinding.ivDetails

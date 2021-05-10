@@ -15,13 +15,8 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentSignupBinding
-import com.kwartracker.android.databinding.FragmentTransactionDetailsBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListFilterBinding
-import com.kwartracker.android.transactions.ui.main.TransactionFragment
 
 class FilterFragment : Fragment() {
     lateinit var binding: FragmentTransactionsListFilterBinding
@@ -31,8 +26,9 @@ class FilterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transactions_list_filter, container, false)
-
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_transactions_list_filter,
+            container, false)
 
         return binding.root
     }
@@ -66,7 +62,7 @@ class FilterFragment : Fragment() {
                         .toInt()
                 if (item.icon != null) {
                     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-                        item.icon = InsetDrawable(item.icon, iconMarginPx, 0, iconMarginPx,0)
+                        item.icon = InsetDrawable(item.icon, iconMarginPx, 0, iconMarginPx, 0)
                     } else {
                         item.icon =
                             object : InsetDrawable(item.icon, iconMarginPx, 0, iconMarginPx, 0) {

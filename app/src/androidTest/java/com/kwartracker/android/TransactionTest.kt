@@ -7,7 +7,6 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class TransactionTest {
     @Test
-    fun test_transaction_UI()
-    {
+    fun test_transaction_UI() {
     }
 }

@@ -3,7 +3,6 @@
     >
     <item android:id="@+id/option_1"
         android:icon="@drawable/ic_transaction_category"
-        android:iconTint="@color/app_color"
         android:title="option 1" />
     <item android:id="@+id/option_2"
         android:icon="@drawable/ic_transaction_category"
@@ -13,7 +12,6 @@
         android:title="option 3" />
     <item android:id="@+id/option_4"
         android:icon="@drawable/ic_transaction_category"
-        android:iconTint="@color/app_color"
         android:title="option 1" />
     <item android:id="@+id/option_5"
         android:icon="@drawable/ic_transaction_category"
@@ -23,7 +21,6 @@
         android:title="option 3" />
     <item android:id="@+id/option_7"
         android:icon="@drawable/ic_transaction_category"
-        android:iconTint="@color/app_color"
         android:title="option 1" />
     <item android:id="@+id/option_8"
         android:icon="@drawable/ic_transaction_category"
