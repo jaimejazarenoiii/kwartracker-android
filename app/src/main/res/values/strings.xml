@@ -37,7 +37,7 @@
     <string name="lbl_profile">My Profile</string>
     <string name="lbl_sample_name">Jupilot D. Great</string>
     <string name="lbl_contact_number">Contact number</string>
-    <string name="lb_birthdate">Birthdate</string>
+    <string name="lbl_birthdate">Birthdate</string>
     <string name="lbl_address">Address</string>
     <string name="lbl_sample_number">09123456789</string>
     <string name="lbl_sample_birthdate">January 01, 1998</string>

@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(
-                this,
-                R.layout.activity_main
+            this,
+            R.layout.activity_main
         )
     }
     private lateinit var navHostFragment: NavHostFragment
@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupNavigation() {
-        navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
+        navHostFragment =
+            supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         navController = navHostFragment.navController
     }
 }
