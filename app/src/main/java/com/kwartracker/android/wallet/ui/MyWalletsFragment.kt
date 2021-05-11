@@ -177,4 +177,3 @@ class MyWalletsFragment : Fragment() {
         walletTransactionsAdapter.setData(transaction)
     }
 }
-

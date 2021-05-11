@@ -31,7 +31,8 @@ fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int)
             position: Int,
             positionOffset: Float,
             positionOffsetPixels: Int
-        ) {}
+        ) {
+        }
 
         override fun onPageSelected(position: Int) {
             for (i in 0 until dotsCount) {
