@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".profile.ui.MyProfileFragment">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_bg_ripple_blue"
+        android:clickable="true"
+        android:elevation="30dp"
+        android:focusable="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/title_my_profile"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <TextView
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:alpha=".48"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/lbl_save"
+        android:textColor="@color/semi_white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_contents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_white_round_top"
+        android:descendantFocusability="blocksDescendants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/wallet_bg_red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_change_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:alpha=".3"
+                android:text="@string/lbl_change_photo"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_" />
+
+            <TextView
+                android:id="@+id/tv_last_name_label"
+                style="@style/style_labels"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/lbl_last_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_change_photo" />
+
+            <EditText
+                android:id="@+id/et_last_name"
+                style="@style/style_text_fields"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="30dp"
+                android:autofillHints="@string/hint_last_name"
+                android:hint="@string/hint_last_name"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_last_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_last_name_label"
+                tools:text="Great" />
+
+            <TextView
+                android:id="@+id/tv_first_name_label"
+                style="@style/style_labels"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/lbl_first_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_last_name" />
+
+            <EditText
+                android:id="@+id/et_first_name"
+                style="@style/style_text_fields"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="30dp"
+                android:autofillHints="@string/hint_first_name"
+                android:hint="@string/hint_first_name"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_first_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_first_name_label"
+                tools:text="Jupilot" />
+
+            <TextView
+                android:id="@+id/tv_contact_number_label"
+                style="@style/style_labels"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/lbl_contact_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_first_name" />
+
+            <EditText
+                android:id="@+id/et_contact_number"
+                style="@style/style_text_fields"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="30dp"
+                android:autofillHints="@string/hint_contact_number"
+                android:hint="@string/hint_contact_number"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_contact_number_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contact_number_label"
+                tools:text="09123456789" />
+
+            <TextView
+                android:id="@+id/tv_birthdate_label"
+                style="@style/style_labels"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/lbl_birthdate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_contact_number" />
+
+            <TextView
+                android:id="@+id/tv_birthdate"
+                style="@style/style_text_fields"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_birthdate_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_label"
+                tools:text="01 / 01 / 1998" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/bg_round_light_gray"
+                android:src="@drawable/ic_calendar"
+                app:layout_constraintBottom_toBottomOf="@id/tv_birthdate"
+                app:layout_constraintEnd_toEndOf="@id/tv_birthdate"
+                app:layout_constraintTop_toTopOf="@id/tv_birthdate"
+                android:contentDescription="@string/lbl_birthdate" />
+
+            <TextView
+                android:id="@+id/tv_address_label"
+                style="@style/style_labels"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/lbl_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_birthdate" />
+
+            <EditText
+                android:id="@+id/et_address"
+                style="@style/style_text_fields"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="@string/hint_address"
+                android:hint="@string/hint_address"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_address_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_address_label"
+                tools:text="@string/lbl_sample_address" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
