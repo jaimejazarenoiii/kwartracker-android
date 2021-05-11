@@ -3,7 +3,6 @@ package com.kwartracker.android.transactions.ui.filter
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.InsetDrawable
-import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.ContextThemeWrapper
