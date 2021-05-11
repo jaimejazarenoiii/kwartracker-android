@@ -33,6 +33,19 @@
     <string name="title_target_amount">to target amount</string>
     <string name="title_target_date">to target date</string>
     <string name="search">Search</string>
+    <string name="default_date_range">Default Date Range</string>
+    <string name="date_range">Date Range</string>
+    <string name="wallet_type">Wallet Type</string>
+    <string name="category">Category</string>
+    <string name="apply">Apply</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="income">Income</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="spent_with">Spent with</string>
+    <string name="transaction_date">Transaction Date</string>
+    <string name="march_15_2021">March 15, 2021</string>
+    <string name="added_to_wallet">Added to Wallet</string>
+    <string name="transaction_image">Transaction Image</string>
 
 
 </resources>

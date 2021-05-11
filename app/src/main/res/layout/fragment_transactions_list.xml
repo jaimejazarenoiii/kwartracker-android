@@ -15,11 +15,11 @@
                 android:id="@+id/ll_transaction_filter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="0dp"
+                android:elevation="0sp"
                 android:background="@drawable/border"
                 android:orientation="horizontal">
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     >
@@ -27,35 +27,34 @@
                     android:id="@+id/et_transaction_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_margin="20sp"
+                    android:layout_marginTop="0sp"
                     android:autofillHints="Search"
                     android:background="@drawable/edittext_bg_round_corner"
-                    android:elevation="10dp"
+                    android:elevation="10sp"
                     android:ems="10"
                     android:hint="@string/search"
                     android:inputType="textEmailAddress"
-                    android:padding="14dp"
+                    android:padding="14sp"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     />
                     <ImageButton
                         android:id="@+id/ib_search"
-                        android:elevation="11dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginRight="35dp"
-                        android:layout_alignParentRight="true"
+                        android:elevation="11sp"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:layout_marginTop="30sp"
+                        android:layout_marginEnd="35sp"
+                        android:layout_alignParentEnd="true"
                         android:background="@drawable/ic_search"
-                        android:text="Button"
                         tools:ignore="ContentDescription" />
                 </RelativeLayout>
                 <ImageButton
                     android:id="@+id/ib_filter"
-                    android:layout_margin="20dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_margin="20sp"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
                     android:background="@drawable/roundsemi_teal"
                     android:src="@mipmap/ic_filter_foreground"
                     tools:ignore="ContentDescription" />
@@ -63,8 +62,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_transaction_list"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
                 />
@@ -75,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/transaction_loader"
                 android:layout_gravity="bottom|center"
+                tools:ignore="ContentDescription"
                 />
         </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -84,7 +84,7 @@
             android:layout_gravity="bottom|center"
             android:background="@color/app_color"
             android:visibility="invisible"
-            android:layout_margin="16dp"
+            android:layout_margin="16sp"
             app:tint="@color/white"
             app:backgroundTint="@color/app_color"
             app:srcCompat="@drawable/ic_arrow_up_24"
