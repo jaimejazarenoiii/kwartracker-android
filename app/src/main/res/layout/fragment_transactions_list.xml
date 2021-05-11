@@ -18,9 +18,14 @@
                 android:elevation="0dp"
                 android:background="@drawable/border"
                 android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
                 <EditText
                     android:id="@+id/et_transaction_search"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:layout_marginTop="0dp"
@@ -33,7 +38,19 @@
                     android:padding="14dp"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
-                    android:layout_weight="1"/>
+                    />
+                    <ImageButton
+                        android:id="@+id/ib_search"
+                        android:elevation="11dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="35dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/ic_search"
+                        android:text="Button"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
                 <ImageButton
                     android:id="@+id/ib_filter"
                     android:layout_margin="20dp"
