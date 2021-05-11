@@ -6,7 +6,7 @@
     app:startDestination="@id/transaction_lists_fragment">
     <fragment
         android:id="@+id/transactions_details_fragment"
-        android:name="com.kwartracker.android.transactions.ui.details.TransactionsDetailsFragment"
+        android:name="com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment"
         android:label="Transaction Details"
         tools:layout="@layout/fragment_transaction_details" />
     <fragment

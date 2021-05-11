@@ -23,8 +23,13 @@ class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>) :
             parent, false
         )
     )
-
-    override fun getItemCount() = transactions.size
+    override fun getItemCount(): Int {
+        return if (transactions.size > 10) {
+            10
+        } else {
+            transactions.size
+        }
+    }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
         holder.bind(transactions[position])
@@ -36,7 +41,7 @@ class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>) :
         private val ivDetails = itemsTransactionBinding.ivDetails
 
         fun bind(model: TransactionModel) {
-            tvTransactionType.text = model.walletType
+            tvTransactionType.text = model.type
 
             ivDetails.setOnClickListener {
                 val intent = Intent("message")

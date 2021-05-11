@@ -23,8 +23,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
-import com.kwartracker.android.transactions.ui.add.TransactionsAddFragment
-import com.kwartracker.android.transactions.ui.details.TransactionsDetailsFragment
+import com.kwartracker.android.transactions.ui.add.TransactionAddFragment
+import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
 import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
 
@@ -51,7 +51,7 @@ class TransactionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivToolbarRight.setOnClickListener {
-            bottomMainSheetModal(TransactionsAddFragment())
+            bottomMainSheetModal(TransactionAddFragment())
         }
 
         binding.ivToolbarLeft.setOnClickListener {
@@ -83,7 +83,7 @@ class TransactionsFragment : Fragment() {
             } else if (func == "details") {
                 binding.tvToolbarTitle.text = "Transaction"
                 val transID = intent.getStringExtra("transID")
-                bottomMainSheetModal(TransactionsDetailsFragment())
+                bottomMainSheetModal(TransactionDetailsFragment())
             }
         }
     }

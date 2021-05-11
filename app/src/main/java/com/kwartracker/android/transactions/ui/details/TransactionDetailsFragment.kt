@@ -10,7 +10,7 @@ import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionDetailsBinding
 import com.kwartracker.android.transactions.ui.main.TransactionsFragment
 
-class TransactionsDetailsFragment : Fragment() {
+class TransactionDetailsFragment : Fragment() {
     lateinit var binding: FragmentTransactionDetailsBinding
 
     override fun onCreateView(

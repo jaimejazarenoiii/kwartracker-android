@@ -16,6 +16,7 @@ import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
 import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
 
+
 class TransactionsListFragment : Fragment() {
     private lateinit var binding: FragmentTransactionsListBinding
     private lateinit var mainBinding: FragmentTransactionBinding
@@ -42,8 +43,18 @@ class TransactionsListFragment : Fragment() {
         val rvTransaction = binding.rvTransactionList
         val fabBackToTop = binding.fabBackToTop
         val llTransactionFilter = binding.llTransactionFilter
+        val mLayoutManager = LinearLayoutManager(view.context)
+        val ivLoader = binding.ivLoader
+        rvTransaction.layoutManager = mLayoutManager
 
         rvTransaction.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            var previousTotal = 0
+            var loading = true
+            val visibleThreshold = 10
+            var firstVisibleItem = 0
+            var visibleItemCount = 0
+            var totalItemCount = 0
+
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 println(newState)
@@ -53,6 +64,24 @@ class TransactionsListFragment : Fragment() {
                 if (dy > 0) {
                     llTransactionFilter.elevation = 20F
                     fabBackToTop.visibility = View.VISIBLE
+
+                    visibleItemCount = mLayoutManager.childCount;
+                    totalItemCount = mLayoutManager.itemCount;
+                    firstVisibleItem = mLayoutManager.findFirstVisibleItemPosition();
+
+                    if (loading) {
+                        if (totalItemCount > previousTotal) {
+                            loading = false
+                            previousTotal = totalItemCount
+                        }
+
+                    }
+
+                    if (!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
+                        fabBackToTop.visibility = View.INVISIBLE
+                        transactionsViewModel.fetchTransactions()
+                        loading = true
+                    }
                 }
                 if (dy <= 0) {
                     llTransactionFilter.elevation = 0F
@@ -83,6 +112,15 @@ class TransactionsListFragment : Fragment() {
             transactions?.let {
                 rvTransaction.visibility = View.VISIBLE
                 transactionsListAdapter.updateTransactions(it)
+            }
+        })
+
+        transactionsViewModel.loading.observe(viewLifecycleOwner, { isLoading ->
+            isLoading?.let {
+                ivLoader.visibility = if(it) View.VISIBLE else View.GONE
+                if(it) {
+                    rvTransaction.visibility = View.GONE
+                }
             }
         })
     }

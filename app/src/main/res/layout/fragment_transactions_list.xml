@@ -60,14 +60,22 @@
                     android:src="@mipmap/ic_filter_foreground"
                     tools:ignore="ContentDescription" />
             </LinearLayout>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_transaction_list"
-                    android:layout_width="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none"
-                    />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transaction_list"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                />
+            <ImageView
+                android:id="@+id/iv_loader"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/transaction_loader"
+                android:layout_gravity="bottom|center"
+                />
         </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_back_to_top"
@@ -81,5 +89,6 @@
             app:backgroundTint="@color/app_color"
             app:srcCompat="@drawable/ic_arrow_up_24"
             tools:ignore="ContentDescription" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

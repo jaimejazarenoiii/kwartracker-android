@@ -10,26 +10,29 @@
 
         <ImageView
             android:id="@+id/iv_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/non_active_dot"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.877"
+            app:layout_constraintHorizontal_bias="0.958"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/non_active_dot"
+            app:srcCompat="@drawable/ic_delete"
             tools:ignore="ContentDescription" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_fragment"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:padding="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="19dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/bg_details"
             android:elevation="20dp"
+            android:padding="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_delete">
 
@@ -51,8 +54,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:textColor="#414141"
                 android:text="March 15 payroll"
+                android:textColor="#414141"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +70,7 @@
             android:paddingStart="20dp"
             android:weightSum="2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_fragment">
 
