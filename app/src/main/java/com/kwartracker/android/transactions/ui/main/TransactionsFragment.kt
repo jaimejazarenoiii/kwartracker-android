@@ -79,8 +79,8 @@ class TransactionsFragment : Fragment() {
                 if (state == "close") bottomSheetModal(null)
                 else bottomSheetModal(TransactionsFilterFragment())
             } else if (func == "details") {
-                binding.tvToolbarTitle.text = "Transaction"
-                val transID = intent.getStringExtra("transID")
+                binding.tvToolbarTitle.text = getString(R.string.transaction)
+
                 bottomMainSheetModal(TransactionDetailsFragment())
             }
         }

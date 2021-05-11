@@ -8,7 +8,6 @@ class TransactionsViewModel : ViewModel() {
 
     val transactions = MutableLiveData<List<TransactionModel>>()
     val loading = MutableLiveData<Boolean>()
-    var backdrop = MutableLiveData<Boolean>()
 
     fun fetchTransactions() {
         loading.value = true
