@@ -6,6 +6,7 @@ import android.graphics.drawable.InsetDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionsListFilterBinding
 
-class FilterFragment : Fragment() {
+class TransactionsFilterFragment : Fragment() {
     lateinit var binding: FragmentTransactionsListFilterBinding
 
     override fun onCreateView(
@@ -26,9 +27,11 @@ class FilterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.fragment_transactions_list_filter,
-            container, false)
+            container, false
+        )
 
         return binding.root
     }
@@ -50,15 +53,18 @@ class FilterFragment : Fragment() {
 
     @SuppressLint("RestrictedApi")
     private fun showMenu(v: View, @MenuRes menuRes: Int) {
-        val popup = PopupMenu(requireContext(), v)
+        val ctw = ContextThemeWrapper(v.context, R.style.Transaction_Popup_Category)
+        val popup = PopupMenu(ctw, v)
         popup.menuInflater.inflate(menuRes, popup.menu)
+
         if (popup.menu is MenuBuilder) {
             val menuBuilder = popup.menu as MenuBuilder
             menuBuilder.setOptionalIconsVisible(true)
             for (item in menuBuilder.visibleItems) {
                 val iconMarginPx =
                     TypedValue.applyDimension(
-                        TypedValue.COMPLEX_UNIT_DIP, 10F, resources.displayMetrics)
+                        TypedValue.COMPLEX_UNIT_DIP, 10F, resources.displayMetrics
+                    )
                         .toInt()
                 if (item.icon != null) {
                     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {

@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kwartracker.android.transactions.model.TransactionModel
 
-class TransactionViewModel : ViewModel() {
+class TransactionsViewModel : ViewModel() {
 
     val transactions = MutableLiveData<List<TransactionModel>>()
     val transactionsLoadError = MutableLiveData<String?>()

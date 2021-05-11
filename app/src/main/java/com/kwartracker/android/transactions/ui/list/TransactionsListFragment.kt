@@ -14,12 +14,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
-import com.kwartracker.android.transactions.ui.main.TransactionViewModel
+import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
 
 class TransactionsListFragment : Fragment() {
     private lateinit var binding: FragmentTransactionsListBinding
     private lateinit var mainBinding: FragmentTransactionBinding
-    private val transactionViewModel: TransactionViewModel by viewModels()
+    private val transactionsViewModel: TransactionsViewModel by viewModels()
     private var transactionsListAdapter = TransactionsListAdapter(arrayListOf())
 
     override fun onCreateView(
@@ -73,13 +73,13 @@ class TransactionsListFragment : Fragment() {
             LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
         }
 
-        transactionViewModel.fetchTransactions()
+        transactionsViewModel.fetchTransactions()
         rvTransaction.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = transactionsListAdapter
         }
 
-        transactionViewModel.transactions.observe(viewLifecycleOwner, { transactions ->
+        transactionsViewModel.transactions.observe(viewLifecycleOwner, { transactions ->
             transactions?.let {
                 rvTransaction.visibility = View.VISIBLE
                 transactionsListAdapter.updateTransactions(it)

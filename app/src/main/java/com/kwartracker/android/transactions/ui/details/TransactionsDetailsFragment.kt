@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionDetailsBinding
-import com.kwartracker.android.transactions.ui.main.TransactionFragment
+import com.kwartracker.android.transactions.ui.main.TransactionsFragment
 
-class TransactionDetailsFragment : Fragment() {
+class TransactionsDetailsFragment : Fragment() {
     lateinit var binding: FragmentTransactionDetailsBinding
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class TransactionDetailsFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_transaction_details,
             container, false)
-        TransactionFragment().tbTitle?.text = "Transaction"
+        TransactionsFragment().tbTitle?.text = "Transaction"
 
         return binding.root
     }

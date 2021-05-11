@@ -23,14 +23,14 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
-import com.kwartracker.android.transactions.ui.add.AddFragment
-import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
-import com.kwartracker.android.transactions.ui.filter.FilterFragment
+import com.kwartracker.android.transactions.ui.add.TransactionsAddFragment
+import com.kwartracker.android.transactions.ui.details.TransactionsDetailsFragment
+import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
 
-class TransactionFragment : Fragment() {
+class TransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
-    private val transactionViewModel: TransactionViewModel by viewModels()
+    private val transactionsViewModel: TransactionsViewModel by viewModels()
     var tbTitle: TextView? = null
     var navBottomSheetModal: NavigationView? = null
 
@@ -40,7 +40,7 @@ class TransactionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction, container, false)
-        transactionViewModel.backdrop.observe(viewLifecycleOwner, {
+        transactionsViewModel.backdrop.observe(viewLifecycleOwner, {
             println("test $it")
         })
         tbTitle = binding.tvToolbarTitle
@@ -51,7 +51,7 @@ class TransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivToolbarRight.setOnClickListener {
-            bottomMainSheetModal(AddFragment())
+            bottomMainSheetModal(TransactionsAddFragment())
         }
 
         binding.ivToolbarLeft.setOnClickListener {
@@ -67,7 +67,7 @@ class TransactionFragment : Fragment() {
         )
 
         bottomMainSheetModal(TransactionsListFragment())
-        changeFragment(FilterFragment(), R.id.nav_fragment_transactions_modal)
+        changeFragment(TransactionsFilterFragment(), R.id.nav_fragment_transactions_modal)
         bottomSheetModal(null)
     }
 
@@ -79,11 +79,11 @@ class TransactionFragment : Fragment() {
             if (func == "filter") {
                 val state = intent.getStringExtra("state")
                 if (state == "close") bottomSheetModal(null)
-                else bottomSheetModal(FilterFragment())
+                else bottomSheetModal(TransactionsFilterFragment())
             } else if (func == "details") {
                 binding.tvToolbarTitle.text = "Transaction"
                 val transID = intent.getStringExtra("transID")
-                bottomMainSheetModal(TransactionDetailsFragment())
+                bottomMainSheetModal(TransactionsDetailsFragment())
             }
         }
     }

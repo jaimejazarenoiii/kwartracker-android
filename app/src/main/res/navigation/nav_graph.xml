@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/transactions_fragment"
-        android:name="com.kwartracker.android.transactions.ui.main.TransactionFragment"
+        android:name="com.kwartracker.android.transactions.ui.main.TransactionsFragment"
         android:label="Transaction"
         tools:layout="@layout/fragment_transaction" />
 </navigation>
