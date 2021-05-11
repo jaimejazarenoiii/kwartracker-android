@@ -19,10 +19,10 @@
     <string name="lbl_or">or</string>
 
     // Sign Up
-    <string name="create_naccount">Create\nAccount</string>
-    <string name="enter_password"><i>Enter Password</i></string>
-    <string name="sign_in">Sign In</string>
-    <string name="already_have_an_account">Already have an account?</string>
+    <string name="lbl_create_naccount">Create\nAccount</string>
+    <string name="lbl_enter_password"><i>Enter Password</i></string>
+    <string name="lbl_sign_in">Sign In</string>
+    <string name="lbl_already_have_an_account">Already have an account?</string>
 
     //Titles
     <string name="title_my_wallets">My Wallets</string>
@@ -32,18 +32,6 @@
     <string name="title_view_all"><u>View All</u></string>
     <string name="title_target_amount">to target amount</string>
     <string name="title_target_date">to target date</string>
-    <string name="search">Search</string>
-    <string name="default_date_range">Default Date Range</string>
-    <string name="date_range">Date Range</string>
-    <string name="wallet_type">Wallet Type</string>
-    <string name="category">Category</string>
-    <string name="apply">Apply</string>
-    <string name="transaction_type">Transaction Type</string>
-    <string name="income">Income</string>
-    <string name="spent_with">Spent with</string>
-    <string name="transaction_date">Transaction Date</string>
-    <string name="added_to_wallet">Added to Wallet</string>
-    <string name="transaction_image">Transaction Image</string>
 
     // Profile
     <string name="lbl_profile">My Profile</string>
@@ -57,6 +45,18 @@
     <string name="lbl_change_photo">Change photo</string>
 
     // Transactions
-    <string name="transaction">Transaction</string>
+    <string name="title_transaction">Transaction</string>
+    <string name="lbl_search">Search</string>
+    <string name="lbl_default_date_range">Default Date Range</string>
+    <string name="lbl_date_range">Date Range</string>
+    <string name="lbl_wallet_type">Wallet Type</string>
+    <string name="lbl_category">Category</string>
+    <string name="lbl_apply">Apply</string>
+    <string name="lbl_transaction_type">Transaction Type</string>
+    <string name="lbl_income">Income</string>
+    <string name="lbl_spent_with">Spent with</string>
+    <string name="lbl_transaction_date">Transaction Date</string>
+    <string name="lbl_added_to_wallet">Added to Wallet</string>
+    <string name="lbl_transaction_image">Transaction Image</string>
 
 </resources>

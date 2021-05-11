@@ -79,7 +79,7 @@ class TransactionsFragment : Fragment() {
                 if (state == "close") bottomSheetModal(null)
                 else bottomSheetModal(TransactionsFilterFragment())
             } else if (func == "details") {
-                binding.tvToolbarTitle.text = getString(R.string.transaction)
+                binding.tvToolbarTitle.text = getString(R.string.title_transactions)
 
                 bottomMainSheetModal(TransactionDetailsFragment())
             }

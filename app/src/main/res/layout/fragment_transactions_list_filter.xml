@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
-            android:text="@string/default_date_range"
+            android:text="@string/lbl_default_date_range"
             android:textColor="#414141"
             android:textSize="25sp"
             android:layout_marginTop="10sp"
@@ -54,7 +54,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/date_range"
+                    android:text="@string/lbl_date_range"
                     android:layout_marginStart="20sp"
                     android:textColor="#BBC3C9"
                     tools:ignore="RelativeOverlap" />
@@ -97,7 +97,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/wallet_type"
+                    android:text="@string/lbl_wallet_type"
                     android:layout_marginStart="20sp"
                     android:textColor="#BBC3C9"
                     tools:ignore="RelativeOverlap" />
@@ -140,7 +140,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/category"
+                    android:text="@string/lbl_category"
                     android:layout_marginStart="20sp"
                     android:textColor="#BBC3C9"
                     tools:ignore="ContentDescription|RelativeOverlap"/>
@@ -187,7 +187,7 @@
                 android:layout_marginLeft="20sp"
                 android:layout_marginRight="20sp"
                 android:background="@drawable/edittext_bg_round_corner"
-                android:text="@string/apply"
+                android:text="@string/lbl_apply"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/app_color"

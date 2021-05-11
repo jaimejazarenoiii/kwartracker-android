@@ -88,14 +88,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/transaction_type"
+                    android:text="@string/lbl_transaction_type"
                     android:textColor="#BBC3C9"
                     android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/income"
+                    android:text="@string/lbl_income"
                     android:textColor="#414141"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -104,7 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20sp"
-                    android:text="@string/category"
+                    android:text="@string/lbl_category"
                     android:textColor="#BBC3C9"
                     android:textSize="13sp" />
 
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20sp"
-                    android:text="@string/spent_with"
+                    android:text="@string/lbl_spent_with"
                     android:textColor="#BBC3C9"
                     android:textSize="13sp" />
 
@@ -145,7 +145,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/transaction_date"
+                    android:text="@string/lbl_transaction_date"
                     android:textColor="#BBC3C9"
                     android:textSize="13sp" />
 
@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20sp"
-                    android:text="@string/added_to_wallet"
+                    android:text="@string/lbl_added_to_wallet"
                     android:textColor="#BBC3C9"
                     android:textSize="13sp" />
 
@@ -183,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:layout_weight="1"
-            android:text="@string/transaction_image"
+            android:text="@string/lbl_transaction_image"
             android:textColor="#BBC3C9"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"

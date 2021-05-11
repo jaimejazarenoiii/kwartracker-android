@@ -21,7 +21,7 @@ class TransactionDetailsFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_transaction_details,
             container, false)
-        TransactionsFragment().tbTitle?.text = "Transaction"
+        TransactionsFragment().tbTitle?.text = getString(R.string.title_transaction)
 
         return binding.root
     }
