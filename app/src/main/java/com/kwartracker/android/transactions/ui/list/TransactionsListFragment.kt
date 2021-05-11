@@ -16,7 +16,6 @@ import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
 import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
 
-
 class TransactionsListFragment : Fragment() {
     private lateinit var binding: FragmentTransactionsListBinding
     private lateinit var mainBinding: FragmentTransactionBinding
@@ -65,16 +64,15 @@ class TransactionsListFragment : Fragment() {
                     llTransactionFilter.elevation = 20F
                     fabBackToTop.visibility = View.VISIBLE
 
-                    visibleItemCount = mLayoutManager.childCount;
-                    totalItemCount = mLayoutManager.itemCount;
-                    firstVisibleItem = mLayoutManager.findFirstVisibleItemPosition();
+                    visibleItemCount = mLayoutManager.childCount
+                    totalItemCount = mLayoutManager.itemCount
+                    firstVisibleItem = mLayoutManager.findFirstVisibleItemPosition()
 
                     if (loading) {
                         if (totalItemCount > previousTotal) {
                             loading = false
                             previousTotal = totalItemCount
                         }
-
                     }
 
                     if (!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
@@ -117,8 +115,8 @@ class TransactionsListFragment : Fragment() {
 
         transactionsViewModel.loading.observe(viewLifecycleOwner, { isLoading ->
             isLoading?.let {
-                ivLoader.visibility = if(it) View.VISIBLE else View.GONE
-                if(it) {
+                ivLoader.visibility = if (it) View.VISIBLE else View.GONE
+                if (it) {
                     rvTransaction.visibility = View.GONE
                 }
             }
