@@ -67,16 +67,7 @@ class TransactionsFilterFragment : Fragment() {
                     )
                         .toInt()
                 if (item.icon != null) {
-                    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-                        item.icon = InsetDrawable(item.icon, iconMarginPx, 0, iconMarginPx, 0)
-                    } else {
-                        item.icon =
-                            object : InsetDrawable(item.icon, iconMarginPx, 0, iconMarginPx, 0) {
-                                override fun getIntrinsicWidth(): Int {
-                                    return intrinsicHeight + iconMarginPx + iconMarginPx
-                                }
-                            }
-                    }
+                    item.icon = InsetDrawable(item.icon, iconMarginPx, 0, iconMarginPx, 0)
                 }
             }
         }
