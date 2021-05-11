@@ -40,9 +40,7 @@ class TransactionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction, container, false)
-        transactionsViewModel.backdrop.observe(viewLifecycleOwner, {
-            println("test $it")
-        })
+
         tbTitle = binding.tvToolbarTitle
         navBottomSheetModal = binding.nvFilter
 
