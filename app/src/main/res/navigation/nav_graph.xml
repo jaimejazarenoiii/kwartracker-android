@@ -32,4 +32,10 @@
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"
         android:label="Login"
         tools:layout="@layout/fragment_wallets" />
+
+    <fragment
+        android:id="@+id/transactions_fragment"
+        android:name="com.kwartracker.android.transactions.ui.main.TransactionsFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_transaction" />
 </navigation>

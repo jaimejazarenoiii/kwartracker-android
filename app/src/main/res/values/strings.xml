@@ -19,10 +19,10 @@
     <string name="lbl_or">or</string>
 
     // Sign Up
-    <string name="create_naccount">Create\nAccount</string>
-    <string name="enter_password"><i>Enter Password</i></string>
-    <string name="sign_in">Sign In</string>
-    <string name="already_have_an_account">Already have an account?</string>
+    <string name="lbl_create_naccount">Create\nAccount</string>
+    <string name="lbl_enter_password"><i>Enter Password</i></string>
+    <string name="lbl_sign_in">Sign In</string>
+    <string name="lbl_already_have_an_account">Already have an account?</string>
 
     //Titles
     <string name="title_my_wallets">My Wallets</string>
@@ -43,12 +43,20 @@
     <string name="lbl_sample_birthdate">January 01, 1998</string>
     <string name="lbl_sample_address">2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000</string>
     <string name="lbl_change_photo">Change photo</string>
-    <string name="lbl_save">Save</string>
-    <string name="lbl_last_name">Last name</string>
-    <string name="lbl_first_name">First name</string>
-    <string name="hint_last_name">Enter last name</string>
-    <string name="hint_first_name">Enter first name</string>
-    <string name="hint_contact_number">Enter contact number</string>
-    <string name="hint_address">Enter address</string>
+
+    // Transactions
+    <string name="title_transaction">Transaction</string>
+    <string name="lbl_search">Search</string>
+    <string name="lbl_default_date_range">Default Date Range</string>
+    <string name="lbl_date_range">Date Range</string>
+    <string name="lbl_wallet_type">Wallet Type</string>
+    <string name="lbl_category">Category</string>
+    <string name="lbl_apply">Apply</string>
+    <string name="lbl_transaction_type">Transaction Type</string>
+    <string name="lbl_income">Income</string>
+    <string name="lbl_spent_with">Spent with</string>
+    <string name="lbl_transaction_date">Transaction Date</string>
+    <string name="lbl_added_to_wallet">Added to Wallet</string>
+    <string name="lbl_transaction_image">Transaction Image</string>
 
 </resources>
