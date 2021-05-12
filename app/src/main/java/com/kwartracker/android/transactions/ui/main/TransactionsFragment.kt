@@ -8,11 +8,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.*
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.view.View
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.ActionMode.Callback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -23,7 +23,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
-import com.kwartracker.android.main.ui.MainActivity
 import com.kwartracker.android.transactions.ui.add.TransactionAddFragment
 import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
 import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
@@ -32,7 +31,6 @@ import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
 
 class TransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
-    private val transactionsViewModel: TransactionsViewModel by viewModels()
     var tbTitle: TextView? = null
     var navBottomSheetModal: NavigationView? = null
 
