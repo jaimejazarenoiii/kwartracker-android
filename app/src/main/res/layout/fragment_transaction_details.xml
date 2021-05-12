@@ -12,9 +12,10 @@
             android:id="@+id/iv_delete"
             android:layout_width="30sp"
             android:layout_height="30sp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/non_active_dot"
-            android:padding="10sp"
             android:elevation="10dp"
+            android:padding="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.958"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,13 +28,13 @@
             android:layout_width="match_parent"
             android:layout_height="120sp"
             android:layout_marginStart="20sp"
-            android:layout_marginTop="19sp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="20sp"
             android:background="@drawable/bg_details"
             android:elevation="20sp"
             android:padding="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_delete">
 
@@ -49,7 +50,7 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tv_trans_date"
