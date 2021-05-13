@@ -32,8 +32,5 @@ findNavController().navigate(R.id.walletsFragment)
 ####Bottom Sheet Modal　
 
 ```javascript
-val intent = Intent("message")
-intent.putExtra("func", "filter")
-intent.putExtra("fragment", "TransactionsFilterFragment")
-LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
+(activity as MainActivity)?.bottomSheetModal(TransactionsFilterFragment())
 ```
