@@ -91,9 +91,9 @@ class MainActivity : AppCompatActivity() {
                 if (state == "close") bottomSheetModal(null)
                 else bottomSheetModal(TransactionsFilterFragment())
             } else if (func == "login") {
-                changeFragment(LoginFragment(), R.id.nav_host_fragment)
+                changeFragment(LoginFragment())
             } else if (func == "signup") {
-                changeFragment(SignUpFragment(), R.id.nav_host_fragment)
+                changeFragment(SignUpFragment())
             }
         }
     }
@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
         ablMain.visibility = View.GONE
     }
 
-    private fun changeFragment(fragment: Fragment, navID: Int) {
+    private fun changeFragment(fragment: Fragment, navID: Int =  R.id.nav_host_fragment) {
         val manager: FragmentManager = supportFragmentManager
         val transaction: FragmentTransaction = manager.beginTransaction()
         val newFragment: Fragment = fragment
@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun bottomSheetModal(fragment: Fragment?) {
+    fun bottomSheetModal(fragment: Fragment?) {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.nvFilter)
         val scrim = binding.scrim
 

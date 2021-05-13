@@ -1,11 +1,11 @@
 package com.kwartracker.android.profile.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ActionMode
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 
 class MyProfileFragment : Fragment() {
@@ -21,7 +21,38 @@ class MyProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity?)!!.supportActionBar?.title =
-            getString(R.string.title_my_profile)
+
+        actionMode()
+    }
+
+    private fun actionMode() {
+        val main = (activity as AppCompatActivity?)!!
+        val callback = object : ActionMode.Callback {
+
+            override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.transaction_action_bar, menu)
+                return true
+            }
+
+            override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+                return false
+            }
+
+            override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+                return when (item?.itemId) {
+                    R.id.menu_toolbar_add -> {
+                        findNavController().navigate(R.id.transaction_add_fragment)
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            override fun onDestroyActionMode(mode: ActionMode?) {
+            }
+        }
+        val actionMode = main.startSupportActionMode(callback)
+        actionMode?.title = getString(R.string.title_my_wallets)
+        main.supportActionBar?.show()
     }
 }

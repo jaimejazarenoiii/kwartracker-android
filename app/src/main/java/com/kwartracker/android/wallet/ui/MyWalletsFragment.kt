@@ -1,12 +1,12 @@
 package com.kwartracker.android.wallet.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ActionMode
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kwartracker.android.R
@@ -163,8 +163,7 @@ class MyWalletsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity?)!!.supportActionBar?.show()
-        (activity as AppCompatActivity?)!!.supportActionBar?.title = getString(R.string.title_my_wallets)
+        actionMode()
         walletsAdapter = MyWalletViewPagerAdapter(requireContext())
 
         binding.walletLayout.viewPager.adapter = walletsAdapter
@@ -178,5 +177,36 @@ class MyWalletsFragment : Fragment() {
         binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
         binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
         walletTransactionsAdapter.setData(transaction)
+    }
+
+    private fun actionMode() {
+        val main = (activity as AppCompatActivity?)!!
+        val callback = object : ActionMode.Callback {
+
+            override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.transaction_action_bar, menu)
+                return true
+            }
+
+            override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+                return false
+            }
+
+            override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+                return when (item?.itemId) {
+                    R.id.menu_toolbar_add -> {
+                        findNavController().navigate(R.id.transaction_add_fragment)
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            override fun onDestroyActionMode(mode: ActionMode?) {
+            }
+        }
+        val actionMode = main.startSupportActionMode(callback)
+        actionMode?.title = getString(R.string.title_my_wallets)
+        main.supportActionBar?.show()
     }
 }

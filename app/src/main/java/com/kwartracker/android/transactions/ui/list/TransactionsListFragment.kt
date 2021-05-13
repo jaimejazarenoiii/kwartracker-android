@@ -2,14 +2,14 @@ package com.kwartracker.android.transactions.ui.list
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ActionMode
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
@@ -38,6 +38,37 @@ class TransactionsListFragment : Fragment() {
         return binding.root
     }
 
+    private fun actionMode() {
+        val main = (activity as AppCompatActivity?)!!
+        val callback = object : ActionMode.Callback {
+
+            override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.transaction_action_bar, menu)
+                return true
+            }
+
+            override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+                return false
+            }
+
+            override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+                return when (item?.itemId) {
+                    R.id.menu_toolbar_add -> {
+                        findNavController().navigate(R.id.transaction_add_fragment)
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            override fun onDestroyActionMode(mode: ActionMode?) {
+            }
+        }
+        val actionMode = main.startSupportActionMode(callback)
+        actionMode?.title = getString(R.string.title_transactions)
+        main.supportActionBar?.show()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val rvTransaction = binding.rvTransactionList
@@ -46,8 +77,7 @@ class TransactionsListFragment : Fragment() {
         val mLayoutManager = LinearLayoutManager(view.context)
         val ivLoader = binding.ivLoader
         rvTransaction.layoutManager = mLayoutManager
-        (activity as AppCompatActivity?)!!.supportActionBar?.show()
-        (activity as AppCompatActivity?)!!.supportActionBar?.title = getString(R.string.title_transactions)
+        actionMode()
 
         rvTransaction.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             var previousTotal = 0

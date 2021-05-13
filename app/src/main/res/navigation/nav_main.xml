@@ -9,15 +9,19 @@
         android:name="com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment"
         android:label="Transaction Details"
         tools:layout="@layout/fragment_transaction_details" />
+
     <fragment
         android:id="@+id/transaction_lists_fragment"
         android:name="com.kwartracker.android.transactions.ui.list.TransactionsListFragment"
         android:label="Transaction Details"
-        tools:layout="@layout/fragment_transactions_list" >
-        <action
-            android:id="@+id/action_transaction_lists_fragment_to_transactions_details_fragment"
-            app:destination="@id/transactions_details_fragment" />
-    </fragment>
+        tools:layout="@layout/fragment_transactions_list" />
+
+    <fragment
+        android:id="@+id/transaction_add_fragment"
+        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddFragment"
+        android:label="Transaction Add"
+        tools:layout="@layout/fragment_transaction_add" />
+
     <fragment
         android:id="@+id/nav_none"
         android:name="com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment"
@@ -32,7 +36,4 @@
         android:name="com.kwartracker.android.profile.ui.MyProfileFragment"
         android:label="Login"
         tools:layout="@layout/fragment_my_profile" />
-
-
-
 </navigation>
