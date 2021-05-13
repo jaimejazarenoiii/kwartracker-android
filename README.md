@@ -19,3 +19,21 @@ Dependencies / Libraries
 * [Realm](https://docs.mongodb.com/realm-legacy/docs/kotlin/latest/#models)
 * [RecyclerView](https://developer.android.com/jetpack/androidx/releases/recyclerview)
 * [Retrofit](https://square.github.io/retrofit/)
+
+Developer Cheat Sheet
+---
+
+####Navigate to fragments　
+
+```javascript
+findNavController().navigate(R.id.walletsFragment)
+```
+
+####Bottom Sheet Modal　
+
+```javascript
+val intent = Intent("message")
+intent.putExtra("func", "filter")
+intent.putExtra("fragment", "TransactionsFilterFragment")
+LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
+```
