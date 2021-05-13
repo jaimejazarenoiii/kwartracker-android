@@ -1,5 +1,6 @@
 package com.kwartracker.android.login.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentLoginBinding
@@ -27,10 +29,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
+            val intent = Intent("message")
+            intent.putExtra("func", "signup")
+            LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
         }
         binding.btnSignIn.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_walletsFragment)
+            findNavController().navigate(R.id.walletsFragment)
         }
     }
 

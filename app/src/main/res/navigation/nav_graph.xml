@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.kwartracker.android.login.ui.LoginFragment"
-        android:label="Login"
+        android:label="Home"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signupFragment"
@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_loginFragment_to_walletsFragment"
             app:destination="@id/walletsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_transactions_fragment"
+            app:destination="@id/transactions_fragment" />
     </fragment>
 
     <fragment

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:height="42sp"
+        android:width="42sp">
+        <shape android:shape="oval" android:padding="10sp">
+            <solid android:color="@color/app_color" />
+            <corners
+                android:bottomRightRadius="5sp"
+                android:bottomLeftRadius="5sp"
+                android:topLeftRadius="5sp"
+                android:topRightRadius="5sp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_back"
+        android:height="25sp"
+        android:width="25sp"
+        android:top="8sp"
+        android:left="6sp"
+        />
+</layer-list>

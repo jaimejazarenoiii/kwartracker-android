@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -45,6 +46,8 @@ class TransactionsListFragment : Fragment() {
         val mLayoutManager = LinearLayoutManager(view.context)
         val ivLoader = binding.ivLoader
         rvTransaction.layoutManager = mLayoutManager
+        (activity as AppCompatActivity?)!!.supportActionBar?.show()
+        (activity as AppCompatActivity?)!!.supportActionBar?.title = getString(R.string.title_transactions)
 
         rvTransaction.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             var previousTotal = 0
@@ -56,7 +59,6 @@ class TransactionsListFragment : Fragment() {
 
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                println(newState)
             }
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -81,10 +83,12 @@ class TransactionsListFragment : Fragment() {
                         loading = true
                     }
                 }
+
                 if (dy <= 0) {
                     llTransactionFilter.elevation = 0F
                     fabBackToTop.visibility = View.INVISIBLE
                 }
+
                 var xxx = recyclerView.scrollY
                 println("$dx $dy $xxx ")
             }

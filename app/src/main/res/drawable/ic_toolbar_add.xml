@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:height="32dp"
+        android:width="32dp"
+        >
+        <shape android:shape="oval" android:padding="0dp">
+            <solid android:color="#ffffff" />
+            <corners
+                android:bottomRightRadius="5dp"
+                android:bottomLeftRadius="5dp"
+                android:topLeftRadius="5dp"
+                android:topRightRadius="5dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_add_teal_36"
+        android:height="32dp"
+        android:width="32dp"
+        android:top="6sp"
+        android:left="6sp"/>
+</layer-list>

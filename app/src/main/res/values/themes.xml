@@ -12,10 +12,16 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:actionBarStyle">@style/Transaction.Popup.Category</item>
         <item name="popupMenuStyle">@style/Transaction.Popup.Category</item>
-    </style>
-    <style name="Transaction.Popup.Category" parent="Widget.MaterialComponents.PopupMenu">
-        <item name="android:popupBackground">@drawable/popup_transaction_category_menu</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="popupMenuBackground">@drawable/roundsemi_gray</item>
+
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/Widget.App.ActionMode</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_toolbar_back</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 </resources>

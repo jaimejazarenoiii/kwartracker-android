@@ -9,15 +9,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.viewModels
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
@@ -27,7 +27,6 @@ import com.kwartracker.android.transactions.ui.add.TransactionAddFragment
 import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
 import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
-
 
 class TransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
@@ -48,6 +47,7 @@ class TransactionsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (activity as AppCompatActivity?)!!.supportActionBar?.show()
         binding.ivToolbarRight.setOnClickListener {
             bottomMainSheetModal(TransactionAddFragment())
         }

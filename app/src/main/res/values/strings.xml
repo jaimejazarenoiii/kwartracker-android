@@ -58,5 +58,10 @@
     <string name="lbl_transaction_date">Transaction Date</string>
     <string name="lbl_added_to_wallet">Added to Wallet</string>
     <string name="lbl_transaction_image">Transaction Image</string>
+    <string name="add">Add</string>
+    <string name="lbl_wallets">Wallets</string>
+    <string name="lbl_reports">Reports</string>
+    <string name="title_my_profile">My Profile</string>
+    <string name="title_settings">Settings</string>
 
 </resources>

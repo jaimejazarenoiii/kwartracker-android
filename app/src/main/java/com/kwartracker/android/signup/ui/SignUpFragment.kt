@@ -1,18 +1,18 @@
 package com.kwartracker.android.signup.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentSignupBinding
 
 class SignUpFragment : Fragment() {
-
-    private lateinit var signUpViewModel: SignUpViewModel
     lateinit var binding: FragmentSignupBinding
 
     override fun onCreateView(
@@ -26,8 +26,11 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity?)!!.supportActionBar?.hide()
         binding.tvSignin.setOnClickListener {
-            findNavController().popBackStack(R.id.loginFragment, false)
+            val intent = Intent("message")
+            intent.putExtra("func", "login")
+            LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
         }
     }
 }
