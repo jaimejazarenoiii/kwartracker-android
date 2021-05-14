@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_loginFragment_to_walletsFragment"
             app:destination="@id/walletsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashoardFragment"
+            app:destination="@id/dashoardFragment" />
     </fragment>
 
     <fragment
@@ -32,4 +35,10 @@
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"
         android:label="Login"
         tools:layout="@layout/fragment_wallets" />
+
+    <fragment
+        android:id="@+id/dashoardFragment"
+        android:name="com.kwartracker.android.dashboard.ui.DashboardFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_dashboard" />
 </navigation>

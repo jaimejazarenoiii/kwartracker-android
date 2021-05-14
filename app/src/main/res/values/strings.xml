@@ -44,6 +44,15 @@
     <string name="lbl_sample_address">2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000</string>
     <string name="lbl_change_photo">Change photo</string>
 
+    <!-- Navigation Drawer Items -->
+    <string name="menu_home">Home</string>
+    <string name="menu_transaction">Transaction</string>
+    <string name="menu_wallet">Wallets</string>
+    <string name="menu_report">Reports</string>
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_setting">Settings</string>
 
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 
 </resources>
