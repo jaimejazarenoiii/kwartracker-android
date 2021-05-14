@@ -2,7 +2,7 @@
     <string name="app_name">Kwartracker</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- Navigation Top Destination Labels -->
+    <!-- Navigation Drawer Items -->
     <string name="menu_home">Home</string>
     <string name="menu_transaction">Transaction</string>
     <string name="menu_wallet">Wallets</string>
