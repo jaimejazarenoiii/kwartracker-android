@@ -9,22 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionDetailsBinding
+import com.kwartracker.android.databinding.FragmentTransactionAdd1Binding
 
-class TransactionAddFragment : Fragment() {
-    lateinit var binding: FragmentTransactionDetailsBinding
+class TransactionAddFragmentS1 : Fragment() {
+    lateinit var binding: FragmentTransactionAdd1Binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction_add, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction_add_1, container, false)
 
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        changeFragment(TransactionAddFragmentS1())
+        binding.btnNext
+        changeFragment(TransactionAddFragmentS2())
     }
 
     private fun changeFragment(fragment: Fragment) {
