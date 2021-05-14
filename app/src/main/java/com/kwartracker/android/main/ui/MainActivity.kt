@@ -149,9 +149,9 @@ class MainActivity : AppCompatActivity() {
 
         if (fragment != null) {
             scrim.visibility = View.VISIBLE
+            changeFragment(fragment, R.id.nav_fragment_modal)
             Handler(Looper.getMainLooper()).postDelayed(
                 {
-                    changeFragment(fragment, R.id.nav_fragment_modal)
                     bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
                 }, 500
             )
