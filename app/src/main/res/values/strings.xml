@@ -2,7 +2,15 @@
     <string name="app_name">Kwartracker</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    // Login Screen
+    <!-- Navigation Top Destination Labels -->
+    <string name="menu_home">Home</string>
+    <string name="menu_transaction">Transaction</string>
+    <string name="menu_wallet">Wallets</string>
+    <string name="menu_report">Reports</string>
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_setting">Settings</string>
+
+    <!-- Login Screen -->
     <string name="lbl_k">k</string>
     <string name="lbl_kwartracker">kwartracker</string>
     <string name="lbl_welcome">Welcome\nBack</string>
@@ -18,7 +26,7 @@
     <string name="lbl_sign_up"><u>Sign Up</u></string>
     <string name="lbl_or">or</string>
 
-    // Sign Up
+    <!-- Sign Up -->
     <string name="create_naccount">Create\nAccount</string>
     <string name="enter_password"><i>Enter Password</i></string>
     <string name="sign_in">Sign In</string>
