@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionAddBinding
-import com.kwartracker.android.databinding.FragmentTransactionDetailsBinding
 
 class TransactionAddFragment : Fragment() {
     lateinit var binding: FragmentTransactionAddBinding

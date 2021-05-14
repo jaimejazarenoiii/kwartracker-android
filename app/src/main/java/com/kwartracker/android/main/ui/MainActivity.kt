@@ -1,22 +1,15 @@
 package com.kwartracker.android.main.ui
 
 import android.annotation.SuppressLint
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -24,8 +17,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.ActivityMainBinding
 import com.kwartracker.android.login.ui.LoginFragment
-import com.kwartracker.android.signup.ui.SignUpFragment
-import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -118,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         ablMain.visibility = View.GONE
     }
 
-    fun changeFragment(fragment: Fragment, navID: Int =  R.id.nav_host_fragment) {
+    fun changeFragment(fragment: Fragment, navID: Int = R.id.nav_host_fragment) {
         val manager: FragmentManager = supportFragmentManager
         val transaction: FragmentTransaction = manager.beginTransaction()
         val newFragment: Fragment = fragment

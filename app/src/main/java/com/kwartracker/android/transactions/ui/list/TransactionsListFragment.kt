@@ -1,19 +1,20 @@
 package com.kwartracker.android.transactions.ui.list
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.view.View
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.ActionMode
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
 import com.kwartracker.android.main.ui.MainActivity
 import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
@@ -21,7 +22,6 @@ import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
 
 class TransactionsListFragment : Fragment() {
     private lateinit var binding: FragmentTransactionsListBinding
-    private lateinit var mainBinding: FragmentTransactionBinding
     private val transactionsViewModel: TransactionsViewModel by viewModels()
     private var transactionsListAdapter = TransactionsListAdapter(arrayListOf())
 
@@ -123,9 +123,6 @@ class TransactionsListFragment : Fragment() {
                     llTransactionFilter.elevation = 0F
                     fabBackToTop.visibility = View.INVISIBLE
                 }
-
-                var xxx = recyclerView.scrollY
-                println("$dx $dy $xxx ")
             }
         })
 
@@ -134,7 +131,7 @@ class TransactionsListFragment : Fragment() {
         }
 
         binding.ibFilter.setOnClickListener {
-            (activity as MainActivity)?.bottomSheetModal(TransactionsFilterFragment())
+            (activity as MainActivity).bottomSheetModal(TransactionsFilterFragment())
         }
 
         transactionsViewModel.fetchTransactions()

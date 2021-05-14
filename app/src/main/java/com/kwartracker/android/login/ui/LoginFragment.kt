@@ -1,6 +1,5 @@
 package com.kwartracker.android.login.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +7,11 @@ import android.view.ViewGroup
 import android.widget.ScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentLoginBinding
 import com.kwartracker.android.main.ui.MainActivity
 import com.kwartracker.android.signup.ui.SignUpFragment
-import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 
 class LoginFragment : Fragment() {
 
