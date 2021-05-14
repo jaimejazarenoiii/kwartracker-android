@@ -1,5 +1,4 @@
 package com.kwartracker.android.wallet.ui
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -188,7 +187,7 @@ class MyWalletsFragment : Fragment() {
         val callback = object : ActionMode.Callback {
 
             override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.transaction_action_bar, menu)
+                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.action_bar, menu)
                 return true
             }
 

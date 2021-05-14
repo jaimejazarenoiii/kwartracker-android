@@ -1,5 +1,4 @@
 package com.kwartracker.android.transactions.ui.list
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -46,7 +45,7 @@ class TransactionsListFragment : Fragment() {
 
             override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
                 (activity as AppCompatActivity?)!!.menuInflater.inflate(
-                    R.menu.transaction_action_bar,
+                    R.menu.action_bar,
                     menu
                 )
                 return true

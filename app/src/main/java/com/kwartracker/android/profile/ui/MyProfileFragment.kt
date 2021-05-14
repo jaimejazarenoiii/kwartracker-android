@@ -1,5 +1,4 @@
 package com.kwartracker.android.profile.ui
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -34,7 +33,7 @@ class MyProfileFragment : Fragment() {
         val callback = object : ActionMode.Callback {
 
             override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.transaction_action_bar, menu)
+                main.menuInflater.inflate(R.menu.action_bar, menu)
                 return true
             }
 

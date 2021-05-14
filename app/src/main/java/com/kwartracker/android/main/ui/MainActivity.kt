@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Menu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -35,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         setupToolbar()
         changeFragment(LoginFragment(), R.id.nav_host_fragment)
         bottomSheetModal(null)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val tb = binding.toolbar
+        tb.inflateMenu(R.menu.action_bar)
+        return true
     }
 
     private fun setupToolbar() {
