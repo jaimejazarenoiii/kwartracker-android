@@ -12,6 +12,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentLoginBinding
+import com.kwartracker.android.main.ui.MainActivity
+import com.kwartracker.android.signup.ui.SignUpFragment
+import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 
 class LoginFragment : Fragment() {
 
@@ -29,9 +32,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvSignUp.setOnClickListener {
-            val intent = Intent("message")
-            intent.putExtra("func", "signup")
-            LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
+            (activity as MainActivity)?.changeFragment(SignUpFragment())
         }
         binding.btnSignIn.setOnClickListener {
             findNavController().navigate(R.id.walletsFragment)

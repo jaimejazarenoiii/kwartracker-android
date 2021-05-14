@@ -44,11 +44,6 @@ class MainActivity : AppCompatActivity() {
         setupToolbar()
         changeFragment(LoginFragment(), R.id.nav_host_fragment)
         bottomSheetModal(null)
-
-        LocalBroadcastManager.getInstance(this).registerReceiver(
-            mMessageReceiver,
-            IntentFilter("message")
-        )
     }
 
     private fun setupToolbar() {
@@ -78,23 +73,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             true
-        }
-    }
-
-    private var mMessageReceiver: BroadcastReceiver = object : BroadcastReceiver() {
-        @RequiresApi(Build.VERSION_CODES.M)
-        override fun onReceive(context: Context, intent: Intent) {
-            val func = intent.getStringExtra("func")
-
-            if (func == "filter") {
-                val state = intent.getStringExtra("state")
-                if (state == "close") bottomSheetModal(null)
-                else bottomSheetModal(TransactionsFilterFragment())
-            } else if (func == "login") {
-                changeFragment(LoginFragment())
-            } else if (func == "signup") {
-                changeFragment(SignUpFragment())
-            }
         }
     }
 
@@ -140,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         ablMain.visibility = View.GONE
     }
 
-    private fun changeFragment(fragment: Fragment, navID: Int =  R.id.nav_host_fragment) {
+    fun changeFragment(fragment: Fragment, navID: Int =  R.id.nav_host_fragment) {
         val manager: FragmentManager = supportFragmentManager
         val transaction: FragmentTransaction = manager.beginTransaction()
         val newFragment: Fragment = fragment

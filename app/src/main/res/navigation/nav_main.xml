@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/nav_none">
+    app:startDestination="@id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.kwartracker.android.home.ui.HomeFragment"
+        android:label="Home" />
+
     <fragment
         android:id="@+id/transactions_details_fragment"
         android:name="com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment"
@@ -22,10 +27,6 @@
         android:label="Transaction Add"
         tools:layout="@layout/fragment_transaction_add" />
 
-    <fragment
-        android:id="@+id/nav_none"
-        android:name="com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment"
-        android:label="Transaction Details" />
     <fragment
         android:id="@+id/walletsFragment"
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"

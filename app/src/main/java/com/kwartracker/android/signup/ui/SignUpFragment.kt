@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentSignupBinding
+import com.kwartracker.android.login.ui.LoginFragment
+import com.kwartracker.android.main.ui.MainActivity
 
 class SignUpFragment : Fragment() {
     lateinit var binding: FragmentSignupBinding
@@ -28,9 +30,7 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity?)!!.supportActionBar?.hide()
         binding.tvSignin.setOnClickListener {
-            val intent = Intent("message")
-            intent.putExtra("func", "login")
-            LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
+            (activity as MainActivity)?.changeFragment(LoginFragment())
         }
     }
 }

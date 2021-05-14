@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
+import com.kwartracker.android.main.ui.MainActivity
+import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
 
 class TransactionsListFragment : Fragment() {
@@ -43,7 +45,10 @@ class TransactionsListFragment : Fragment() {
         val callback = object : ActionMode.Callback {
 
             override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-                (activity as AppCompatActivity?)!!.menuInflater.inflate(R.menu.transaction_action_bar, menu)
+                (activity as AppCompatActivity?)!!.menuInflater.inflate(
+                    R.menu.transaction_action_bar,
+                    menu
+                )
                 return true
             }
 
@@ -129,9 +134,7 @@ class TransactionsListFragment : Fragment() {
         }
 
         binding.ibFilter.setOnClickListener {
-            val intent = Intent("message")
-            intent.putExtra("func", "filter")
-            LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
+            (activity as MainActivity)?.bottomSheetModal(TransactionsFilterFragment())
         }
 
         transactionsViewModel.fetchTransactions()
