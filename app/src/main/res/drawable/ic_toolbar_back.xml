@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
-        android:height="42sp"
-        android:width="42sp">
+        android:height="32sp"
+        android:width="32sp"
+        android:top="-2sp">
+        <shape android:shape="oval" android:padding="10sp">
+            <solid android:color="#66FFFFFF" />
+            <corners
+                android:bottomRightRadius="5sp"
+                android:bottomLeftRadius="5sp"
+                android:topLeftRadius="5sp"
+                android:topRightRadius="5sp"/>
+        </shape>
+    </item>
+    <item
+        android:height="32sp"
+        android:width="32sp"
+        android:top="3sp"
+        android:left="4sp">
+        <shape android:shape="oval" android:padding="10sp">
+            <solid android:color="#1F000000" />
+            <corners
+                android:bottomRightRadius="5sp"
+                android:bottomLeftRadius="5sp"
+                android:topLeftRadius="5sp"
+                android:topRightRadius="5sp"/>
+        </shape>
+    </item>
+    <item
+        android:height="32sp"
+        android:width="32sp"
+        android:left="2sp">
         <shape android:shape="oval" android:padding="10sp">
             <solid android:color="@color/app_color" />
             <corners
@@ -13,9 +41,9 @@
         </shape>
     </item>
     <item android:drawable="@drawable/ic_back"
-        android:height="25sp"
-        android:width="25sp"
-        android:top="8sp"
-        android:left="6sp"
+        android:height="15sp"
+        android:width="15sp"
+        android:top="9sp"
+        android:left="9sp"
         />
 </layer-list>
