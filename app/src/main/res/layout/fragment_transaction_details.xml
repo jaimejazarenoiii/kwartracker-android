@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/content_main">
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/non_active_dot"
+            android:elevation="10dp"
+            android:padding="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.958"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_delete"
+            tools:ignore="ContentDescription" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="120sp"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20sp"
+            android:background="@drawable/bg_details"
+            android:elevation="20sp"
+            android:padding="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_delete">
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:text="₱ 10,000.00"
+                android:textColor="#0EBCA7"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_trans_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12sp"
+                android:text="March 15 payroll"
+                android:textColor="#414141"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_amount"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_fragment"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="315sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_transaction_type"
+                    android:textColor="#BBC3C9"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_income"
+                    android:textColor="#414141"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20sp"
+                    android:text="@string/lbl_category"
+                    android:textColor="#BBC3C9"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_category_salary"
+                        android:contentDescription="Receipt"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5sp"
+                        android:text="Salary"
+                        android:textColor="#03BED6"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20sp"
+                    android:text="@string/lbl_spent_with"
+                    android:textColor="#BBC3C9"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Juan dela Cruz"
+                    android:textColor="#414141"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="315sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_transaction_date"
+                    android:textColor="#BBC3C9"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="March 15, 2021"
+                    android:textColor="#414141"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20sp"
+                    android:text="@string/lbl_added_to_wallet"
+                    android:textColor="#BBC3C9"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="BPI Savings"
+                    android:textColor="#414141"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_trans_receipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_weight="1"
+            android:text="@string/lbl_transaction_image"
+            android:textColor="#BBC3C9"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <ImageView
+            android:id="@+id/iv_Receipt"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:src="@drawable/img_receipt"
+            android:background="@drawable/roundsemi_gray_darker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_trans_receipt"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_trans_filename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="receipt101020.jpg"
+            android:textColor="#BBC3C9"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_Receipt"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

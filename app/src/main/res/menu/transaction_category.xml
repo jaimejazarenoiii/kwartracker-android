@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item android:id="@+id/option_1"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 1" />
+    <item android:id="@+id/option_2"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 2" />
+    <item android:id="@+id/option_3"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 3" />
+    <item android:id="@+id/option_4"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 1" />
+    <item android:id="@+id/option_5"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 2" />
+    <item android:id="@+id/option_6"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 3" />
+    <item android:id="@+id/option_7"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 1" />
+    <item android:id="@+id/option_8"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 2" />
+    <item android:id="@+id/option_9"
+        android:icon="@drawable/ic_transaction_category"
+        android:title="option 3" />
+</menu>
