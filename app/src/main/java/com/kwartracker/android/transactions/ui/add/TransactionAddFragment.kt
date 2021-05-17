@@ -16,20 +16,23 @@ class TransactionAddFragment : Fragment() {
     lateinit var binding: FragmentTransactionAddBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+                inflater,
                 R.layout.fragment_transaction_add,
                 container, false)
 
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.transaction_add_1_fragment)
         }
+
         binding.btnBack.setOnClickListener {
             TransactionsFragment().bottomMainSheetModal(TransactionsListFragment())
         }

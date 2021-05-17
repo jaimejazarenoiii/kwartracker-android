@@ -18,12 +18,15 @@ class TransactionAddFragmentS1 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.fragment_transaction_add_1,
-            container, false)
+            container, false
+        )
 
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.transaction_add_fragment)
