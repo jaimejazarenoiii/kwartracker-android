@@ -67,8 +67,18 @@
     <string name="lbl_added_to_wallet">Added to Wallet</string>
     <string name="lbl_transaction_image">Transaction Image</string>
 
+    <!-- Navigation Drawer Items -->
+    <string name="menu_home">Home</string>
+    <string name="menu_transaction">Transaction</string>
+    <string name="menu_wallet">Wallets</string>
+    <string name="menu_report">Reports</string>
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_setting">Settings</string>
+
     // Settings
     <string name="btn_login_security">Login and Security</string>
     <string name="btn_categories">Categories</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 
 </resources>
