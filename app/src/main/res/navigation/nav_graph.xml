@@ -43,8 +43,25 @@
         tools:layout="@layout/fragment_transaction" />
 
     <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.kwartracker.android.profile.ui.MyProfileFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_my_profile" />
+
+    <fragment
         android:id="@+id/dashoardFragment"
         android:name="com.kwartracker.android.dashboard.ui.DashboardFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashoardFragment_to_walletsFragment"
+            app:destination="@id/walletsFragment" />
+        <action
+            android:id="@+id/action_dashoardFragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+        <action
+            android:id="@+id/action_dashoardFragment_to_transactions_fragment"
+            app:destination="@id/transactions_fragment" />
+    </fragment>
+
 </navigation>

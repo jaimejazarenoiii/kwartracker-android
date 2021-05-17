@@ -66,6 +66,7 @@
     <string name="lbl_transaction_date">Transaction Date</string>
     <string name="lbl_added_to_wallet">Added to Wallet</string>
     <string name="lbl_transaction_image">Transaction Image</string>
+
     <!-- Navigation Drawer Items -->
     <string name="menu_home">Home</string>
     <string name="menu_transaction">Transaction</string>
