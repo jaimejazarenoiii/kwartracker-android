@@ -51,7 +51,7 @@ class TransactionsFragment : Fragment() {
         }
 
         binding.ivToolbarLeft.setOnClickListener {
-            bottomMainSheetModal(TransactionsListFragment())
+            findNavController().navigate(R.id.action_loginFragment_to_dashoardFragment)
         }
 
         binding.tvToolbarTitle.text = getString(R.string.title_transaction)
@@ -116,7 +116,7 @@ class TransactionsFragment : Fragment() {
         }
     }
 
-    private fun bottomMainSheetModal(fragment: Fragment) {
+    fun bottomMainSheetModal(fragment: Fragment) {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.navBackdrop)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
