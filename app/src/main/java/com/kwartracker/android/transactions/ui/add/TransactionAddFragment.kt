@@ -20,7 +20,9 @@ class TransactionAddFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction_add, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+                R.layout.fragment_transaction_add,
+                container, false)
 
         return binding.root
     }
