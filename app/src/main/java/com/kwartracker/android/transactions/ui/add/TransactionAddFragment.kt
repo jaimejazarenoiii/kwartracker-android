@@ -21,9 +21,10 @@ class TransactionAddFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(
-                inflater,
-                R.layout.fragment_transaction_add,
-                container, false)
+            inflater,
+            R.layout.fragment_transaction_add,
+            container, false
+        )
 
         return binding.root
     }
