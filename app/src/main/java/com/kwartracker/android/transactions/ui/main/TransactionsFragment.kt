@@ -9,8 +9,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
@@ -95,14 +95,14 @@ class TransactionsFragment : Fragment() {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
         bottomSheetBehavior.addBottomSheetCallback(object :
-            BottomSheetBehavior.BottomSheetCallback() {
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {}
+                BottomSheetBehavior.BottomSheetCallback() {
+                override fun onSlide(bottomSheet: View, slideOffset: Float) {}
 
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                if (newState == 5) scrim.visibility = View.GONE
-                else scrim.visibility = View.VISIBLE
-            }
-        })
+                override fun onStateChanged(bottomSheet: View, newState: Int) {
+                    if (newState == 5) scrim.visibility = View.GONE
+                    else scrim.visibility = View.VISIBLE
+                }
+            })
 
         if (fragment != null) {
             scrim.visibility = View.VISIBLE
@@ -110,7 +110,8 @@ class TransactionsFragment : Fragment() {
                 {
                     changeFragment(fragment, R.id.nav_fragment_transactions_modal)
                     bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-                }, 500
+                },
+                500
             )
         }
     }
@@ -123,7 +124,8 @@ class TransactionsFragment : Fragment() {
             {
                 changeFragment(fragment, R.id.nav_host_fragment_transactions)
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-            }, 500
+            },
+            500
         )
     }
 

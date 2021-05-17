@@ -20,10 +20,14 @@ class TransactionsViewModel : ViewModel() {
     private fun generateDummyTransactions(): List<TransactionModel> {
         val transactions = arrayListOf<TransactionModel>()
         for (i in 1..20) {
-            transactions.add(TransactionModel(1, "dummyCapital $i",
-                (0..10).random(), "Type $i",
-                "Name $i",
-                "Type $i"))
+            transactions.add(
+                TransactionModel(
+                    1, "dummyCapital $i",
+                    (0..10).random(), "Type $i",
+                    "Name $i",
+                    "Type $i"
+                )
+            )
         }
 
         return transactions

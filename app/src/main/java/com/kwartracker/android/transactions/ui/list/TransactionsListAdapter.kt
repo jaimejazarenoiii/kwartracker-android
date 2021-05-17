@@ -23,6 +23,7 @@ class TransactionsListAdapter(var transactions: ArrayList<TransactionModel>) :
             parent, false
         )
     )
+
     override fun getItemCount(): Int {
         return if (transactions.size > 10) {
             10

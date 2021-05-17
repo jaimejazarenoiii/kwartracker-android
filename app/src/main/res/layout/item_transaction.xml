@@ -113,7 +113,7 @@
             android:layout_height="30dp"
             android:background="@drawable/round_bg_ripple_white"
             android:clickable="true"
-            android:elevation="30dp"
+            android:elevation="5dp"
             android:layout_marginEnd="5dp"
             android:focusable="true"
             android:padding="10dp"

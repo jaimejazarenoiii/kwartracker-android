@@ -13,12 +13,11 @@ class MyWalletViewPagerAdapter(val context: Context) : PagerAdapter() {
 
     var data: List<Wallet> = listOf()
     var contentBackground =
-        listOf(R.drawable.wallet_bg_green, R.drawable.wallet_bg_blue, R.drawable.wallet_bg_red)
-    var contentShadow = listOf(
-        R.drawable.wallet_green_shadow,
-        R.drawable.wallet_blue_shadow,
-        R.drawable.wallet_red_shadow
-    )
+        listOf(
+            Pair(R.drawable.wallet_bg_green, R.drawable.wallet_green_shadow),
+            Pair(R.drawable.wallet_bg_blue, R.drawable.wallet_blue_shadow),
+            Pair(R.drawable.wallet_bg_red, R.drawable.wallet_red_shadow)
+        )
 
     fun observeValue(list: List<Wallet>) {
         data = list
@@ -37,8 +36,8 @@ class MyWalletViewPagerAdapter(val context: Context) : PagerAdapter() {
         val binding = ItemWalletBinding.inflate(LayoutInflater.from(context), container, false)
         val item = data[position]
         val colorPos: Int = position % contentBackground.size
-        binding.contraintContents.setBackgroundResource(contentBackground[colorPos])
-        binding.imageShadow.setBackgroundResource(contentShadow[colorPos])
+        binding.contraintContents.setBackgroundResource(contentBackground[colorPos].first)
+        binding.imageShadow.setBackgroundResource(contentBackground[colorPos].second)
 
         binding.apply {
             tvBalance.text = item.balance.toString()

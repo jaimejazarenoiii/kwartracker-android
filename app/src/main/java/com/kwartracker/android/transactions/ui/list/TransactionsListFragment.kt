@@ -106,20 +106,26 @@ class TransactionsListFragment : Fragment() {
             adapter = transactionsListAdapter
         }
 
-        transactionsViewModel.transactions.observe(viewLifecycleOwner, { transactions ->
-            transactions?.let {
-                rvTransaction.visibility = View.VISIBLE
-                transactionsListAdapter.updateTransactions(it)
-            }
-        })
-
-        transactionsViewModel.loading.observe(viewLifecycleOwner, { isLoading ->
-            isLoading?.let {
-                ivLoader.visibility = if (it) View.VISIBLE else View.GONE
-                if (it) {
-                    rvTransaction.visibility = View.GONE
+        transactionsViewModel.transactions.observe(
+            viewLifecycleOwner,
+            { transactions ->
+                transactions?.let {
+                    rvTransaction.visibility = View.VISIBLE
+                    transactionsListAdapter.updateTransactions(it)
                 }
             }
-        })
+        )
+
+        transactionsViewModel.loading.observe(
+            viewLifecycleOwner,
+            { isLoading ->
+                isLoading?.let {
+                    ivLoader.visibility = if (it) View.VISIBLE else View.GONE
+                    if (it) {
+                        rvTransaction.visibility = View.GONE
+                    }
+                }
+            }
+        )
     }
 }
