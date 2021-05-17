@@ -18,9 +18,11 @@ class TransactionDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.fragment_transaction_details,
-            container, false)
+            container, false
+        )
         TransactionsFragment().tbTitle?.text = getString(R.string.title_transaction)
 
         return binding.root
