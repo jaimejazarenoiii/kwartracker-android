@@ -17,17 +17,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.viewModels
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
-import com.kwartracker.android.transactions.ui.add.TransactionAddFragment
 import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
 import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
-
 
 class TransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
@@ -49,7 +47,7 @@ class TransactionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivToolbarRight.setOnClickListener {
-            bottomMainSheetModal(TransactionAddFragment())
+            findNavController().navigate(R.id.transaction_add_fragment)
         }
 
         binding.ivToolbarLeft.setOnClickListener {

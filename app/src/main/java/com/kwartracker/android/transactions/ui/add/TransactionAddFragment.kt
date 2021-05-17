@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionDetailsBinding
+import com.kwartracker.android.databinding.FragmentTransactionAddBinding
 
 class TransactionAddFragment : Fragment() {
-    lateinit var binding: FragmentTransactionDetailsBinding
+    lateinit var binding: FragmentTransactionAddBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,15 +23,8 @@ class TransactionAddFragment : Fragment() {
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        changeFragment(TransactionAddFragmentS1())
-    }
-
-    private fun changeFragment(fragment: Fragment) {
-        val manager: FragmentManager? = activity?.supportFragmentManager
-        val transaction: FragmentTransaction? = manager?.beginTransaction()
-        val newFragment: Fragment = fragment
-
-        transaction?.replace(R.id.fr_steps, newFragment)
-        transaction?.commit()
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(R.id.transaction_add_1_fragment)
+        }
     }
 }
