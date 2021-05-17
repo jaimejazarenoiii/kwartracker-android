@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(

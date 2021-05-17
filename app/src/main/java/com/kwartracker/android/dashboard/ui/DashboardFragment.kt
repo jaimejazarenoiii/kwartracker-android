@@ -72,7 +72,6 @@ class DashboardFragment : Fragment() {
                 binding.drawerLayout.bringChildToFront(drawerView)
                 binding.drawerLayout.requestLayout()
             }
-
         }
     }
 }
