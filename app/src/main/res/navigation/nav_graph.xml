@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_transactions_fragment_to_transaction_add_fragment"
             app:destination="@id/transaction_add_fragment" />
+        <action
+            android:id="@+id/action_transactions_fragment_to_transaction_edit_fragment"
+            app:destination="@id/transaction_edit_fragment" />
     </fragment>
 
     <fragment
@@ -55,6 +58,12 @@
             android:id="@+id/action_transaction_add_fragment_to_transaction_add_1_fragment"
             app:destination="@id/transaction_add_1_fragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/transaction_edit_fragment"
+        android:name="com.kwartracker.android.transactions.ui.edit.TransactionEditFragment"
+        android:label="Transaction Edit"
+        tools:layout="@layout/fragment_transaction_add" />
 
     <fragment
         android:id="@+id/transaction_add_1_fragment"
