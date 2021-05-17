@@ -12,7 +12,9 @@
             android:id="@+id/iv_delete"
             android:layout_width="30sp"
             android:layout_height="30sp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/non_active_dot"
+            android:elevation="10dp"
             android:padding="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.958"
@@ -26,13 +28,13 @@
             android:layout_width="match_parent"
             android:layout_height="120sp"
             android:layout_marginStart="20sp"
-            android:layout_marginTop="19sp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="20sp"
             android:background="@drawable/bg_details"
             android:elevation="20sp"
             android:padding="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_delete">
 
@@ -41,14 +43,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16sp"
-                android:text="10,000.00"
+                android:text="₱ 10,000.00"
                 android:textColor="#0EBCA7"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tv_trans_date"
@@ -108,14 +110,30 @@
                     android:textColor="#BBC3C9"
                     android:textSize="13sp" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Income"
-                    android:textColor="#414141"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
+                    android:layout_marginTop="5sp"
+                    tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_category_salary"
+                        android:contentDescription="Receipt"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5sp"
+                        android:text="Salary"
+                        android:textColor="#03BED6"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -178,7 +196,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_trans_header"
+            android:id="@+id/tv_trans_receipt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
@@ -192,14 +210,33 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <ImageView
-            android:layout_width="100sp"
-            android:layout_height="100sp"
+            android:id="@+id/iv_Receipt"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
             android:layout_marginTop="12sp"
-            tools:ignore="ContentDescription"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:src="@drawable/img_receipt"
+            android:background="@drawable/roundsemi_gray_darker"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_trans_header" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_trans_receipt"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_trans_filename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="receipt101020.jpg"
+            android:textColor="#BBC3C9"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_Receipt"
+            tools:ignore="HardcodedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

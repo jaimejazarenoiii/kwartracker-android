@@ -28,9 +28,9 @@ import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragmen
 import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
 import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
 
+
 class TransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
-    private val transactionsViewModel: TransactionsViewModel by viewModels()
     var tbTitle: TextView? = null
     var navBottomSheetModal: NavigationView? = null
 
@@ -56,7 +56,7 @@ class TransactionsFragment : Fragment() {
             bottomMainSheetModal(TransactionsListFragment())
         }
 
-        binding.tvToolbarTitle.text = "Transactions"
+        binding.tvToolbarTitle.text = getString(R.string.title_transaction)
 
         bottomMainSheetModal(TransactionsListFragment())
         LocalBroadcastManager.getInstance(view.context).registerReceiver(
