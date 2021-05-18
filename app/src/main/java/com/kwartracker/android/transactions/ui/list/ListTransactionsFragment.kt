@@ -16,11 +16,11 @@ import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.databinding.FragmentTransactionsListBinding
 import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
 
-class TransactionsListFragment : Fragment() {
+class ListTransactionsFragment : Fragment() {
     private lateinit var binding: FragmentTransactionsListBinding
     private lateinit var mainBinding: FragmentTransactionBinding
     private val transactionsViewModel: TransactionsViewModel by viewModels()
-    private var transactionsListAdapter = TransactionsListAdapter(arrayListOf())
+    private var transactionsListAdapter = ListTransactionsAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater,

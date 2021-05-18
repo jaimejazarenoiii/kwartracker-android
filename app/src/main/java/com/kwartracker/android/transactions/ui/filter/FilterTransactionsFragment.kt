@@ -18,7 +18,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionsListFilterBinding
 
-class TransactionsFilterFragment : Fragment() {
+class FilterTransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionsListFilterBinding
 
     override fun onCreateView(

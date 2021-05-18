@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/transaction_add_fragment"
-        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddFragment"
+        android:name="com.kwartracker.android.transactions.ui.add.AddTransactionFragment"
         android:label="Transaction Add"
         tools:layout="@layout/fragment_transaction_add" >
         <action
@@ -58,7 +58,7 @@
 
     <fragment
         android:id="@+id/transaction_add_next_fragment"
-        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddNextFragment"
+        android:name="com.kwartracker.android.transactions.ui.add.AddNewTransactionFragment"
         android:label="Transaction Add"
         tools:layout="@layout/fragment_transaction_add_next" />
 

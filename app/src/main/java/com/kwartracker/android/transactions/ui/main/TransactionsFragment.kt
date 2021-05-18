@@ -23,9 +23,9 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
-import com.kwartracker.android.transactions.ui.details.TransactionDetailsFragment
-import com.kwartracker.android.transactions.ui.filter.TransactionsFilterFragment
-import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
+import com.kwartracker.android.transactions.ui.details.DetailsTransactionFragment
+import com.kwartracker.android.transactions.ui.filter.FilterTransactionsFragment
+import com.kwartracker.android.transactions.ui.list.ListTransactionsFragment
 
 class TransactionsFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
@@ -56,14 +56,14 @@ class TransactionsFragment : Fragment() {
 
         binding.tvToolbarTitle.text = getString(R.string.title_transaction)
 
-        bottomMainSheetModal(TransactionsListFragment())
+        bottomMainSheetModal(ListTransactionsFragment())
         LocalBroadcastManager.getInstance(view.context).registerReceiver(
             mMessageReceiver,
             IntentFilter("message")
         )
 
-        bottomMainSheetModal(TransactionsListFragment())
-        changeFragment(TransactionsFilterFragment(), R.id.nav_fragment_transactions_modal)
+        bottomMainSheetModal(ListTransactionsFragment())
+        changeFragment(FilterTransactionsFragment(), R.id.nav_fragment_transactions_modal)
         bottomSheetModal(null)
     }
 
@@ -75,11 +75,11 @@ class TransactionsFragment : Fragment() {
             if (func == "filter") {
                 val state = intent.getStringExtra("state")
                 if (state == "close") bottomSheetModal(null)
-                else bottomSheetModal(TransactionsFilterFragment())
+                else bottomSheetModal(FilterTransactionsFragment())
             } else if (func == "details") {
                 binding.tvToolbarTitle.text = getString(R.string.title_transactions)
 
-                bottomMainSheetModal(TransactionDetailsFragment())
+                bottomMainSheetModal(DetailsTransactionFragment())
             }
         }
     }
