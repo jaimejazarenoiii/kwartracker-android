@@ -51,6 +51,4 @@ class WalletTypeListAdapter(private val walletTypes: List<WalletType>) : BaseAda
             }
         }
     }
-
-
 }

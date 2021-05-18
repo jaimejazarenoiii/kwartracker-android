@@ -15,8 +15,6 @@ import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentAddWalletBinding
 import com.kwartracker.android.wallet.model.WalletType
-import java.util.*
-
 
 class AddWalletFragment : Fragment() {
 
