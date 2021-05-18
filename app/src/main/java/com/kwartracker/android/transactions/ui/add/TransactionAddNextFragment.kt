@@ -8,10 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionAdd1Binding
+import com.kwartracker.android.databinding.FragmentTransactionAddNextBinding
 
-class TransactionAddFragmentS1 : Fragment() {
-    lateinit var binding: FragmentTransactionAdd1Binding
+class TransactionAddNextFragment : Fragment() {
+    lateinit var binding: FragmentTransactionAddNextBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,7 +20,7 @@ class TransactionAddFragmentS1 : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_transaction_add_1,
+            R.layout.fragment_transaction_add_next,
             container, false
         )
 

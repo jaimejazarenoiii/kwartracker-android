@@ -16,9 +16,9 @@ class TransactionAddFragment : Fragment() {
     lateinit var binding: FragmentTransactionAddBinding
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
@@ -31,7 +31,7 @@ class TransactionAddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.transaction_add_1_fragment)
+            findNavController().navigate(R.id.transaction_add_next_fragment)
         }
 
         binding.btnBack.setOnClickListener {

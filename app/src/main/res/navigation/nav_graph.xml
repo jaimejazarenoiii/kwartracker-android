@@ -53,14 +53,14 @@
         tools:layout="@layout/fragment_transaction_add" >
         <action
             android:id="@+id/action_transaction_add_fragment_to_transaction_add_1_fragment"
-            app:destination="@id/transaction_add_1_fragment" />
+            app:destination="@id/transaction_add_next_fragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/transaction_add_1_fragment"
-        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddFragmentS1"
+        android:id="@+id/transaction_add_next_fragment"
+        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddNextFragment"
         android:label="Transaction Add"
-        tools:layout="@layout/fragment_transaction_add_1" />
+        tools:layout="@layout/fragment_transaction_add_next" />
 
     <fragment
         android:id="@+id/profile_fragment"
