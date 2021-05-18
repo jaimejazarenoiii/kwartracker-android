@@ -29,5 +29,6 @@
     <color name="content_main">#f1f3f6</color>
     <color name="light_green">#0EBCA7</color>
     <color name="light_red">#E26767</color>
+    <color name="light_grey">#C2C9CE</color>
 
 </resources>

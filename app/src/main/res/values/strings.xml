@@ -80,5 +80,14 @@
     <string name="btn_categories">Categories</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="lbl_wallet_name">Wallet Name</string>
+    <string name="title_add_wallet">Add Wallet</string>
+    <string name="hint_wallet_name">Enter wallet name</string>
+    <string name="lbl_currency">Currency</string>
+    <string name="hint_wallet_currency">Select wallet currency</string>
+    <string name="hint_wallet_type">Select wallet type</string>
+    <string name="message_inclue_overall">Include in overall total balance?</string>
+    <string name="lbl_yes">Yes</string>
+    <string name="lbl_no">No</string>
 
 </resources>

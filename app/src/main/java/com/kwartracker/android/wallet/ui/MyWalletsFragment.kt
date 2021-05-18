@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kwartracker.android.R
@@ -162,8 +163,11 @@ class MyWalletsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val linearLayoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
         walletsAdapter = MyWalletViewPagerAdapter(requireContext())
 
+        binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
+        binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
         binding.walletLayout.viewPager.adapter = walletsAdapter
         binding.walletLayout.viewPager.setPadding(100, 0, 100, 0)
         walletsAdapter.observeValue(data)
@@ -171,9 +175,13 @@ class MyWalletsFragment : Fragment() {
             binding.walletLayout.sliderDots,
             walletsAdapter.count
         ) {}
-        val linearLayoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
-        binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
-        binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
+
         walletTransactionsAdapter.setData(transaction)
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        binding.btnAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_walletsFragment_to_addWalletFragment)
+        }
     }
 }
