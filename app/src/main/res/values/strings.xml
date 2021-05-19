@@ -69,6 +69,19 @@
     <string name="lbl_which_wallet_do_you_want_to_add">Which wallet do you want to add?</string>
     <string name="lbl_next">Next</string>
     <string name="lbl_add">Add</string>
+    <string name="lbl_enter_amount">Enter Amount</string>
+    <string name="lbl_peso_sign">₱</string>
+    <string name="lbl_default_decimal_value">00.00</string>
+    <string name="lbl_transaction_name">Transaction name</string>
+    <string name="lbl_select_date">Select date</string>
+    <string name="lbl_dd_mm_yyyy">DD / MM / YYYY</string>
+    <string name="lbl_spent_with_this_person">Spent with this person</string>
+    <string name="lbl_upload_photo">Upload photo</string>
+    <string name="lbl_browse">Browse</string>
+    <string name="hint_select_wallet_to_add">Select wallet to add</string>
+    <string name="hint_select_transaction_type">Select transaction type</string>
+    <string name="hint_select_category">Select Category</string>
+    <string name="hint_enter_name_with_person">Enter name with person</string>
 
     <!-- Navigation Drawer Items -->
     <string name="menu_home">Home</string>

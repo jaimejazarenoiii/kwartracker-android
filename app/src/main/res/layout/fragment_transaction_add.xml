@@ -108,8 +108,7 @@
                     android:background="@drawable/roundsemi_gray"
                     android:elevation="11sp"
                     android:src="@drawable/ic_arrow_down_gray_24"
-                    android:text="Button"
-                    tools:ignore="HardcodedText,ContentDescription"
+                    tools:ignore="ContentDescription"
                     />
             </RelativeLayout>
             <com.google.android.material.button.MaterialButton
