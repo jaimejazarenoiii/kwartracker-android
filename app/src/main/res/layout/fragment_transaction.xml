@@ -77,7 +77,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingTop="50sp"
-                    app:defaultNavHost="true"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     app:navGraph="@navigation/nav_transactions" />
 
