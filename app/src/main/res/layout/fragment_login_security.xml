@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color"
+        android:orientation="vertical"
+        tools:context=".settings.loginSecurity.ui.LoginSecurityFragment">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_bg_ripple_blue"
+            android:clickable="true"
+            android:elevation="30dp"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/title_login_security"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toStartOf="@+id/btn_add"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_bg_ripple_white"
+            android:clickable="true"
+            android:elevation="30dp"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_btn_plus"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_contents"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_white_round_top"
+            android:descendantFocusability="blocksDescendants"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_back">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_login_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/ib_edit"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="31dp"
+                    android:background="@drawable/round_bg_ripple_white"
+                    android:clickable="true"
+                    android:elevation="20dp"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_pencil"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_email_label"
+                    style="@style/style_labels"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/lbl_email_address"
+                    app:layout_constraintEnd_toEndOf="@id/cl_login_security"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/cl_login_security"
+                    app:layout_constraintTop_toBottomOf="@id/ib_edit" />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_sample_email"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@id/cl_login_security"
+                    app:layout_constraintStart_toStartOf="@id/tv_email_label"
+                    app:layout_constraintTop_toBottomOf="@id/tv_email_label" />
+
+                <TextView
+                    android:id="@+id/tv_password_label"
+                    style="@style/style_labels"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/lbl_password"
+                    app:layout_constraintEnd_toEndOf="@id/cl_login_security"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/tv_email_label"
+                    app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+                <TextView
+                    android:id="@+id/tv_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@id/cl_login_security"
+                    app:layout_constraintStart_toStartOf="@id/tv_password_label"
+                    app:layout_constraintTop_toBottomOf="@id/tv_password_label" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_change_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:padding="16dp"
+                    android:text="@string/btn_change_password"
+                    android:textAllCaps="false"
+                    android:textColor="@color/semi_white"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/app_color"
+                    app:layout_constraintEnd_toEndOf="@+id/cl_login_security"
+                    app:layout_constraintStart_toStartOf="@+id/cl_login_security"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_password" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
