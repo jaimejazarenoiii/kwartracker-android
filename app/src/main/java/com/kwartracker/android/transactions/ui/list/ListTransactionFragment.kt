@@ -12,15 +12,13 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionBinding
-import com.kwartracker.android.databinding.FragmentTransactionsListBinding
-import com.kwartracker.android.transactions.ui.main.TransactionsViewModel
+import com.kwartracker.android.databinding.FragmentListTransactionBinding
+import com.kwartracker.android.transactions.ui.main.TransactionViewModel
 
-class ListTransactionsFragment : Fragment() {
-    private lateinit var binding: FragmentTransactionsListBinding
-    private lateinit var mainBinding: FragmentTransactionBinding
-    private val transactionsViewModel: TransactionsViewModel by viewModels()
-    private var transactionsListAdapter = ListTransactionsAdapter(arrayListOf())
+class ListTransactionFragment : Fragment() {
+    private lateinit var binding: FragmentListTransactionBinding
+    private val transactionViewModel: TransactionViewModel by viewModels()
+    private var transactionsListAdapter = ListTransactionAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +27,7 @@ class ListTransactionsFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_transactions_list,
+            R.layout.fragment_list_transaction,
             container,
             false
         )
@@ -75,9 +73,11 @@ class ListTransactionsFragment : Fragment() {
                         }
                     }
 
-                    if (!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
+                    if (!loading && (totalItemCount - visibleItemCount) <=
+                        (firstVisibleItem + visibleThreshold)
+                    ) {
                         fabBackToTop.visibility = View.INVISIBLE
-                        transactionsViewModel.fetchTransactions()
+                        transactionViewModel.fetchTransactions()
                         loading = true
                     }
                 }
@@ -85,7 +85,7 @@ class ListTransactionsFragment : Fragment() {
                     llTransactionFilter.elevation = 0F
                     fabBackToTop.visibility = View.INVISIBLE
                 }
-                var xxx = recyclerView.scrollY
+                val xxx = recyclerView.scrollY
                 println("$dx $dy $xxx ")
             }
         })
@@ -100,13 +100,13 @@ class ListTransactionsFragment : Fragment() {
             LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
         }
 
-        transactionsViewModel.fetchTransactions()
+        transactionViewModel.fetchTransactions()
         rvTransaction.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = transactionsListAdapter
         }
 
-        transactionsViewModel.transactions.observe(
+        transactionViewModel.transactions.observe(
             viewLifecycleOwner,
             { transactions ->
                 transactions?.let {
@@ -116,7 +116,7 @@ class ListTransactionsFragment : Fragment() {
             }
         )
 
-        transactionsViewModel.loading.observe(
+        transactionViewModel.loading.observe(
             viewLifecycleOwner,
             { isLoading ->
                 isLoading?.let {

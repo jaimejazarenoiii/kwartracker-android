@@ -24,10 +24,10 @@ import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentTransactionBinding
 import com.kwartracker.android.transactions.ui.details.DetailsTransactionFragment
-import com.kwartracker.android.transactions.ui.filter.FilterTransactionsFragment
-import com.kwartracker.android.transactions.ui.list.ListTransactionsFragment
+import com.kwartracker.android.transactions.ui.filter.FilterTransactionFragment
+import com.kwartracker.android.transactions.ui.list.ListTransactionFragment
 
-class TransactionsFragment : Fragment() {
+class TransactionFragment : Fragment() {
     lateinit var binding: FragmentTransactionBinding
     var tbTitle: TextView? = null
     var navBottomSheetModal: NavigationView? = null
@@ -37,7 +37,10 @@ class TransactionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_transaction, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_transaction, container, false
+        )
 
         tbTitle = binding.tvToolbarTitle
         navBottomSheetModal = binding.nvFilter
@@ -47,7 +50,7 @@ class TransactionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivToolbarRight.setOnClickListener {
-            findNavController().navigate(R.id.transaction_add_fragment)
+            findNavController().navigate(R.id.transaction_add_wallet_fragment)
         }
 
         binding.ivToolbarLeft.setOnClickListener {
@@ -56,14 +59,14 @@ class TransactionsFragment : Fragment() {
 
         binding.tvToolbarTitle.text = getString(R.string.title_transaction)
 
-        bottomMainSheetModal(ListTransactionsFragment())
+        bottomMainSheetModal(ListTransactionFragment())
         LocalBroadcastManager.getInstance(view.context).registerReceiver(
             mMessageReceiver,
             IntentFilter("message")
         )
 
-        bottomMainSheetModal(ListTransactionsFragment())
-        changeFragment(FilterTransactionsFragment(), R.id.nav_fragment_transactions_modal)
+        bottomMainSheetModal(ListTransactionFragment())
+        changeFragment(FilterTransactionFragment(), R.id.nav_fragment_transactions_modal)
         bottomSheetModal(null)
     }
 
@@ -75,7 +78,7 @@ class TransactionsFragment : Fragment() {
             if (func == "filter") {
                 val state = intent.getStringExtra("state")
                 if (state == "close") bottomSheetModal(null)
-                else bottomSheetModal(FilterTransactionsFragment())
+                else bottomSheetModal(FilterTransactionFragment())
             } else if (func == "details") {
                 binding.tvToolbarTitle.text = getString(R.string.title_transactions)
 

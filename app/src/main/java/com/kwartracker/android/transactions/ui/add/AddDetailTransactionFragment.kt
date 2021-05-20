@@ -8,12 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionAddBinding
-import com.kwartracker.android.transactions.ui.list.ListTransactionsFragment
-import com.kwartracker.android.transactions.ui.main.TransactionsFragment
+import com.kwartracker.android.databinding.FragmentAddDetailTransactionBinding
 
-class AddTransactionFragment : Fragment() {
-    lateinit var binding: FragmentTransactionAddBinding
+class AddDetailTransactionFragment : Fragment() {
+    lateinit var binding: FragmentAddDetailTransactionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,7 +20,7 @@ class AddTransactionFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_transaction_add,
+            R.layout.fragment_add_detail_transaction,
             container, false
         )
 
@@ -30,12 +28,8 @@ class AddTransactionFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.transaction_add_next_fragment)
-        }
-
         binding.btnBack.setOnClickListener {
-            TransactionsFragment().bottomMainSheetModal(ListTransactionsFragment())
+            findNavController().navigate(R.id.transaction_add_wallet_fragment)
         }
     }
 }

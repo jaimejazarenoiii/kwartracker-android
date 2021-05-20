@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.databinding.ItemTransactionBinding
 import com.kwartracker.android.transactions.model.TransactionModel
 
-class ListTransactionsAdapter(var transactions: ArrayList<TransactionModel>) :
-    RecyclerView.Adapter<ListTransactionsAdapter.TransactionViewHolder>() {
+class ListTransactionAdapter(var transactions: ArrayList<TransactionModel>) :
+    RecyclerView.Adapter<ListTransactionAdapter.TransactionViewHolder>() {
 
     fun updateTransactions(newTransactions: List<TransactionModel>) {
         transactions.clear()
