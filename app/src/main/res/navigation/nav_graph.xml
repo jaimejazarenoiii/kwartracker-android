@@ -71,7 +71,7 @@
     <fragment
         android:id="@+id/addWalletFragment"
         android:name="com.kwartracker.android.wallet.ui.add.AddWalletFragment"
-        android:label="Add Wallet"
+        android:label="@string/title_add_wallet"
         tools:layout="@layout/fragment_add_wallet" />
 
 </navigation>

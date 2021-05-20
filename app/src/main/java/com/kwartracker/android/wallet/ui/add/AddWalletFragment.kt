@@ -20,8 +20,7 @@ class AddWalletFragment : Fragment() {
 
     private lateinit var binding: FragmentAddWalletBinding
     private lateinit var walletTypeListAdapter: WalletTypeListAdapter
-    private var walletTypes =
-        listOf(WalletType(id = 1, title = "Wallet"), WalletType(id = 2, title = "Savings"))
+    private var walletTypes = listOf<WalletType>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +33,10 @@ class AddWalletFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        walletTypes = listOf(
+            WalletType(id = 1, title = getString(R.string.title_wallet)),
+            WalletType(id = 2, title = getString(R.string.title_savings))
+        )
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }

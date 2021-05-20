@@ -34,6 +34,8 @@
     <string name="title_my_profile">My Profile</string>
     <string name="title_target_amount">to target amount</string>
     <string name="title_target_date">to target date</string>
+    <string name="title_wallet">Wallet</string>
+    <string name="title_savings">Savings</string>
 
     // Profile
     <string name="lbl_sample_name">Jupilot D. Great</string>

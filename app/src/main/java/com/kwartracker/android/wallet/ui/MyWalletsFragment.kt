@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -15,7 +16,7 @@ import com.kwartracker.android.utils.onPageChange
 import com.kwartracker.android.wallet.model.Wallet
 import com.kwartracker.android.wallet.model.WalletTransactions
 
-class MyWalletsFragment : Fragment() {
+class MyWalletsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentWalletsBinding
     private lateinit var walletsAdapter: MyWalletViewPagerAdapter
@@ -177,11 +178,24 @@ class MyWalletsFragment : Fragment() {
         ) {}
 
         walletTransactionsAdapter.setData(transaction)
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
-        binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_walletsFragment_to_addWalletFragment)
+        binding.btnBack.setOnClickListener(this)
+        binding.btnAdd.setOnClickListener(this)
+        binding.walletLayout.imageViewEditWallet.setOnClickListener(this)
+        binding.walletLayout.tvEditWallet.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when (view) {
+            binding.btnBack -> {
+                findNavController().popBackStack()
+            }
+            binding.btnAdd -> {
+                findNavController().navigate(R.id.action_walletsFragment_to_addWalletFragment)
+            }
+            binding.walletLayout.imageViewEditWallet,
+            binding.walletLayout.tvEditWallet -> {
+                Toast.makeText(requireContext(), "Edit Wallet", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
