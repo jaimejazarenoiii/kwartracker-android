@@ -31,7 +31,7 @@
             android:ellipsize="end"
             android:gravity="center"
             android:singleLine="true"
-            android:text="Edit Transaction"
+            android:text="@string/title_transaction"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -52,7 +52,7 @@
             android:textStyle="bold"
             android:focusable="true"
             android:padding="12dp"
-            android:text="Save"
+            android:text="@string/lbl_save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tv_title"
@@ -93,7 +93,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_white_round_top"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="ScrollViewSize">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -120,7 +121,7 @@
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_which_wallet_do_you_want_to_add"
                             android:textColor="@color/transaction_field_name"
-                            tools:ignore="ContentDescription|RelativeOverlap" />
+                            tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
                             android:id="@+id/et_trans_wallet"
@@ -136,7 +137,9 @@
                             android:padding="14sp"
                             android:text="@string/lbl_bpi_savings"
                             android:textColor="@color/transaction_field_text"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:importantForAutofill="no"
+                            tools:ignore="LabelFor" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_wallet"
@@ -176,7 +179,8 @@
                         android:padding="14sp"
                         android:text="@string/lbl_default_amount_value"
                         android:textColor="@color/transaction_field_text"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        tools:ignore="Autofill" />
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -194,7 +198,7 @@
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_transaction_type"
                             android:textColor="@color/transaction_field_name"
-                            tools:ignore="ContentDescription|RelativeOverlap" />
+                            tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
                             android:id="@+id/et_trans_type"
@@ -210,7 +214,9 @@
                             android:padding="14sp"
                             android:text="@string/lbl_income"
                             android:textColor="@color/transaction_field_text"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:importantForAutofill="no"
+                            tools:ignore="LabelFor" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_type"
@@ -242,7 +248,7 @@
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_category"
                             android:textColor="@color/transaction_field_name"
-                            tools:ignore="ContentDescription|RelativeOverlap" />
+                            tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
                             android:id="@+id/et_category"
@@ -258,7 +264,9 @@
                             android:inputType="text"
                             android:padding="14sp"
                             android:textColor="@color/transaction_field_text"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:importantForAutofill="no"
+                            tools:ignore="LabelFor" />
 
                         <ImageButton
                             android:id="@+id/ib_category"
@@ -293,7 +301,7 @@
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_select_date"
                             android:textColor="@color/transaction_field_name"
-                            tools:ignore="ContentDescription|RelativeOverlap" />
+                            tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
                             android:id="@+id/et_trans_date"
@@ -310,7 +318,8 @@
                             android:text="@string/lbl_date_value"
                             android:textColor="@color/transaction_field_text"
                             android:textSize="16sp"
-                            tools:ignore="TextFields" />
+                            tools:ignore="LabelFor,TextFields"
+                            android:autofillHints="" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_date"
@@ -321,7 +330,7 @@
                             android:layout_marginEnd="30sp"
                             android:background="@drawable/roundsemi_gray"
                             android:elevation="11sp"
-                            android:src="@drawable/ic_arrow_down_gray_24"
+                            android:src="@drawable/ic_calendar"
                             android:text="Button"
                             tools:ignore="HardcodedText,ContentDescription"
 
@@ -349,7 +358,9 @@
                         android:inputType="text"
                         android:padding="14sp"
                         android:textColor="@color/transaction_field_text"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:importantForAutofill="no"
+                        tools:ignore="LabelFor" />
 
                     <TextView
                         android:id="@+id/tv_trans_receipt"
