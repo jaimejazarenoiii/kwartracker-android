@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionEditBinding
-import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
-import com.kwartracker.android.transactions.ui.main.TransactionsFragment
+import com.kwartracker.android.databinding.FragmentEditTransactionBinding
+import com.kwartracker.android.transactions.ui.list.ListTransactionFragment
+import com.kwartracker.android.transactions.ui.main.TransactionFragment
 
-class TransactionEditFragment : Fragment() {
-    lateinit var binding: FragmentTransactionEditBinding
+class EditTransactionFragment : Fragment() {
+    lateinit var binding: FragmentEditTransactionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,7 +21,7 @@ class TransactionEditFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_transaction_edit,
+            R.layout.fragment_edit_transaction,
             container, false
         )
 
@@ -30,7 +30,7 @@ class TransactionEditFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnBack.setOnClickListener {
-            TransactionsFragment().bottomMainSheetModal(TransactionsListFragment())
+            TransactionFragment().bottomMainSheetModal(ListTransactionFragment())
         }
     }
 }

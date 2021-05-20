@@ -50,11 +50,11 @@ class TransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivToolbarRight.setOnClickListener {
-            findNavController().navigate(R.id.transaction_add_wallet_fragment)
+            findNavController().navigate(R.id.add_wallet_transaction_fragment)
         }
 
         binding.ivToolbarLeft.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_dashoardFragment)
+            findNavController().navigate(R.id.action_transaction_fragment_to_dashoardFragment)
         }
 
         binding.tvToolbarTitle.text = getString(R.string.title_transaction)

@@ -29,7 +29,7 @@ class AddDetailTransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.transaction_add_wallet_fragment)
+            findNavController().navigate(R.id.add_wallet_transaction_fragment)
         }
     }
 }

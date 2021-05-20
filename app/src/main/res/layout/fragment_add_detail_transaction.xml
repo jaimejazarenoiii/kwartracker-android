@@ -95,6 +95,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="18dp"
                     android:text="@string/lbl_peso_sign"
+                    android:textColor="@color/transaction_field_text"
                     android:textSize="50sp"
                     app:layout_constraintEnd_toStartOf="@+id/et_amount"
                     app:layout_constraintHorizontal_bias=".9"
@@ -325,7 +326,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
-                        android:text="@string/lbl_upload_photo"
+                        android:text="@string/btn_upload_photo"
                         android:textColor="@color/transaction_field_name"
                         tools:ignore="ContentDescription|RelativeOverlap" />
 
