@@ -8,12 +8,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionAddBinding
-import com.kwartracker.android.transactions.ui.list.TransactionsListFragment
-import com.kwartracker.android.transactions.ui.main.TransactionsFragment
+import com.kwartracker.android.databinding.FragmentAddWalletTransactionBinding
+import com.kwartracker.android.transactions.ui.list.ListTransactionFragment
+import com.kwartracker.android.transactions.ui.main.TransactionFragment
 
-class TransactionAddFragment : Fragment() {
-    lateinit var binding: FragmentTransactionAddBinding
+class AddWalletTransactionFragment : Fragment() {
+    lateinit var binding: FragmentAddWalletTransactionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,7 +22,7 @@ class TransactionAddFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_transaction_add,
+            R.layout.fragment_add_wallet_transaction,
             container, false
         )
 
@@ -31,11 +31,11 @@ class TransactionAddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.transaction_add_next_fragment)
+            findNavController().navigate(R.id.transaction_add_detail_fragment)
         }
 
         binding.btnBack.setOnClickListener {
-            TransactionsFragment().bottomMainSheetModal(TransactionsListFragment())
+            TransactionFragment().bottomMainSheetModal(ListTransactionFragment())
         }
     }
 }

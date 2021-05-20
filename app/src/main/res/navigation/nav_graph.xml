@@ -38,38 +38,30 @@
 
     <fragment
         android:id="@+id/transactions_fragment"
-        android:name="com.kwartracker.android.transactions.ui.main.TransactionsFragment"
+        android:name="com.kwartracker.android.transactions.ui.main.TransactionFragment"
         android:label="Transaction"
         tools:layout="@layout/fragment_transaction" >
         <action
-            android:id="@+id/action_transactions_fragment_to_transaction_add_fragment"
-            app:destination="@id/transaction_add_fragment" />
-        <action
             android:id="@+id/action_transactions_fragment_to_transaction_edit_fragment"
-            app:destination="@id/transaction_edit_fragment" />
+            app:destination="@id/transaction_edit_fragment" /> />
     </fragment>
 
     <fragment
-        android:id="@+id/transaction_add_fragment"
-        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddFragment"
+        android:id="@+id/transaction_add_wallet_fragment"
+        android:name="com.kwartracker.android.transactions.ui.add.AddWalletTransactionFragment"
         android:label="Transaction Add"
-        tools:layout="@layout/fragment_transaction_add" >
+        tools:layout="@layout/fragment_add_wallet_transaction" >
         <action
             android:id="@+id/action_transaction_add_fragment_to_transaction_add_1_fragment"
             app:destination="@id/transaction_add_next_fragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/transaction_edit_fragment"
-        android:name="com.kwartracker.android.transactions.ui.edit.TransactionEditFragment"
-        android:label="Transaction Edit"
-        tools:layout="@layout/fragment_transaction_add" />
+        android:id="@+id/transaction_add_detail_fragment"
+        android:name="com.kwartracker.android.transactions.ui.add.AddDetailTransactionFragment"
 
-    <fragment
-        android:id="@+id/transaction_add_next_fragment"
-        android:name="com.kwartracker.android.transactions.ui.add.TransactionAddNextFragment"
         android:label="Transaction Add"
-        tools:layout="@layout/fragment_transaction_add_next" />
+        tools:layout="@layout/fragment_add_detail_transaction" />
 
     <fragment
         android:id="@+id/profile_fragment"
