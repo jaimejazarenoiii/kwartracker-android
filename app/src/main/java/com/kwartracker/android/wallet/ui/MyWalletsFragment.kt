@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kwartracker.android.R
@@ -14,7 +16,7 @@ import com.kwartracker.android.utils.onPageChange
 import com.kwartracker.android.wallet.model.Wallet
 import com.kwartracker.android.wallet.model.WalletTransactions
 
-class MyWalletsFragment : Fragment() {
+class MyWalletsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentWalletsBinding
     private lateinit var walletsAdapter: MyWalletViewPagerAdapter
@@ -162,8 +164,11 @@ class MyWalletsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val linearLayoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
         walletsAdapter = MyWalletViewPagerAdapter(requireContext())
 
+        binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
+        binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
         binding.walletLayout.viewPager.adapter = walletsAdapter
         binding.walletLayout.viewPager.setPadding(100, 0, 100, 0)
         walletsAdapter.observeValue(data)
@@ -171,9 +176,26 @@ class MyWalletsFragment : Fragment() {
             binding.walletLayout.sliderDots,
             walletsAdapter.count
         ) {}
-        val linearLayoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
-        binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
-        binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
+
         walletTransactionsAdapter.setData(transaction)
+        binding.btnBack.setOnClickListener(this)
+        binding.btnAdd.setOnClickListener(this)
+        binding.walletLayout.imageViewEditWallet.setOnClickListener(this)
+        binding.walletLayout.tvEditWallet.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when (view) {
+            binding.btnBack -> {
+                findNavController().popBackStack()
+            }
+            binding.btnAdd -> {
+                findNavController().navigate(R.id.action_walletsFragment_to_addWalletFragment)
+            }
+            binding.walletLayout.imageViewEditWallet,
+            binding.walletLayout.tvEditWallet -> {
+                Toast.makeText(requireContext(), "Edit Wallet", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

@@ -16,10 +16,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentTransactionsListFilterBinding
+import com.kwartracker.android.databinding.FragmentListFilterTransactionBinding
 
-class TransactionsFilterFragment : Fragment() {
-    lateinit var binding: FragmentTransactionsListFilterBinding
+class FilterTransactionFragment : Fragment() {
+    lateinit var binding: FragmentListFilterTransactionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +28,7 @@ class TransactionsFilterFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_transactions_list_filter,
+            R.layout.fragment_list_filter_transaction,
             container, false
         )
 

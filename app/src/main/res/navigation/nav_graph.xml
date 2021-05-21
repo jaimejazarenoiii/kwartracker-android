@@ -34,13 +34,37 @@
         android:id="@+id/walletsFragment"
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_wallets" />
+        tools:layout="@layout/fragment_wallets" >
+        <action
+            android:id="@+id/action_walletsFragment_to_addWalletFragment"
+            app:destination="@id/addWalletFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/transactions_fragment"
-        android:name="com.kwartracker.android.transactions.ui.main.TransactionsFragment"
+        android:name="com.kwartracker.android.transactions.ui.main.TransactionFragment"
         android:label="Transaction"
-        tools:layout="@layout/fragment_transaction" />
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactions_fragment_to_transaction_add_fragment"
+            app:destination="@id/transaction_add_wallet_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transaction_add_wallet_fragment"
+        android:name="com.kwartracker.android.transactions.ui.add.AddWalletTransactionFragment"
+        android:label="Transaction Add"
+        tools:layout="@layout/fragment_add_wallet_transaction" >
+        <action
+            android:id="@+id/action_transaction_add_fragment_to_transaction_add_1_fragment"
+            app:destination="@id/transaction_add_detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transaction_add_detail_fragment"
+        android:name="com.kwartracker.android.transactions.ui.add.AddDetailTransactionFragment"
+        android:label="Transaction Add"
+        tools:layout="@layout/fragment_add_detail_transaction" />
 
     <fragment
         android:id="@+id/profile_fragment"
@@ -52,7 +76,7 @@
         android:id="@+id/dashoardFragment"
         android:name="com.kwartracker.android.dashboard.ui.DashboardFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashoardFragment_to_walletsFragment"
             app:destination="@id/walletsFragment" />
@@ -63,5 +87,11 @@
             android:id="@+id/action_dashoardFragment_to_transactions_fragment"
             app:destination="@id/transactions_fragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/addWalletFragment"
+        android:name="com.kwartracker.android.wallet.ui.add.AddWalletFragment"
+        android:label="@string/title_add_wallet"
+        tools:layout="@layout/fragment_add_wallet" />
 
 </navigation>
