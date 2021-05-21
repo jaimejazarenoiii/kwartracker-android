@@ -34,7 +34,11 @@
         android:id="@+id/walletsFragment"
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_wallets" />
+        tools:layout="@layout/fragment_wallets" >
+        <action
+            android:id="@+id/action_walletsFragment_to_addWalletFragment"
+            app:destination="@id/addWalletFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/transactions_fragment"
@@ -72,7 +76,7 @@
         android:id="@+id/dashoardFragment"
         android:name="com.kwartracker.android.dashboard.ui.DashboardFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashoardFragment_to_walletsFragment"
             app:destination="@id/walletsFragment" />
@@ -83,4 +87,11 @@
             android:id="@+id/action_dashoardFragment_to_transactions_fragment"
             app:destination="@id/transactions_fragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/addWalletFragment"
+        android:name="com.kwartracker.android.wallet.ui.add.AddWalletFragment"
+        android:label="@string/title_add_wallet"
+        tools:layout="@layout/fragment_add_wallet" />
+
 </navigation>
