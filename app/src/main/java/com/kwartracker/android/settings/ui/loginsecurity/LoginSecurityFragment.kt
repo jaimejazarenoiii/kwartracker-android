@@ -1,4 +1,4 @@
-package com.kwartracker.android.settings.loginSecurity.ui
+package com.kwartracker.android.settings.ui.loginsecurity
 
 import android.os.Bundle
 import android.view.LayoutInflater

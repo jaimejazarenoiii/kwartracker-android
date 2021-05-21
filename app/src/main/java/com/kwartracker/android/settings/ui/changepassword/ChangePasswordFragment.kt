@@ -1,4 +1,4 @@
-package com.kwartracker.android.settings.changePassword.ui
+package com.kwartracker.android.settings.ui.changepassword
 
 import android.os.Bundle
 import android.view.LayoutInflater
