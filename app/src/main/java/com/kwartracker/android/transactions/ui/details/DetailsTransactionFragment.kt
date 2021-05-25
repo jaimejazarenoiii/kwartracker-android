@@ -36,10 +36,10 @@ class DetailsTransactionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.ivDelete.setOnClickListener {
             confirmationDialog.title = getString(R.string.title_confirmation)
-            confirmationDialog.message = "Are you sure you want to delete this?"
+            confirmationDialog.message = getString(R.string.lbl_message_delete)
             confirmationDialog.show()
             confirmationDialog.yes.setOnClickListener {
-                Toast.makeText(context, "yes", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.lbl_yes), Toast.LENGTH_SHORT).show()
             }
         }
     }

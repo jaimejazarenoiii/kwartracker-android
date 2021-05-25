@@ -138,5 +138,5 @@
     <string name="title_confirmation">Confirmation</string>
     <string name="lbl_are_you_sure">Are you sure?</string>
     <string name="lbl_cancel">Cancel</string>
-
+    <string name="lbl_message_delete">Are you sure you want to delete this?</string>
 </resources>

@@ -11,6 +11,7 @@
         android:orientation="horizontal" >
 
         <LinearLayout
+            android:id="@+id/ll_dialog"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:elevation="10sp"
@@ -75,4 +76,5 @@
 
         </LinearLayout>
     </LinearLayout>
+
 </layout>
