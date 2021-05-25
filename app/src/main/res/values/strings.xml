@@ -134,4 +134,9 @@
     <string name="lbl_parent_category">Parent category</string>
     <string name="lbl_sample_category_name">Parent Category Name</string>
 
+    //Confirmation Dialog
+    <string name="title_confirmation">Confirmation</string>
+    <string name="lbl_are_you_sure">Are you sure?</string>
+    <string name="lbl_cancel">Cancel</string>
+
 </resources>
