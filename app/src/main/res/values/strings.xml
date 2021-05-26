@@ -144,4 +144,7 @@
     <string name="lbl_exit">Exit</string>
     <string name="lbl_confirmed">Confirmed</string>
     <string name="lbl_confirmed_successfully">Confirmed successfully.</string>
+    <string name="lbl_success">Success</string>
+    <string name="lbl_confirmed_success_message">Your transaction has been added!</string>
+    <string name="lbl_cool">Cool</string>
 </resources>

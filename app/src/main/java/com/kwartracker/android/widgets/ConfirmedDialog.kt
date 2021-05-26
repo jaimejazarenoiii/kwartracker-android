@@ -14,17 +14,14 @@ import com.kwartracker.android.databinding.ConfirmedDialogBinding
 
 class ConfirmedDialog(activity: Activity) : Dialog(activity), View.OnClickListener {
     var dialog: Dialog? = null
-    var title: String? = null
-    var message: String? = null
-    var exitText: String? = null
+    val binding: ConfirmedDialogBinding = ConfirmedDialogBinding.inflate(layoutInflater)
+    lateinit var ivDialogIcon: ImageView
     lateinit var scrim: LinearLayout
     lateinit var llDialog: LinearLayout
-    lateinit var ivDialogIcon: ImageView
-    lateinit var binding: ConfirmedDialogBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ConfirmedDialogBinding.inflate(layoutInflater)
+
         scrim = binding.scrim
         ivDialogIcon = binding.ivDialogIcon
         llDialog = binding.llDialog
@@ -38,22 +35,28 @@ class ConfirmedDialog(activity: Activity) : Dialog(activity), View.OnClickListen
 
         scrim.setOnClickListener(this)
         llDialog.setOnClickListener(this)
+        binding.btnDialogExit.setOnClickListener(this)
     }
 
-    private fun init() {
-        if (title != null) binding.tvTitle.text = title
-        if (message != null) binding.tvMessage.text = message
-        if (exitText != null) binding.btnDialogExit.text = exitText
+    fun setIcon(resID: Int) {
+        binding.ivDialogIcon.setImageResource(resID)
     }
 
-    override fun show() {
-        super.show()
-        init()
+    fun setTitle(title: String) {
+        binding.tvTitle.text = title
+    }
+
+    fun setMessage(message: String) {
+        binding.tvMessage.text = message
+    }
+
+    fun setExitText(exitText: String) {
+        binding.btnDialogExit.text = exitText
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_cancel -> dismiss()
+            R.id.btn_dialog_exit -> dismiss()
             R.id.scrim -> dismiss()
             else -> {}
         }

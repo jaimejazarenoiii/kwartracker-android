@@ -42,10 +42,10 @@ class DetailsTransactionFragment : Fragment() {
             confirmationDialog.show()
             confirmationDialog.yes.setOnClickListener {
                 confirmationDialog.dismiss()
-                confirmedDialog.ivDialogIcon.setImageResource(R.drawable.ic_delete_red_58)
-                confirmedDialog.title = getString(R.string.lbl_deleted)
-                confirmedDialog.exitText = getString(R.string.lbl_exit)
-                confirmedDialog.message = getString(R.string.lbl_confirmed_delete_message)
+                confirmedDialog.setIcon(R.drawable.ic_delete_red_58)
+                confirmedDialog.setTitle(getString(R.string.lbl_deleted))
+                confirmedDialog.setExitText(getString(R.string.lbl_exit))
+                confirmedDialog.setMessage(getString(R.string.lbl_confirmed_delete_message))
                 confirmedDialog.show()
             }
         }
