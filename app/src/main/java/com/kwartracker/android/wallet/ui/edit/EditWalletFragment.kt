@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentEditWalletBinding
+import com.kwartracker.android.utils.clearCardViewConfiguration
+import com.kwartracker.android.utils.setVisible
 import com.kwartracker.android.wallet.model.WalletType
 import com.kwartracker.android.wallet.ui.adapter.WalletTypeListAdapter
 
@@ -38,9 +40,14 @@ class EditWalletFragment : Fragment() {
             WalletType(id = 1, title = getString(R.string.title_wallet)),
             WalletType(id = 2, title = getString(R.string.title_savings))
         )
-        binding.btnBack.setOnClickListener {
+        binding.toolbar.btnContainer.clearCardViewConfiguration()
+        binding.toolbar.btnSave.setVisible(true)
+        binding.toolbar.btnAdd.setVisible(false)
+        binding.toolbar.tvTitle.text = getString(R.string.title_edit_wallet)
+        binding.toolbar.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
         binding.etCurrency.setOnClickListener {
             showMenu(it, R.menu.currency_list)
         }

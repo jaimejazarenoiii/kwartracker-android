@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.ScrollView
+import androidx.core.widget.NestedScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentWalletsBinding
 import com.kwartracker.android.utils.onPageChange
+import com.kwartracker.android.utils.setVisible
 import com.kwartracker.android.wallet.model.Wallet
 import com.kwartracker.android.wallet.model.WalletTransactions
 
@@ -166,6 +168,7 @@ class MyWalletsFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         val linearLayoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
         walletsAdapter = MyWalletViewPagerAdapter(requireContext())
+        binding.toolbar.tvTitle.text = getString(R.string.title_my_wallets)
 
         binding.walletLayout.recylerViewTransactions.layoutManager = linearLayoutManager
         binding.walletLayout.recylerViewTransactions.adapter = walletTransactionsAdapter
@@ -178,18 +181,34 @@ class MyWalletsFragment : Fragment(), View.OnClickListener {
         ) {}
 
         walletTransactionsAdapter.setData(transaction)
-        binding.btnBack.setOnClickListener(this)
-        binding.btnAdd.setOnClickListener(this)
+        binding.toolbar.btnBack.setOnClickListener(this)
+        binding.toolbar.btnAdd.setOnClickListener(this)
         binding.walletLayout.imageViewEditWallet.setOnClickListener(this)
         binding.walletLayout.tvEditWallet.setOnClickListener(this)
+        binding.nestedScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
+
+            if (scrollY > 0) {
+                binding.fabBackToTop.setVisible(true)
+            } else if (scrollY < 0) {
+                binding.fabBackToTop.setVisible(false)
+            }
+            if (scrollY == 0) {
+                binding.fabBackToTop.setVisible(false)
+            }
+        }
+        binding.fabBackToTop.setOnClickListener {
+            binding.nestedScrollView.fling(0)
+            binding.nestedScrollView.fullScroll(ScrollView.FOCUS_UP)
+        }
+
     }
 
     override fun onClick(view: View?) {
         when (view) {
-            binding.btnBack -> {
+            binding.toolbar.btnBack -> {
                 findNavController().popBackStack()
             }
-            binding.btnAdd -> {
+            binding.toolbar.btnAdd -> {
                 findNavController().navigate(R.id.action_walletsFragment_to_addWalletFragment)
             }
             binding.walletLayout.imageViewEditWallet,
