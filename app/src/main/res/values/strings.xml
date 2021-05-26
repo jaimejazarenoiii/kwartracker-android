@@ -139,4 +139,9 @@
     <string name="lbl_are_you_sure">Are you sure?</string>
     <string name="lbl_cancel">Cancel</string>
     <string name="lbl_message_delete">Are you sure you want to delete this?</string>
+    <string name="lbl_deleted">Deleted</string>
+    <string name="lbl_confirmed_delete_message">It has been successfully deleted.</string>
+    <string name="lbl_exit">Exit</string>
+    <string name="lbl_confirmed">Confirmed</string>
+    <string name="lbl_confirmed_successfully">Confirmed successfully.</string>
 </resources>
