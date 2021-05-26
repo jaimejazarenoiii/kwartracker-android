@@ -13,7 +13,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentAddWalletBinding
 import com.kwartracker.android.databinding.FragmentEditWalletBinding
 import com.kwartracker.android.wallet.model.WalletType
 import com.kwartracker.android.wallet.ui.adapter.WalletTypeListAdapter
