@@ -194,7 +194,7 @@ class MyWalletsFragment : Fragment(), View.OnClickListener {
             }
             binding.walletLayout.imageViewEditWallet,
             binding.walletLayout.tvEditWallet -> {
-                Toast.makeText(requireContext(), "Edit Wallet", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_walletsFragment_to_editWalletFragment)
             }
         }
     }

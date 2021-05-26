@@ -1,4 +1,4 @@
-package com.kwartracker.android.wallet.ui.add
+package com.kwartracker.android.wallet.ui.edit
 
 import android.os.Bundle
 import android.view.ContextThemeWrapper
@@ -14,12 +14,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentAddWalletBinding
+import com.kwartracker.android.databinding.FragmentEditWalletBinding
 import com.kwartracker.android.wallet.model.WalletType
 import com.kwartracker.android.wallet.ui.adapter.WalletTypeListAdapter
 
-class AddWalletFragment : Fragment() {
+class EditWalletFragment : Fragment() {
 
-    private lateinit var binding: FragmentAddWalletBinding
+    private lateinit var binding: FragmentEditWalletBinding
     private lateinit var walletTypeListAdapter: WalletTypeListAdapter
     private var walletTypes = listOf<WalletType>()
 
@@ -28,7 +29,7 @@ class AddWalletFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_wallet, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit_wallet, container, false)
         return binding.root
     }
 
