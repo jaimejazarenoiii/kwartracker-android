@@ -67,7 +67,7 @@ fun View.setVisible(visibility: Boolean = true) {
     }
 }
 
-fun CardView.clearCardViewConfiguration(){
+fun CardView.clearCardViewConfiguration() {
     setCardBackgroundColor(Color.TRANSPARENT)
     cardElevation = 0f
 }
