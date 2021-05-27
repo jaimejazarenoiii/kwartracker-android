@@ -9,19 +9,14 @@
         android:layout_height="match_parent"
         >
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_white_round_top"
-            app:layout_behavior="@string/bottom_sheet_behavior"
-            app:behavior_hideable="true"
-            >
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_marginTop="30sp"
+                android:id="@+id/navView"
+                android:paddingTop="30sp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_round_top"
+                app:layout_behavior="@string/bottom_sheet_behavior"
+                app:behavior_hideable="true">
 
                 <TextView
                     android:id="@+id/tv_date_range"
@@ -209,7 +204,5 @@
                         />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.navigation.NavigationView>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

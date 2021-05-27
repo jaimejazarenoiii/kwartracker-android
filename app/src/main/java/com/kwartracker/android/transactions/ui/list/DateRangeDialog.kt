@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -18,7 +19,7 @@ import com.kwartracker.android.databinding.DialogDateRangeTransactionBinding
 
 class DateRangeDialog : DialogFragment() {
     private lateinit var binding: DialogDateRangeTransactionBinding
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<NavigationView>
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
     override fun onCreateView(
         inflater: LayoutInflater,
