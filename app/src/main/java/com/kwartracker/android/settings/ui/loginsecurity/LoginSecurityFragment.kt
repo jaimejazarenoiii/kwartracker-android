@@ -40,7 +40,8 @@ class LoginSecurityFragment : Fragment(), View.OnClickListener {
             }
             binding.ibChangePassword,
             binding.btnChangePassword -> {
-                findNavController().navigate(R.id.action_loginSecurityFragment_to_changePasswordFragment)
+                findNavController()
+                    .navigate(R.id.action_loginSecurityFragment_to_changePasswordFragment)
             }
         }
     }
