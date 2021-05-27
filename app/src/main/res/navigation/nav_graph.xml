@@ -121,7 +121,7 @@
 
     <dialog
         android:id="@+id/date_range_transaction_fragment"
-        android:name="com.kwartracker.android.transactions.ui.list.DateRangeDialogTransaction"
+        android:name="com.kwartracker.android.transactions.ui.list.DateRangeDialog"
         android:label="@string/lbl_date_range"
         tools:layout="@layout/dialog_date_range_transaction" />
 

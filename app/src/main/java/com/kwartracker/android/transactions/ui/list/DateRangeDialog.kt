@@ -16,7 +16,7 @@ import com.google.android.material.navigation.NavigationView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.DialogDateRangeTransactionBinding
 
-class DateRangeDialogTransaction : DialogFragment() {
+class DateRangeDialog : DialogFragment() {
     private lateinit var binding: DialogDateRangeTransactionBinding
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<NavigationView>
 
