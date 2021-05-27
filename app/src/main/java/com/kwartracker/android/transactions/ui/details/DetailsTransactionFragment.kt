@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentDetailsTransactionBinding
-import com.kwartracker.android.transactions.ui.main.TransactionFragment
 
 class DetailsTransactionFragment : Fragment() {
     lateinit var binding: FragmentDetailsTransactionBinding
@@ -23,8 +24,16 @@ class DetailsTransactionFragment : Fragment() {
             R.layout.fragment_details_transaction,
             container, false
         )
-        TransactionFragment().tbTitle?.text = getString(R.string.title_transaction)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnEdit.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_details_transaction_fragment_to_edit_transaction_fragment
+            )
+        }
     }
 }

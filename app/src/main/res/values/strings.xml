@@ -134,5 +134,6 @@
     <string name="lbl_parent_category">Parent category</string>
     <string name="lbl_sample_category_name">Parent Category Name</string>
     <string name="lbl_this_month">This month</string>
+    <string name="lbl_edit">Edit</string>
 
 </resources>

@@ -1,10 +1,10 @@
-package com.kwartracker.android.transactions.ui.main
+package com.kwartracker.android.transactions.ui.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kwartracker.android.transactions.model.TransactionModel
 
-class TransactionViewModel : ViewModel() {
+class ListTransactionViewModel : ViewModel() {
 
     val transactions = MutableLiveData<List<TransactionModel>>()
     val loading = MutableLiveData<Boolean>()

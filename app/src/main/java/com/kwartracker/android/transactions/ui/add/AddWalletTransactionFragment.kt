@@ -31,9 +31,5 @@ class AddWalletTransactionFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.add_detail_transaction_fragment)
         }
-
-        binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.transaction_fragment)
-        }
     }
 }
