@@ -83,7 +83,11 @@
         android:id="@+id/profile_fragment"
         android:name="com.kwartracker.android.profile.ui.MyProfileFragment"
         android:label="Transaction"
-        tools:layout="@layout/fragment_my_profile" />
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_profile_fragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/dashoardFragment"
@@ -99,6 +103,9 @@
         <action
             android:id="@+id/action_dashoardFragment_to_transaction_fragment"
             app:destination="@id/transaction_fragment" />
+        <action
+            android:id="@+id/action_dashoardFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
@@ -106,5 +113,31 @@
         android:name="com.kwartracker.android.wallet.ui.add.AddWalletFragment"
         android:label="@string/title_add_wallet"
         tools:layout="@layout/fragment_add_wallet" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.kwartracker.android.profile.ui.edit.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.kwartracker.android.settings.ui.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_loginSecurityFragment"
+            app:destination="@id/loginSecurityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginSecurityFragment"
+        android:name="com.kwartracker.android.settings.ui.loginsecurity.LoginSecurityFragment"
+        android:label="LoginSecurityFragment" >
+        <action
+            android:id="@+id/action_loginSecurityFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.kwartracker.android.settings.ui.changepassword.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
 
 </navigation>

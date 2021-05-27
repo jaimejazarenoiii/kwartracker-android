@@ -1,18 +1,19 @@
-package com.kwartracker.android.profile.ui
+package com.kwartracker.android.profile.ui.edit
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.FragmentMyProfileBinding
+import com.kwartracker.android.databinding.FragmentEditProfileBinding
 
-class MyProfileFragment : Fragment(), View.OnClickListener {
+class EditProfileFragment : Fragment(), View.OnClickListener {
 
-    lateinit var binding: FragmentMyProfileBinding
+    lateinit var binding: FragmentEditProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,7 +21,7 @@ class MyProfileFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_my_profile, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_edit_profile, container, false)
         return binding.root
     }
 
@@ -28,7 +29,8 @@ class MyProfileFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnBack.setOnClickListener(this)
-        binding.ibEditProfile.setOnClickListener(this)
+        binding.tvChangePhoto.setOnClickListener(this)
+        binding.tvSave.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -36,8 +38,11 @@ class MyProfileFragment : Fragment(), View.OnClickListener {
             binding.btnBack -> {
                 findNavController().popBackStack()
             }
-            binding.ibEditProfile -> {
-                findNavController().navigate(R.id.action_profile_fragment_to_editProfileFragment)
+            binding.tvChangePhoto -> {
+                Toast.makeText(activity, "Change Photo Clicked", Toast.LENGTH_SHORT).show()
+            }
+            binding.tvSave -> {
+                Toast.makeText(activity, "Saving Profile...", Toast.LENGTH_SHORT).show()
             }
         }
     }
