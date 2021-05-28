@@ -130,7 +130,7 @@
     <fragment
         android:id="@+id/loginSecurityFragment"
         android:name="com.kwartracker.android.settings.ui.loginsecurity.LoginSecurityFragment"
-        android:label="LoginSecurityFragment" >
+        android:label="@string/lbl_login_security" >
         <action
             android:id="@+id/action_loginSecurityFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
@@ -138,6 +138,6 @@
     <fragment
         android:id="@+id/changePasswordFragment"
         android:name="com.kwartracker.android.settings.ui.changepassword.ChangePasswordFragment"
-        android:label="ChangePasswordFragment" />
+        android:label="@string/lbl_change_password" />
 
 </navigation>
