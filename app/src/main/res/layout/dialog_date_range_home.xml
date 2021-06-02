@@ -2,18 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/scrim"
-        android:background="@color/transparent_white"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:paddingTop="30sp"
                 android:id="@+id/navView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_white_round_top"
                 app:layout_behavior="@string/bottom_sheet_behavior"
                 app:behavior_hideable="true">
 
@@ -115,5 +109,4 @@
                         />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
