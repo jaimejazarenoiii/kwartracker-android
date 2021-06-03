@@ -16,8 +16,6 @@ class ConfirmationDialog(activity: Activity) : Dialog(activity), View.OnClickLis
     var dialog: Dialog? = null
     var title: String? = null
     var message: String? = null
-    lateinit var scrim: LinearLayout
-    lateinit var llDialog: LinearLayout
     lateinit var yes: MaterialButton
     lateinit var no: MaterialButton
     lateinit var binding: ConfirmationDialogBinding
@@ -27,27 +25,18 @@ class ConfirmationDialog(activity: Activity) : Dialog(activity), View.OnClickLis
         binding = ConfirmationDialogBinding.inflate(layoutInflater)
         yes = binding.btnYes
         no = binding.btnCancel
-        scrim = binding.scrim
-        llDialog = binding.llDialog
 
         setContentView(binding.root)
-        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        window?.setLayout(
-            WindowManager.LayoutParams.MATCH_PARENT,
-            WindowManager.LayoutParams.MATCH_PARENT
-        )
+        window?.setBackgroundDrawableResource(R.color.tranparent_white)
 
         if (title != null) binding.tvTitle.text = title
         if (message != null) binding.tvMessage.text = message
         no.setOnClickListener(this)
-        scrim.setOnClickListener(this)
-        llDialog.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_cancel -> dismiss()
-            R.id.scrim -> dismiss()
             else -> {}
         }
     }
