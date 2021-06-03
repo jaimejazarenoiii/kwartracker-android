@@ -79,7 +79,7 @@
     <string name="lbl_default_decimal_value">00.00</string>
     <string name="lbl_default_amount_value">₱10,000.00</string>
     <string name="lbl_transaction_name">Transaction name</string>
-    <string name="lbl_select_date">Select date</string>
+    <string name="lbl_select_date">Select date range</string>
     <string name="lbl_dd_mm_yyyy">DD / MM / YYYY</string>
     <string name="lbl_spent_with_this_person">Spent with this person</string>
     <string name="lbl_browse">Browse</string>
@@ -134,5 +134,8 @@
     <string name="lbl_parent_category">Parent category</string>
     <string name="lbl_sample_category_name">Parent Category Name</string>
     <string name="lbl_this_month">This month</string>
+    <string name="lbl_this_week">This week</string>
+    <string name="lbl_all_wallet">All wallet</string>
+    <string name="lbl_select_category">Select category</string>
 
 </resources>
