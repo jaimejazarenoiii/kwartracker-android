@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_transaction_fragment_to_dashoardFragment"
             app:destination="@id/dashoardFragment" />
+        <action
+            android:id="@+id/action_transaction_fragment_to_date_range_transaction_fragment"
+            app:destination="@id/date_range_transaction_fragment" />
     </fragment>
 
     <fragment
@@ -101,6 +104,9 @@
         <action
             android:id="@+id/action_dashoardFragment_to_transaction_fragment"
             app:destination="@id/transaction_fragment" />
+        <action
+            android:id="@+id/action_dashoardFragment_to_date_range_home_fragment"
+            app:destination="@id/date_range_home_fragment" />
     </fragment>
 
     <fragment
@@ -108,6 +114,18 @@
         android:name="com.kwartracker.android.wallet.ui.add.AddWalletFragment"
         android:label="@string/title_add_wallet"
         tools:layout="@layout/fragment_add_wallet" />
+
+    <dialog
+        android:id="@+id/date_range_home_fragment"
+        android:name="com.kwartracker.android.home.ui.DateRangeDialog"
+        android:label="@string/lbl_date_range"
+        tools:layout="@layout/dialog_date_range_home" />
+
+    <dialog
+        android:id="@+id/date_range_transaction_fragment"
+        android:name="com.kwartracker.android.transactions.ui.list.DateRangeDialog"
+        android:label="@string/lbl_date_range"
+        tools:layout="@layout/dialog_date_range_transaction" />
 
     <fragment
         android:id="@+id/editWalletFragment"
