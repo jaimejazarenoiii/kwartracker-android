@@ -13,21 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="popupMenuStyle">@style/Transaction.Popup.Category</item>
-        <item name="android:backgroundDimEnabled">false</item>
-        <item name="dialogTheme">@style/MyDialogTheme</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
 
-    <style name="MyDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:popupBackground">@color/tranparent_white</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/tranparent_white</item>
-        <item name="android:backgroundDimEnabled">true</item>
-    </style>
-
-    <style name="Confirmation.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:popupBackground">@color/white</item>
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_white_round_top</item>
     </style>
 
     <style name="Transaction.Popup.Category" parent="Widget.MaterialComponents.PopupMenu">
