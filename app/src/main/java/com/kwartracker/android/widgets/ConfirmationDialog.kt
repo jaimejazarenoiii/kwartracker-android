@@ -1,53 +1,62 @@
 package com.kwartracker.android.widgets
 
-import android.app.Activity
 import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import android.view.WindowManager
-import android.widget.LinearLayout
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.button.MaterialButton
 import com.kwartracker.android.R
-import com.kwartracker.android.databinding.ConfirmationDialogBinding
+import com.kwartracker.android.databinding.DialogConfirmationBinding
 
-class ConfirmationDialog(activity: Activity) : Dialog(activity), View.OnClickListener {
-    var dialog: Dialog? = null
-    var title: String? = null
-    var message: String? = null
-    lateinit var scrim: LinearLayout
-    lateinit var llDialog: LinearLayout
-    lateinit var yes: MaterialButton
-    lateinit var no: MaterialButton
-    lateinit var binding: ConfirmationDialogBinding
+class ConfirmationDialog : DialogFragment(), View.OnClickListener {
+    private val args: ConfirmationDialogArgs by navArgs()
+    private lateinit var binding: DialogConfirmationBinding
+    private lateinit var no: MaterialButton
+    private lateinit var yes: MaterialButton
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ConfirmationDialogBinding.inflate(layoutInflater)
-        yes = binding.btnYes
-        no = binding.btnCancel
-        scrim = binding.scrim
-        llDialog = binding.llDialog
-
-        setContentView(binding.root)
-        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        window?.setLayout(
-            WindowManager.LayoutParams.MATCH_PARENT,
-            WindowManager.LayoutParams.MATCH_PARENT
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.dialog_confirmation,
+            container,
+            false
         )
+        return binding.root
+    }
 
-        if (title != null) binding.tvTitle.text = title
-        if (message != null) binding.tvMessage.text = message
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        setStyle(STYLE_NO_TITLE, R.style.ConfirmationDialog)
+        return super.onCreateDialog(savedInstanceState)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        no = binding.btnCancel
+        yes = binding.btnYes
+        binding.tvTitle.text = args.title
+        binding.tvMessage.text = args.message
         no.setOnClickListener(this)
-        scrim.setOnClickListener(this)
-        llDialog.setOnClickListener(this)
+        yes.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_cancel -> dismiss()
-            R.id.scrim -> dismiss()
+            R.id.btn_yes -> {
+                findNavController()
+                    .previousBackStackEntry
+                    ?.savedStateHandle?.set("key", 1)
+                findNavController().popBackStack()
+            }
             else -> {}
         }
     }

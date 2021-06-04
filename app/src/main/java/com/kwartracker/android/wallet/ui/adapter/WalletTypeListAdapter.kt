@@ -1,4 +1,4 @@
-package com.kwartracker.android.wallet.ui.add
+package com.kwartracker.android.wallet.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

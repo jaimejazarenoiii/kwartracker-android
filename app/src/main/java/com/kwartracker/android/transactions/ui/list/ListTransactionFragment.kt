@@ -1,6 +1,5 @@
 package com.kwartracker.android.transactions.ui.list
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
@@ -95,9 +94,9 @@ class ListTransactionFragment : Fragment() {
         }
 
         binding.ibFilter.setOnClickListener {
-            val intent = Intent("message")
-            intent.putExtra("func", "filter")
-            LocalBroadcastManager.getInstance(view.context).sendBroadcast(intent)
+            findNavController().navigate(
+                R.id.action_transaction_fragment_to_date_range_transaction_fragment
+            )
         }
 
         transactionViewModel.fetchTransactions()
