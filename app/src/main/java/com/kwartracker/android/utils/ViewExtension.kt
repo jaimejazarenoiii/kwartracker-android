@@ -1,7 +1,10 @@
 package com.kwartracker.android.utils
 
+import android.graphics.Color
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.kwartracker.android.R
@@ -54,4 +57,17 @@ fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int)
 
         override fun onPageScrollStateChanged(state: Int) {}
     })
+}
+
+fun View.setVisible(visibility: Boolean = true) {
+    if (visibility) {
+        setVisibility(View.VISIBLE)
+    } else {
+        setVisibility(View.GONE)
+    }
+}
+
+fun CardView.clearCardViewConfiguration() {
+    setCardBackgroundColor(Color.TRANSPARENT)
+    cardElevation = 0f
 }
