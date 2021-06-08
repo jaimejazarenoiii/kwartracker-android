@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/ib_edit"
+                    android:id="@+id/ib_change_password"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="30dp"
@@ -103,7 +103,7 @@
                     app:layout_constraintEnd_toEndOf="@id/cl_login_security"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@id/cl_login_security"
-                    app:layout_constraintTop_toBottomOf="@id/ib_edit" />
+                    app:layout_constraintTop_toBottomOf="@id/ib_change_password" />
 
                 <TextView
                     android:id="@+id/tv_email"
