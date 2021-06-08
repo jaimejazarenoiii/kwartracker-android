@@ -12,11 +12,9 @@ import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentDetailsTransactionBinding
 import com.kwartracker.android.transactions.ui.main.TransactionFragment
 import com.kwartracker.android.transactions.ui.main.TransactionFragmentDirections
-import com.kwartracker.android.widgets.ConfirmationDialog
 
 class DetailsTransactionFragment : Fragment() {
     lateinit var binding: FragmentDetailsTransactionBinding
-    private lateinit var confirmationDialog: ConfirmationDialog
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +27,7 @@ class DetailsTransactionFragment : Fragment() {
             container, false
         )
         TransactionFragment().tbTitle?.text = getString(R.string.title_transaction)
-        confirmationDialog = ConfirmationDialog()
+
         return binding.root
     }
 
