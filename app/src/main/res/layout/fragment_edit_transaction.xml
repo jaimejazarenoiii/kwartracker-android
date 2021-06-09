@@ -120,7 +120,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_which_wallet_do_you_want_to_add"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -136,7 +136,7 @@
                             android:inputType="text"
                             android:padding="14sp"
                             android:text="@string/lbl_bpi_savings"
-                            android:textColor="@color/transaction_field_text"
+                            android:textColor="@color/dark_gray"
                             android:textSize="16sp"
                             android:importantForAutofill="no"
                             tools:ignore="LabelFor" />
@@ -160,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
                         android:text="@string/lbl_transaction_amount"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         tools:ignore="ContentDescription|RelativeOverlap" />
 
                     <EditText
@@ -175,10 +175,10 @@
                         android:elevation="10sp"
                         android:inputType="text"
                         android:hint="@string/lbl_enter_amount"
-                        android:textColorHint="@color/transaction_field_name"
+                        android:textColorHint="@color/gray"
                         android:padding="14sp"
                         android:text="@string/lbl_default_amount_value"
-                        android:textColor="@color/transaction_field_text"
+                        android:textColor="@color/dark_gray"
                         android:textSize="16sp"
                         tools:ignore="Autofill" />
 
@@ -197,7 +197,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_transaction_type"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -213,7 +213,7 @@
                             android:inputType="text"
                             android:padding="14sp"
                             android:text="@string/lbl_income"
-                            android:textColor="@color/transaction_field_text"
+                            android:textColor="@color/dark_gray"
                             android:textSize="16sp"
                             android:importantForAutofill="no"
                             tools:ignore="LabelFor" />
@@ -247,7 +247,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_category"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -263,7 +263,7 @@
                             android:text="@string/lbl_salary"
                             android:inputType="text"
                             android:padding="14sp"
-                            android:textColor="@color/transaction_field_text"
+                            android:textColor="@color/dark_gray"
                             android:textSize="16sp"
                             android:importantForAutofill="no"
                             tools:ignore="LabelFor" />
@@ -300,7 +300,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_select_date"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -316,7 +316,7 @@
                             android:inputType="text"
                             android:padding="14sp"
                             android:text="@string/lbl_date_value"
-                            android:textColor="@color/transaction_field_text"
+                            android:textColor="@color/dark_gray"
                             android:textSize="16sp"
                             tools:ignore="LabelFor,TextFields"
                             android:autofillHints="" />
@@ -342,7 +342,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
                         android:text="@string/lbl_spent_with_this_person"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         tools:ignore="ContentDescription,RelativeOverlap,HardcodedText" />
 
                     <EditText
@@ -357,7 +357,7 @@
                         android:text="@string/lbl_person_name_value"
                         android:inputType="text"
                         android:padding="14sp"
-                        android:textColor="@color/transaction_field_text"
+                        android:textColor="@color/dark_gray"
                         android:textSize="16sp"
                         android:importantForAutofill="no"
                         tools:ignore="LabelFor" />
@@ -370,7 +370,7 @@
                         android:layout_marginStart="20sp"
                         android:layout_weight="1"
                         android:text="@string/lbl_transaction_image"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.048"
@@ -399,7 +399,7 @@
                         android:layout_marginStart="20sp"
                         android:layout_weight="1"
                         android:text="@string/lbl_receipt_filename"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.048"
