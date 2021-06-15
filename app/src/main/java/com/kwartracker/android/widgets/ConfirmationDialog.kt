@@ -34,23 +34,26 @@ class ConfirmationDialog : DialogFragment(), View.OnClickListener {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        setStyle(STYLE_NO_TITLE, R.style.ConfirmationDialog)
+        setStyle(STYLE_NO_FRAME, R.style.ConfirmationDialog)
         return super.onCreateDialog(savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val scrim = binding.scrim
         no = binding.btnCancel
         yes = binding.btnYes
         binding.tvTitle.text = args.title
         binding.tvMessage.text = args.message
         no.setOnClickListener(this)
         yes.setOnClickListener(this)
+        scrim.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_cancel -> dismiss()
+            R.id.scrim -> dismiss()
             R.id.btn_yes -> {
                 findNavController()
                     .previousBackStackEntry

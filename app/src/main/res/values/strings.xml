@@ -120,11 +120,13 @@
     <string name="lbl_no">No</string>
 
     // Log in and Security
+    <string name="lbl_login_security">LoginSecurityFragment</string>
     <string name="lbl_email_address">Email address</string>
     <string name="lbl_sample_email">email_email_email@emailemail.com</string>
     <string name="btn_change_password">Change Password</string>
-  
+
     // Change Password
+    <string name="lbl_change_password">ChangePasswordFragment</string>
     <string name="lbl_new_password">New password</string>
     <string name="lbl_confirm_new_password">Confirm new password</string>
     <string name="hint_enter_new_password"><i>Enter new password</i></string>

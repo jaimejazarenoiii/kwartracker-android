@@ -17,11 +17,11 @@
     </style>
 
     <style name="ConfirmationDialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@color/transparent_white</item>
+        <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">false</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
-        <item name="android:gravity">center</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent_white</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
     <style name="AppBottomSheetDialogTheme"
