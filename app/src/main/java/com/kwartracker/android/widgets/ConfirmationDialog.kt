@@ -58,7 +58,6 @@ class ConfirmationDialog : DialogFragment(), View.OnClickListener {
                 findNavController()
                     .previousBackStackEntry
                     ?.savedStateHandle?.set("key", 1)
-                findNavController().popBackStack()
             }
             else -> {}
         }

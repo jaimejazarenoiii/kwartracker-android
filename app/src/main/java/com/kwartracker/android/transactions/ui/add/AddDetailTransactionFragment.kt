@@ -1,6 +1,5 @@
 package com.kwartracker.android.transactions.ui.add
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentAddDetailTransactionBinding
-import com.kwartracker.android.widgets.ConfirmedDialog
 
 class AddDetailTransactionFragment : Fragment() {
     lateinit var binding: FragmentAddDetailTransactionBinding
@@ -30,17 +28,18 @@ class AddDetailTransactionFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val confirmedDialog = ConfirmedDialog(activity as Activity)
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.transaction_fragment)
         }
         binding.btnAdd.setOnClickListener {
-            confirmedDialog.setIcon(R.drawable.ic_success_teal_75)
-            confirmedDialog.setTitle(getString(R.string.lbl_success))
-            confirmedDialog.setExitText(getString(R.string.lbl_cool))
-            confirmedDialog.setMessage(getString(R.string.lbl_confirmed_success_message))
-            confirmedDialog.show()
-            findNavController().navigate(R.id.transaction_fragment)
+            val action = AddDetailTransactionFragmentDirections
+                .actionAddDetailTransactionFragmentToConfirmedDialogTransaction(
+                    getString(R.string.lbl_success),
+                    getString(R.string.lbl_confirmed_success_message),
+                    getString(R.string.lbl_cool),
+                    R.drawable.ic_success_teal_75
+                )
+            findNavController().navigate(action)
         }
     }
 }

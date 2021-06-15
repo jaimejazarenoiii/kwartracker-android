@@ -53,8 +53,8 @@
             android:id="@+id/action_transaction_fragment_to_add_wallet_transaction_fragment2"
             app:destination="@id/add_wallet_transaction_fragment" />
         <action
-            android:id="@+id/action_transaction_fragment_to_edit_transaction_fragment"
-            app:destination="@id/edit_transaction_fragment" />
+            android:id="@+id/action_transaction_fragment_to_add_transaction_fragment"
+            app:destination="@id/add_transaction_fragment" />
         <action
             android:id="@+id/action_transaction_fragment_to_dashoardFragment"
             app:destination="@id/dashoardFragment" />
@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_transaction_fragment_to_confirmationDialogDeleteTransaction"
             app:destination="@id/confirmationDialogDeleteTransaction" />
+        <action
+            android:id="@+id/action_transaction_fragment_to_confirmedDialogTransaction3"
+            app:destination="@id/confirmedDialogTransaction" />
     </fragment>
 
     <dialog
@@ -85,6 +88,25 @@
             app:argType="string"/>
     </dialog>
 
+    <dialog
+        android:id="@+id/confirmedDialogTransaction"
+        android:name="com.kwartracker.android.widgets.ConfirmedDialog"
+        android:label="Confirmed Transaction"
+        tools:layout="@layout/dialog_confirmed" >
+        <argument
+            android:name="title"
+            app:argType="string"/>
+        <argument
+            android:name="message"
+            app:argType="string"/>
+        <argument
+            android:name="txtExit"
+            app:argType="string"/>
+        <argument
+            android:name="resID"
+            app:argType="integer" />
+    </dialog>
+
     <fragment
         android:id="@+id/add_wallet_transaction_fragment"
         android:name="com.kwartracker.android.transactions.ui.add.AddWalletTransactionFragment"
@@ -96,7 +118,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/edit_transaction_fragment"
+        android:id="@+id/add_transaction_fragment"
         android:name="com.kwartracker.android.transactions.ui.edit.EditTransactionFragment"
         android:label="Transaction Add"
         tools:layout="@layout/fragment_add_wallet_transaction" />
@@ -105,7 +127,11 @@
         android:id="@+id/add_detail_transaction_fragment"
         android:name="com.kwartracker.android.transactions.ui.add.AddDetailTransactionFragment"
         android:label="Transaction Add"
-        tools:layout="@layout/fragment_add_detail_transaction" />
+        tools:layout="@layout/fragment_add_detail_transaction" >
+        <action
+            android:id="@+id/action_add_detail_transaction_fragment_to_confirmedDialogTransaction"
+            app:destination="@id/confirmedDialogTransaction" />
+    </fragment>
 
     <!-- Profile -->
     <fragment

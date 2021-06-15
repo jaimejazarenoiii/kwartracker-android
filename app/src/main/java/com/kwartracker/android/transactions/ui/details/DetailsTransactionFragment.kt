@@ -39,5 +39,11 @@ class DetailsTransactionFragment : Fragment() {
                 )
             findNavController().navigate(action)
         }
+
+        // navigate after confirmation
+        findNavController()
+            .currentBackStackEntry
+            ?.savedStateHandle
+            ?.getLiveData<Int>("key")?.observe(viewLifecycleOwner) { }
     }
 }
