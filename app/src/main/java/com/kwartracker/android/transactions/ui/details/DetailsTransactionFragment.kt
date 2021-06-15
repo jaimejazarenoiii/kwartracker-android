@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -27,7 +26,6 @@ class DetailsTransactionFragment : Fragment() {
             container, false
         )
         TransactionFragment().tbTitle?.text = getString(R.string.title_transaction)
-
         return binding.root
     }
 
@@ -42,15 +40,10 @@ class DetailsTransactionFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        // navigate after confirmation
         findNavController()
             .currentBackStackEntry
             ?.savedStateHandle
-            ?.getLiveData<Int>("key")?.observe(viewLifecycleOwner) { data ->
-                if (data.toInt() == 1) {
-                    Toast.makeText(
-                        view.context, "test", Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
+            ?.getLiveData<Int>("key")?.observe(viewLifecycleOwner) { }
     }
 }

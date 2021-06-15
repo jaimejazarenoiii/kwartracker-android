@@ -41,23 +41,24 @@
             app:layout_constraintStart_toEndOf="@+id/btn_back"
             app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/btn_add"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/round_bg_ripple_white"
             android:clickable="true"
-            android:elevation="30dp"
+            android:textColor="#7AF1F3F6"
+            android:textStyle="bold"
             android:focusable="true"
             android:padding="12dp"
-            android:visibility="invisible"
-            android:src="@drawable/ic_btn_plus"
+            android:text="@string/lbl_save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tv_title"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
         <ScrollView
             android:id="@+id/nsv_contents"
             android:layout_width="match_parent"
