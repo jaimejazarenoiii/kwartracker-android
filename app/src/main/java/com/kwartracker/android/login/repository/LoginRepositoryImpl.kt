@@ -6,8 +6,8 @@ import com.kwartracker.android.login.model.User
 import com.kwartracker.android.type.CredentialsInput
 import com.kwartracker.android.utils.ApiHelper.safeApiCall
 import com.kwartracker.android.utils.network.KwartrackerApi
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
+import kotlinx.coroutines.Dispatchers
 
 class LoginRepositoryImpl @Inject constructor(
     private val api: KwartrackerApi

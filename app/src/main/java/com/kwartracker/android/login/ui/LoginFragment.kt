@@ -52,22 +52,35 @@ class LoginFragment : Fragment() {
     }
 
     private fun observers() {
-        viewModel.emailAddress.observe(viewLifecycleOwner, {
-            viewModel.loginDataChanged()
-        })
-
-        viewModel.password.observe(viewLifecycleOwner, {
-            viewModel.loginDataChanged()
-        })
-
-        viewModel.formState.observe(viewLifecycleOwner, {
-            binding.btnSignIn.backgroundTintList = if (!it.isValid) {
-                ColorStateList.valueOf(ContextCompat
-                    .getColor(requireActivity(), R.color.gray))
-            } else {
-                ColorStateList.valueOf(ContextCompat
-                    .getColor(requireActivity(), R.color.app_color))
+        viewModel.emailAddress.observe(
+            viewLifecycleOwner,
+            {
+                viewModel.loginDataChanged()
             }
-        })
+        )
+
+        viewModel.password.observe(
+            viewLifecycleOwner,
+            {
+                viewModel.loginDataChanged()
+            }
+        )
+
+        viewModel.formState.observe(
+            viewLifecycleOwner,
+            {
+                binding.btnSignIn.backgroundTintList = if (!it.isValid) {
+                    ColorStateList.valueOf(
+                        ContextCompat
+                            .getColor(requireActivity(), R.color.gray)
+                    )
+                } else {
+                    ColorStateList.valueOf(
+                        ContextCompat
+                            .getColor(requireActivity(), R.color.app_color)
+                    )
+                }
+            }
+        )
     }
 }

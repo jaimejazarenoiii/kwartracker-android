@@ -1,7 +1,7 @@
 package com.kwartracker.android.utils
 
-import android.util.*
-import androidx.annotation.*
+import android.util.Patterns
+import androidx.annotation.StringRes
 import androidx.core.util.PatternsCompat
 import com.kwartracker.android.KwartrackerApplication
 import com.kwartracker.android.R
@@ -88,7 +88,10 @@ class StringValidator(@StringRes val x: Int?) : Validator<String>(x) {
     }
 
     fun email(): StringValidator {
-        return add({ PatternsCompat.EMAIL_ADDRESS.matcher(it).matches() }, R.string.validation_email) as StringValidator
+        return add(
+            { PatternsCompat.EMAIL_ADDRESS.matcher(it).matches() },
+            R.string.validation_email
+        ) as StringValidator
     }
 
     fun maxLength(max: Int): StringValidator {

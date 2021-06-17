@@ -1,7 +1,6 @@
 package com.kwartracker.android.utils.extension
 
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
