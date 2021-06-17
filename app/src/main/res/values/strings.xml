@@ -153,4 +153,15 @@
     <string name="lbl_success">Success</string>
     <string name="lbl_confirmed_success_message">Your transaction has been added!</string>
     <string name="lbl_cool">Cool</string>
+
+    <!-- Validation -->
+    <string name="validation_required">Please enter %s.</string>
+    <string name="validation_email_taken">Email already taken. Please try a different email.</string>
+    <string name="validation_tel">Please enter a valid Tel number.</string>
+    <string name="validation_maxlength">%1$s has to be up to %2$d characters long.</string>
+    <string name="validation_range">%1$s has to be from %2$d to %3$d characters long.</string>
+    <string name="validation_password">Please enter your password.</string>
+    <string name="validation_email_required">Please enter your email address.</string>
+    <string name="validation_email">Please enter a valid email address.</string>
+
 </resources>

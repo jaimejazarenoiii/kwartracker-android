@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentWalletsBinding
-import com.kwartracker.android.utils.onPageChange
-import com.kwartracker.android.utils.setVisible
+import com.kwartracker.android.utils.extension.onPageChange
 import com.kwartracker.android.wallet.model.Wallet
 import com.kwartracker.android.wallet.model.WalletTransactions
 
@@ -187,12 +186,12 @@ class MyWalletsFragment : Fragment(), View.OnClickListener {
         binding.nestedScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
 
             if (scrollY > 0) {
-                binding.fabBackToTop.setVisible(true)
+                binding.fabBackToTop.show()
             } else if (scrollY < 0) {
-                binding.fabBackToTop.setVisible(false)
+                binding.fabBackToTop.hide()
             }
             if (scrollY == 0) {
-                binding.fabBackToTop.setVisible(false)
+                binding.fabBackToTop.hide()
             }
         }
         binding.fabBackToTop.setOnClickListener {

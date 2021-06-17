@@ -1,4 +1,4 @@
-package com.kwartracker.android.utils
+package com.kwartracker.android.utils.extension
 
 import android.graphics.Color
 import android.view.View
@@ -6,8 +6,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import com.kwartracker.android.R
+import com.kwartracker.android.utils.CoroutineTask
 
 fun ViewPager.onPageChange(view: LinearLayout, count: Int, onPageSelected: (Int) -> Unit) {
     val dotsCount: Int = count
@@ -70,4 +75,27 @@ fun View.setVisible(visibility: Boolean = true) {
 fun CardView.clearCardViewConfiguration() {
     setCardBackgroundColor(Color.TRANSPARENT)
     cardElevation = 0f
+}
+
+fun LifecycleOwner.bind(
+    text: MutableLiveData<String>,
+    afterTextChanged: ((String) -> Unit)? = null
+) {
+    text.observe(
+        this,
+        Observer {
+            afterTextChanged?.invoke(it)
+        }
+    )
+}
+
+fun <T : Any> Fragment.handleApolloResponse(
+    task: CoroutineTask<T>,
+    handler: ((T?) -> Unit)? = null
+) {
+    task.observe(this) {
+        onSuccess {
+            handler?.invoke(it)
+        }
+    }
 }
