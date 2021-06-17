@@ -12,11 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentListTransactionBinding
-import com.kwartracker.android.transactions.ui.main.TransactionViewModel
 
 class ListTransactionFragment : Fragment() {
     private lateinit var binding: FragmentListTransactionBinding
-    private val transactionViewModel: TransactionViewModel by viewModels()
+    private val listTransactionViewModel: ListTransactionViewModel by viewModels()
     private var transactionsListAdapter = ListTransactionAdapter(arrayListOf())
 
     override fun onCreateView(
@@ -76,7 +75,7 @@ class ListTransactionFragment : Fragment() {
                         (firstVisibleItem + visibleThreshold)
                     ) {
                         fabBackToTop.visibility = View.INVISIBLE
-                        transactionViewModel.fetchTransactions()
+                        listTransactionViewModel.fetchTransactions()
                         loading = true
                     }
                 }
@@ -93,19 +92,29 @@ class ListTransactionFragment : Fragment() {
             rvTransaction.smoothScrollToPosition(1)
         }
 
-        binding.ibFilter.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             findNavController().navigate(
-                R.id.action_transaction_fragment_to_date_range_transaction_fragment
+                R.id.action_list_transaction_fragment_to_add_wallet_transaction_fragment
             )
         }
 
-        transactionViewModel.fetchTransactions()
+        binding.ibFilter.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_list_transaction_fragment_to_date_range_transaction_fragment
+            )
+        }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        listTransactionViewModel.fetchTransactions()
         rvTransaction.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = transactionsListAdapter
         }
 
-        transactionViewModel.transactions.observe(
+        listTransactionViewModel.transactions.observe(
             viewLifecycleOwner,
             { transactions ->
                 transactions?.let {
@@ -115,7 +124,7 @@ class ListTransactionFragment : Fragment() {
             }
         )
 
-        transactionViewModel.loading.observe(
+        listTransactionViewModel.loading.observe(
             viewLifecycleOwner,
             { isLoading ->
                 isLoading?.let {

@@ -29,7 +29,7 @@ class AddDetailTransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.transaction_fragment)
+            findNavController().popBackStack()
         }
         binding.btnAdd.setOnClickListener {
             val action = AddDetailTransactionFragmentDirections

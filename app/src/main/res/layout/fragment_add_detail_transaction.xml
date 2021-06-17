@@ -16,9 +16,10 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/round_bg_ripple_blue"
             android:clickable="true"
+            android:elevation="30dp"
             android:focusable="true"
             android:padding="12dp"
-            android:src="@drawable/ic_toolbar_back"
+            android:src="@drawable/ic_btn_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,7 +53,7 @@
             android:textStyle="bold"
             android:focusable="true"
             android:padding="12dp"
-            android:text="@string/lbl_save"
+            android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tv_title"
@@ -122,7 +123,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40sp"
+                    android:layout_marginTop="60dp"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -148,11 +149,11 @@
                         android:background="@drawable/edittext_bg_round_corner"
                         android:elevation="10sp"
                         android:hint="@string/hint_select_wallet_to_add"
+                        android:importantForAutofill="no"
                         android:inputType="text"
                         android:padding="14sp"
                         android:textColor="@color/dark_gray"
-                        android:textSize="16sp"
-                        android:importantForAutofill="no" />
+                        android:textSize="16sp" />
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -183,11 +184,11 @@
                             android:background="@drawable/edittext_bg_round_corner"
                             android:elevation="10sp"
                             android:hint="@string/hint_select_transaction_type"
+                            android:importantForAutofill="no"
                             android:inputType="text"
                             android:padding="14sp"
                             android:textColor="@color/dark_gray"
-                            android:textSize="16sp"
-                            android:importantForAutofill="no" />
+                            android:textSize="16sp" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_type"
@@ -231,11 +232,11 @@
                             android:background="@drawable/edittext_bg_round_corner"
                             android:elevation="10sp"
                             android:hint="@string/hint_select_category"
+                            android:importantForAutofill="no"
                             android:inputType="text"
                             android:padding="14sp"
                             android:textColor="@color/dark_gray"
-                            android:textSize="16sp"
-                            android:importantForAutofill="no" />
+                            android:textSize="16sp" />
 
                         <ImageButton
                             android:id="@+id/ib_category"
@@ -281,13 +282,13 @@
                             android:layout_marginBottom="20sp"
                             android:background="@drawable/edittext_bg_round_corner"
                             android:elevation="10sp"
+                            android:importantForAutofill="no"
                             android:inputType="text"
                             android:padding="14sp"
                             android:text="@string/lbl_dd_mm_yyyy"
                             android:textColor="@color/dark_gray"
                             android:textSize="16sp"
-                            tools:ignore="LabelFor,TextFields"
-                            android:importantForAutofill="no" />
+                            tools:ignore="LabelFor,TextFields" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_date"
@@ -323,11 +324,11 @@
                         android:background="@drawable/edittext_bg_round_corner"
                         android:elevation="10sp"
                         android:hint="@string/hint_enter_name_with_person"
+                        android:importantForAutofill="no"
                         android:inputType="text"
                         android:padding="14sp"
                         android:textColor="@color/dark_gray"
-                        android:textSize="16sp"
-                        android:importantForAutofill="no" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -343,13 +344,30 @@
                         android:layout_height="56sp"
                         android:layout_marginStart="20sp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="50sp"
+                        android:layout_marginBottom="20sp"
                         android:background="@drawable/edittext_bg_round_corner_gray"
                         android:backgroundTint="@color/gray"
                         android:elevation="10sp"
                         android:text="@string/lbl_browse"
+                        android:textColor="@color/white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="80sp"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@drawable/edittext_bg_round_corner"
+                        android:elevation="10sp"
+                        android:text="@string/lbl_add"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
-                        />
+                        app:backgroundTint="@color/app_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_step1" />
+
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

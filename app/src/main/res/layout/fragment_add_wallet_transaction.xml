@@ -16,9 +16,10 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/round_bg_ripple_blue"
             android:clickable="true"
+            android:elevation="30dp"
             android:focusable="true"
             android:padding="12dp"
-            android:src="@drawable/ic_toolbar_back"
+            android:src="@drawable/ic_btn_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

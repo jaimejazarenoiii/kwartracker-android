@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentDetailsTransactionBinding
-import com.kwartracker.android.transactions.ui.main.TransactionFragment
-import com.kwartracker.android.transactions.ui.main.TransactionFragmentDirections
 
 class DetailsTransactionFragment : Fragment() {
     lateinit var binding: FragmentDetailsTransactionBinding
@@ -25,19 +23,28 @@ class DetailsTransactionFragment : Fragment() {
             R.layout.fragment_details_transaction,
             container, false
         )
-        TransactionFragment().tbTitle?.text = getString(R.string.title_transaction)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.ivDelete.setOnClickListener {
-            val action = TransactionFragmentDirections
-                .actionTransactionFragmentToConfirmationDialogDeleteTransaction(
+            val action = DetailsTransactionFragmentDirections
+                .actionDetailsTransactionFragmentToConfirmationDialogDeleteTransaction(
                     getString(R.string.title_confirmation),
                     getString(R.string.lbl_message_delete)
                 )
             findNavController().navigate(action)
+        }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        binding.btnEdit.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_details_transaction_fragment_to_edit_transaction_fragment
+            )
         }
 
         // navigate after confirmation
