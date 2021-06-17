@@ -42,7 +42,9 @@ class DetailsTransactionFragment : Fragment() {
         }
 
         binding.btnEdit.setOnClickListener {
-            findNavController().navigate(R.id.action_details_transaction_fragment_to_edit_transaction_fragment)
+            findNavController().navigate(
+                R.id.action_details_transaction_fragment_to_edit_transaction_fragment
+            )
         }
 
         // navigate after confirmation
