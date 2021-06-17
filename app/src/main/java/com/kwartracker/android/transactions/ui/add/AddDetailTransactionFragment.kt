@@ -29,7 +29,17 @@ class AddDetailTransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.add_wallet_transaction_fragment)
+            findNavController().popBackStack()
+        }
+        binding.btnAdd.setOnClickListener {
+            val action = AddDetailTransactionFragmentDirections
+                .actionAddDetailTransactionFragmentToConfirmedDialogTransaction(
+                    getString(R.string.lbl_success),
+                    getString(R.string.lbl_confirmed_success_message),
+                    getString(R.string.lbl_cool),
+                    R.drawable.ic_success_teal_75
+                )
+            findNavController().navigate(action)
         }
     }
 }

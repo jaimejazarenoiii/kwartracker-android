@@ -50,6 +50,9 @@ class DashboardFragment : Fragment() {
                 R.id.profileFragment -> {
                     findNavController().navigate(R.id.action_dashoardFragment_to_profile_fragment)
                 }
+                R.id.settingFragment -> {
+                    findNavController().navigate(R.id.action_dashoardFragment_to_settingsFragment)
+                }
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
@@ -60,7 +63,7 @@ class DashboardFragment : Fragment() {
         }
     }
 
-    private fun setupDrawerToggle(): ActionBarDrawerToggle? {
+    private fun setupDrawerToggle(): ActionBarDrawerToggle {
         return object : ActionBarDrawerToggle(
             requireActivity(),
             binding.drawerLayout,

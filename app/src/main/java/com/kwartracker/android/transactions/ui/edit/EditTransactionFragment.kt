@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentEditTransactionBinding
 
@@ -22,6 +23,10 @@ class EditTransactionFragment : Fragment() {
             R.layout.fragment_edit_transaction,
             container, false
         )
+
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
         return binding.root
     }

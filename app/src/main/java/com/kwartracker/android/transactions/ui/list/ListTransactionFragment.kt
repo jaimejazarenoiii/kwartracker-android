@@ -104,6 +104,10 @@ class ListTransactionFragment : Fragment() {
             )
         }
 
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         listTransactionViewModel.fetchTransactions()
         rvTransaction.apply {
             layoutManager = LinearLayoutManager(context)

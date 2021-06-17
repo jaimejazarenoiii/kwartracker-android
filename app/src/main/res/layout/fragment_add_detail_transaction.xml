@@ -42,23 +42,24 @@
             app:layout_constraintStart_toEndOf="@+id/btn_back"
             app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/btn_add"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/round_bg_ripple_white"
             android:clickable="true"
-            android:elevation="30dp"
+            android:textColor="#7AF1F3F6"
+            android:textStyle="bold"
             android:focusable="true"
             android:padding="12dp"
-            android:visibility="invisible"
-            android:src="@drawable/ic_btn_plus"
+            android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tv_title"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
         <ScrollView
             android:id="@+id/nsv_contents"
             android:layout_width="match_parent"
@@ -84,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/lbl_enter_amount"
-                    android:textColor="@color/transaction_field_name"
+                    android:textColor="@color/gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -96,7 +97,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="18dp"
                     android:text="@string/lbl_peso_sign"
-                    android:textColor="@color/transaction_field_text"
+                    android:textColor="@color/dark_gray"
                     android:textSize="50sp"
                     app:layout_constraintEnd_toStartOf="@+id/et_amount"
                     app:layout_constraintHorizontal_bias=".9"
@@ -122,7 +123,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40sp"
+                    android:layout_marginTop="60dp"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -134,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
                         android:text="@string/lbl_transaction_name"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         tools:ignore="ContentDescription|RelativeOverlap" />
 
                     <EditText
@@ -148,11 +149,11 @@
                         android:background="@drawable/edittext_bg_round_corner"
                         android:elevation="10sp"
                         android:hint="@string/hint_select_wallet_to_add"
+                        android:importantForAutofill="no"
                         android:inputType="text"
                         android:padding="14sp"
-                        android:textColor="@color/transaction_field_text"
-                        android:textSize="16sp"
-                        android:importantForAutofill="no" />
+                        android:textColor="@color/dark_gray"
+                        android:textSize="16sp" />
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -169,7 +170,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_transaction_type"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -183,11 +184,11 @@
                             android:background="@drawable/edittext_bg_round_corner"
                             android:elevation="10sp"
                             android:hint="@string/hint_select_transaction_type"
+                            android:importantForAutofill="no"
                             android:inputType="text"
                             android:padding="14sp"
-                            android:textColor="@color/transaction_field_text"
-                            android:textSize="16sp"
-                            android:importantForAutofill="no" />
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_type"
@@ -217,7 +218,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_category"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -231,11 +232,11 @@
                             android:background="@drawable/edittext_bg_round_corner"
                             android:elevation="10sp"
                             android:hint="@string/hint_select_category"
+                            android:importantForAutofill="no"
                             android:inputType="text"
                             android:padding="14sp"
-                            android:textColor="@color/transaction_field_text"
-                            android:textSize="16sp"
-                            android:importantForAutofill="no" />
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp" />
 
                         <ImageButton
                             android:id="@+id/ib_category"
@@ -268,7 +269,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20sp"
                             android:text="@string/lbl_select_date"
-                            android:textColor="@color/transaction_field_name"
+                            android:textColor="@color/gray"
                             tools:ignore="ContentDescription|RelativeOverlap,RelativeOverlap" />
 
                         <EditText
@@ -281,13 +282,13 @@
                             android:layout_marginBottom="20sp"
                             android:background="@drawable/edittext_bg_round_corner"
                             android:elevation="10sp"
+                            android:importantForAutofill="no"
                             android:inputType="text"
                             android:padding="14sp"
                             android:text="@string/lbl_dd_mm_yyyy"
-                            android:textColor="@color/transaction_field_text"
+                            android:textColor="@color/dark_gray"
                             android:textSize="16sp"
-                            tools:ignore="LabelFor,TextFields"
-                            android:importantForAutofill="no" />
+                            tools:ignore="LabelFor,TextFields" />
 
                         <ImageButton
                             android:id="@+id/ib_trans_date"
@@ -309,7 +310,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
                         android:text="@string/lbl_spent_with_this_person"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         tools:ignore="ContentDescription,RelativeOverlap" />
 
                     <EditText
@@ -323,18 +324,18 @@
                         android:background="@drawable/edittext_bg_round_corner"
                         android:elevation="10sp"
                         android:hint="@string/hint_enter_name_with_person"
+                        android:importantForAutofill="no"
                         android:inputType="text"
                         android:padding="14sp"
-                        android:textColor="@color/transaction_field_text"
-                        android:textSize="16sp"
-                        android:importantForAutofill="no" />
+                        android:textColor="@color/dark_gray"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20sp"
                         android:text="@string/btn_upload_photo"
-                        android:textColor="@color/transaction_field_name"
+                        android:textColor="@color/gray"
                         tools:ignore="ContentDescription|RelativeOverlap" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -343,13 +344,30 @@
                         android:layout_height="56sp"
                         android:layout_marginStart="20sp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="50sp"
+                        android:layout_marginBottom="20sp"
                         android:background="@drawable/edittext_bg_round_corner_gray"
                         android:backgroundTint="@color/gray"
                         android:elevation="10sp"
                         android:text="@string/lbl_browse"
+                        android:textColor="@color/white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="80sp"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@drawable/edittext_bg_round_corner"
+                        android:elevation="10sp"
+                        android:text="@string/lbl_next"
+                        android:textAllCaps="false"
                         android:textColor="@color/white"
-                        />
+                        app:backgroundTint="@color/app_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_step1" />
+
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
