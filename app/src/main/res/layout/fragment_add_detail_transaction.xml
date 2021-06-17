@@ -360,7 +360,7 @@
                         android:layout_marginEnd="20sp"
                         android:background="@drawable/edittext_bg_round_corner"
                         android:elevation="10sp"
-                        android:text="@string/lbl_next"
+                        android:text="@string/lbl_add"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         app:backgroundTint="@color/app_color"
