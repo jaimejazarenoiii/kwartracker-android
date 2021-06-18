@@ -139,6 +139,7 @@
     <string name="lbl_this_week">This week</string>
     <string name="lbl_all_wallet">All wallet</string>
     <string name="lbl_select_category">Select category</string>
+    <string name="lbl_edit">Edit</string>
 
     //Confirmation Dialog
     <string name="title_confirmation">Confirmation</string>

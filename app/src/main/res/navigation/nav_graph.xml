@@ -17,9 +17,6 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
-            android:id="@+id/action_loginFragment_to_walletsFragment"
-            app:destination="@id/walletsFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_dashoardFragment"
             app:destination="@id/dashoardFragment" />
     </fragment>
@@ -45,28 +42,22 @@
 
     <!-- Transactions -->
     <fragment
-        android:id="@+id/transaction_fragment"
-        android:name="com.kwartracker.android.transactions.ui.main.TransactionFragment"
+        android:id="@+id/list_transaction_fragment"
+        android:name="com.kwartracker.android.transactions.ui.list.ListTransactionFragment"
         android:label="Transaction"
-        tools:layout="@layout/fragment_transaction" >
+        tools:layout="@layout/fragment_list_transaction" >
         <action
-            android:id="@+id/action_transaction_fragment_to_add_wallet_transaction_fragment2"
-            app:destination="@id/add_wallet_transaction_fragment" />
-        <action
-            android:id="@+id/action_transaction_fragment_to_add_transaction_fragment"
-            app:destination="@id/add_transaction_fragment" />
-        <action
-            android:id="@+id/action_transaction_fragment_to_dashoardFragment"
-            app:destination="@id/dashoardFragment" />
+            android:id="@+id/action_list_transaction_fragment_to_date_range_transaction_fragment"
+            app:destination="@id/date_range_transaction_fragment" />
         <action
             android:id="@+id/action_transaction_fragment_to_date_range_transaction_fragment"
             app:destination="@id/date_range_transaction_fragment" />
         <action
-            android:id="@+id/action_transaction_fragment_to_confirmationDialogDeleteTransaction"
-            app:destination="@id/confirmationDialogDeleteTransaction" />
+            android:id="@+id/action_list_transaction_fragment_to_add_wallet_transaction_fragment"
+            app:destination="@id/add_wallet_transaction_fragment" />
         <action
-            android:id="@+id/action_transaction_fragment_to_confirmedDialogTransaction3"
-            app:destination="@id/confirmedDialogTransaction" />
+            android:id="@+id/action_list_transaction_fragment_to_details_transaction_fragment"
+            app:destination="@id/details_transaction_fragment" />
     </fragment>
 
     <dialog
@@ -108,6 +99,12 @@
     </dialog>
 
     <fragment
+        android:id="@+id/edit_transaction_fragment"
+        android:name="com.kwartracker.android.transactions.ui.edit.EditTransactionFragment"
+        android:label="Transaction Edit"
+        tools:layout="@layout/fragment_edit_transaction" />
+
+    <fragment
         android:id="@+id/add_wallet_transaction_fragment"
         android:name="com.kwartracker.android.transactions.ui.add.AddWalletTransactionFragment"
         android:label="Transaction Add"
@@ -118,10 +115,20 @@
     </fragment>
 
     <fragment
-        android:id="@+id/add_transaction_fragment"
-        android:name="com.kwartracker.android.transactions.ui.edit.EditTransactionFragment"
-        android:label="Transaction Add"
-        tools:layout="@layout/fragment_add_wallet_transaction" />
+        android:id="@+id/details_transaction_fragment"
+        android:name="com.kwartracker.android.transactions.ui.details.DetailsTransactionFragment"
+        android:label="Transaction Details"
+        tools:layout="@layout/fragment_details_transaction" >
+        <action
+            android:id="@+id/action_details_transaction_fragment_to_confirmationDialogDeleteTransaction"
+            app:destination="@id/confirmationDialogDeleteTransaction" />
+        <action
+            android:id="@+id/action_details_transaction_fragment_to_confirmedDialogTransaction"
+            app:destination="@id/confirmedDialogTransaction" />
+        <action
+            android:id="@+id/action_details_transaction_fragment_to_edit_transaction_fragment"
+            app:destination="@id/edit_transaction_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/add_detail_transaction_fragment"
@@ -134,6 +141,7 @@
     </fragment>
 
     <!-- Profile -->
+
     <fragment
         android:id="@+id/profile_fragment"
         android:name="com.kwartracker.android.profile.ui.MyProfileFragment"
@@ -156,14 +164,14 @@
             android:id="@+id/action_dashoardFragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
         <action
-            android:id="@+id/action_dashoardFragment_to_transaction_fragment"
-            app:destination="@id/transaction_fragment" />
-        <action
             android:id="@+id/action_dashoardFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
             android:id="@+id/action_dashoardFragment_to_date_range_home_fragment"
             app:destination="@id/date_range_home_fragment" />
+        <action
+            android:id="@+id/action_dashoardFragment_to_list_transaction_fragment"
+            app:destination="@id/list_transaction_fragment" />
     </fragment>
 
     <fragment
