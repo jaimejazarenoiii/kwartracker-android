@@ -44,7 +44,7 @@ class DashboardFragment : Fragment() {
                 }
                 R.id.transactionFragment -> {
                     findNavController().navigate(
-                        R.id.action_dashoardFragment_to_transaction_fragment
+                        R.id.action_dashoardFragment_to_list_transaction_fragment
                     )
                 }
                 R.id.reportFragment -> {

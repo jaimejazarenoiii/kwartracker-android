@@ -1,14 +1,16 @@
 package com.kwartracker.android.transactions.ui.list
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.kwartracker.android.R
 import com.kwartracker.android.databinding.ItemTransactionBinding
 import com.kwartracker.android.transactions.model.TransactionModel
 
-class ListTransactionAdapter(var transactions: ArrayList<TransactionModel>) :
+class ListTransactionAdapter(
+    var transactions: ArrayList<TransactionModel>
+) :
     RecyclerView.Adapter<ListTransactionAdapter.TransactionViewHolder>() {
 
     fun updateTransactions(newTransactions: List<TransactionModel>) {
@@ -45,10 +47,9 @@ class ListTransactionAdapter(var transactions: ArrayList<TransactionModel>) :
             tvTransactionType.text = model.type
 
             ivDetails.setOnClickListener {
-                val intent = Intent("message")
-                intent.putExtra("func", "details")
-                intent.putExtra("tID", "transID")
-                LocalBroadcastManager.getInstance(itemView.context).sendBroadcast(intent)
+                itemView.findNavController().navigate(
+                    R.id.action_list_transaction_fragment_to_details_transaction_fragment
+                )
             }
         }
     }

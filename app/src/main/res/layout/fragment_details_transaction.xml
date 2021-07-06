@@ -2,22 +2,85 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/content_main">
+        android:background="@color/app_color"
+        tools:context=".profile.edit.ui.EditProfileFragment">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_bg_ripple_blue"
+        android:clickable="true"
+        android:elevation="30dp"
+        android:focusable="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/title_transaction"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintEnd_toStartOf="@+id/btn_edit"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <TextView
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:alpha=".48"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/lbl_edit"
+        android:textColor="@color/semi_white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_contents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_white_round_top"
+        android:descendantFocusability="blocksDescendants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/iv_delete"
             android:layout_width="30sp"
             android:layout_height="30sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30sp"
             android:background="@drawable/non_active_dot"
             android:elevation="10dp"
             android:padding="10sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.958"
+            app:layout_constraintHorizontal_bias="0.921"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_delete"
@@ -29,7 +92,7 @@
             android:layout_height="120sp"
             android:layout_marginStart="20sp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="20sp"
+            android:layout_marginEnd="30sp"
             android:background="@drawable/bg_details"
             android:elevation="20sp"
             android:padding="20sp"
@@ -72,8 +135,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40sp"
             android:orientation="horizontal"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
             android:weightSum="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -199,13 +262,13 @@
             android:id="@+id/tv_trans_receipt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
+            android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:text="@string/lbl_transaction_image"
             android:textColor="#BBC3C9"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintHorizontal_bias="0.099"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -214,8 +277,8 @@
             android:layout_width="match_parent"
             android:layout_height="150sp"
             android:layout_marginTop="12sp"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
             android:src="@drawable/img_receipt"
             android:background="@drawable/roundsemi_gray_darker"
             app:layout_constraintEnd_toEndOf="parent"
@@ -233,10 +296,11 @@
             android:textColor="#BBC3C9"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintHorizontal_bias="0.097"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_Receipt"
             tools:ignore="HardcodedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -15,6 +15,15 @@
         <item name="popupMenuStyle">@style/Transaction.Popup.Category</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
+
+    <style name="ConfirmationDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent_white</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
     <style name="AppBottomSheetDialogTheme"
         parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
@@ -26,7 +35,7 @@
     </style>
 
     <style name="Transaction.Popup.Category" parent="Widget.MaterialComponents.PopupMenu">
-        <item name="android:popupBackground">@drawable/popup_transaction_category_menu</item>
+        <item name="android:popupBackground">@drawable/roundsemi_dialog</item>
         <item name="android:layout_width">match_parent</item>
     </style>
 
