@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color"
+        tools:context=".reports.ui.dashboard.ReportsDashboardFragment">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_contents"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_white_round_top"
+            android:descendantFocusability="blocksDescendants"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_reports"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_select_date_label"
+                    style="@style/style_labels"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/lbl_date_select"
+                    app:layout_constraintEnd_toEndOf="@id/cl_reports"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/cl_reports"
+                    app:layout_constraintTop_toTopOf="@id/cl_reports" />
+
+                <TextView
+                    android:id="@+id/tv_select_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="10dp"
+                    android:focusable="true"
+                    android:padding="16dp"
+                    android:singleLine="true"
+                    android:text="@string/sample_date"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ib_calendar"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/tv_select_date_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_select_date_label" />
+
+                <ImageView
+                    android:id="@+id/iv_dropdown_range"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_round_light_gray"
+                    android:contentDescription="@string/lbl_date_range"
+                    android:elevation="10dp"
+                    android:padding="15dp"
+                    android:rotation="-90"
+                    android:src="@drawable/ic_btn_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_select_date"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_select_date"
+                    app:layout_constraintTop_toTopOf="@+id/tv_select_date"
+                    app:tint="@color/gray" />
+
+                <ImageButton
+                    android:id="@+id/ib_calendar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/roundsemi_teal"
+                    android:contentDescription="@string/title_reports"
+                    android:src="@drawable/ic_calendar_white"
+                    app:backgroundTint="@color/app_color"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_select_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight=".2"
+                    app:layout_constraintStart_toEndOf="@+id/tv_select_date"
+                    app:layout_constraintTop_toTopOf="@id/tv_select_date" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_net_income"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_select_date">
+
+                    <TextView
+                        android:id="@+id/tv_net_income_label"
+                        style="@style/style_labels"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/lbl_net_income"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@id/cl_net_income"
+                        app:layout_constraintTop_toTopOf="@id/cl_net_income" />
+
+                    <TextView
+                        android:id="@+id/tv_net_income"
+                        style="@style/style_labels"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/sample_net_income"
+                        android:textColor="@color/light_green"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_net_income"
+                        app:layout_constraintStart_toStartOf="@id/tv_net_income_label"
+                        app:layout_constraintTop_toTopOf="@id/tv_net_income_label"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_income_expense_label"
+                    style="@style/style_labels"
+                    android:layout_marginTop="35dp"
+                    android:text="@string/lbl_income_expense"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/cl_net_income"
+                    app:layout_constraintTop_toBottomOf="@id/cl_net_income" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_income_expense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_income_expense_label">
+
+                    <TextView
+                        android:id="@+id/tv_balance_label"
+                        style="@style/style_labels"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/lbl_balance"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/cl_income_expense"
+                        app:layout_constraintTop_toTopOf="@id/cl_income_expense" />
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        style="@style/style_labels"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/sample_balance"
+                        android:textColor="@color/light_green"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tv_balance_label"
+                        app:layout_constraintTop_toTopOf="@id/tv_balance_label" />
+
+                    <View
+                        android:id="@+id/view_line"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/light_gray"
+                        app:layout_constraintBottom_toTopOf="@id/compose_bar_income_expense"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_expenses_label"
+                        style="@style/style_labels"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/lbl_expenses"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@id/view_line"
+                        app:layout_constraintTop_toTopOf="@id/cl_income_expense" />
+
+                    <TextView
+                        android:id="@+id/tv_expenses"
+                        style="@style/style_labels"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/sample_expense"
+                        android:textColor="@color/light_red"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/tv_expenses_label"
+                        app:layout_constraintTop_toTopOf="@id/tv_expenses_label" />
+
+                    <androidx.compose.ui.platform.ComposeView
+                        android:id="@+id/compose_bar_income_expense"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_balance" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_income_category_label"
+                    style="@style/style_labels"
+                    android:layout_marginTop="35dp"
+                    android:text="@string/lbl_income_category"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/cl_income_expense"
+                    app:layout_constraintTop_toBottomOf="@id/cl_income_expense" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_income_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_income_category_label">
+
+                    <androidx.compose.ui.platform.ComposeView
+                        android:id="@+id/compose_pie_income_category"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_income_category_legend"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:scrollbars="none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/compose_pie_income_category"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_expense_category_label"
+                    style="@style/style_labels"
+                    android:layout_marginTop="35dp"
+                    android:text="@string/lbl_expenses_category"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/cl_income_category"
+                    app:layout_constraintTop_toBottomOf="@id/cl_income_category" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_expense_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_expense_category_label">
+
+                    <androidx.compose.ui.platform.ComposeView
+                        android:id="@+id/compose_pie_expense_category"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_expense_category_legend"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:scrollbars="none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/compose_pie_expense_category"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_wallet_balance_label"
+                    style="@style/style_labels"
+                    android:layout_marginTop="35dp"
+                    android:text="@string/lbl_wallet_balance"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/cl_expense_category"
+                    app:layout_constraintTop_toBottomOf="@id/cl_expense_category" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_wallet_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/edittext_bg_round_corner"
+                    android:elevation="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_wallet_balance_label">
+
+                    <androidx.compose.ui.platform.ComposeView
+                        android:id="@+id/compose_pie_wallet_balance"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_wallet_balance_legend"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/compose_pie_wallet_balance" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
