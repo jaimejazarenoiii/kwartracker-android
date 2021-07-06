@@ -48,7 +48,9 @@ class DashboardFragment : Fragment() {
                     )
                 }
                 R.id.reportFragment -> {
-                    findNavController().navigate(R.id.action_dashoardFragment_to_reportsDashboardFragment)
+                    findNavController().navigate(
+                        R.id.action_dashoardFragment_to_reportsDashboardFragment
+                    )
                 }
                 R.id.profileFragment -> {
                     findNavController().navigate(R.id.action_dashoardFragment_to_profile_fragment)
