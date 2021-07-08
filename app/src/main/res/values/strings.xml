@@ -34,6 +34,7 @@
     <string name="title_my_profile">My Profile</string>
     <string name="title_login_security">Log in and Security</string>
     <string name="title_category_name">Category Name</string>
+    <string name="title_reports">Reports</string>
     <string name="title_target_amount">to target amount</string>
     <string name="title_target_date">to target date</string>
     <string name="title_wallet">Wallet</string>
@@ -165,4 +166,20 @@
     <string name="validation_email_required">Please enter your email address.</string>
     <string name="validation_email">Please enter a valid email address.</string>
 
+
+    // Reports Dashboard
+    <string name="lbl_date_select">Select date</string>
+    <string name="lbl_net_income">Net Income</string>
+    <string name="lbl_income_expense">Income and Expense</string>
+    <string name="lbl_balance">Balance</string>
+    <string name="lbl_expenses">Expenses</string>
+    <string name="lbl_income_category">Income by Category</string>
+    <string name="lbl_expenses_category">Expenses by Category</string>
+    <string name="lbl_wallet_balance">Wallet Balance</string>
+    <string name="sample_net_income">₱ 35,000.00</string>
+    <string name="sample_balance">₱ 40,000.00</string>
+    <string name="sample_expense">₱ 5,000.00</string>
+    <string name="sample_wallet_balance">₱ 00,000.00</string>
+    <string name="sample_date">March 01, 2021 - March 7, 2021</string>
+    <string name="sample_percentage">000%</string>
 </resources>

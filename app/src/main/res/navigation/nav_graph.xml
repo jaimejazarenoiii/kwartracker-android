@@ -31,7 +31,7 @@
         android:id="@+id/walletsFragment"
         android:name="com.kwartracker.android.wallet.ui.MyWalletsFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_wallets" >
+        tools:layout="@layout/fragment_wallets">
         <action
             android:id="@+id/action_walletsFragment_to_addWalletFragment"
             app:destination="@id/addWalletFragment" />
@@ -46,6 +46,13 @@
         android:name="com.kwartracker.android.transactions.ui.list.ListTransactionFragment"
         android:label="Transaction"
         tools:layout="@layout/fragment_list_transaction" >
+        tools:layout="@layout/fragment_transaction">
+        <action
+            android:id="@+id/action_transaction_fragment_to_add_wallet_transaction_fragment2"
+            app:destination="@id/add_wallet_transaction_fragment" />
+        <action
+            android:id="@+id/action_transaction_fragment_to_edit_transaction_fragment"
+            app:destination="@id/edit_transaction_fragment" />
         <action
             android:id="@+id/action_list_transaction_fragment_to_date_range_transaction_fragment"
             app:destination="@id/date_range_transaction_fragment" />
@@ -108,7 +115,7 @@
         android:id="@+id/add_wallet_transaction_fragment"
         android:name="com.kwartracker.android.transactions.ui.add.AddWalletTransactionFragment"
         android:label="Transaction Add"
-        tools:layout="@layout/fragment_add_wallet_transaction" >
+        tools:layout="@layout/fragment_add_wallet_transaction">
         <action
             android:id="@+id/action_add_wallet_transaction_fragment_to_add_detail_transaction_fragment"
             app:destination="@id/add_detail_transaction_fragment" />
@@ -146,7 +153,7 @@
         android:id="@+id/profile_fragment"
         android:name="com.kwartracker.android.profile.ui.MyProfileFragment"
         android:label="Transaction"
-        tools:layout="@layout/fragment_my_profile" >
+        tools:layout="@layout/fragment_my_profile">
         <action
             android:id="@+id/action_profile_fragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
@@ -170,6 +177,9 @@
             android:id="@+id/action_dashoardFragment_to_date_range_home_fragment"
             app:destination="@id/date_range_home_fragment" />
         <action
+            android:id="@+id/action_dashoardFragment_to_reportsDashboardFragment"
+            app:destination="@id/reportsDashboardFragment" />
+        <action
             android:id="@+id/action_dashoardFragment_to_list_transaction_fragment"
             app:destination="@id/list_transaction_fragment" />
     </fragment>
@@ -188,7 +198,7 @@
         android:id="@+id/settingsFragment"
         android:name="com.kwartracker.android.settings.ui.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" >
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_loginSecurityFragment"
             app:destination="@id/loginSecurityFragment" />
@@ -196,7 +206,7 @@
     <fragment
         android:id="@+id/loginSecurityFragment"
         android:name="com.kwartracker.android.settings.ui.loginsecurity.LoginSecurityFragment"
-        android:label="@string/lbl_login_security" >
+        android:label="@string/lbl_login_security">
         <action
             android:id="@+id/action_loginSecurityFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
@@ -211,6 +221,11 @@
         android:name="com.kwartracker.android.wallet.ui.edit.EditWalletFragment"
         android:label="@string/title_edit_wallet"
         tools:layout="@layout/fragment_edit_wallet" />
+    <fragment
+        android:id="@+id/reportsDashboardFragment"
+        android:name="com.kwartracker.android.reports.ui.dashboard.ReportsDashboardFragment"
+        android:label="@string/title_reports"
+        tools:layout="@layout/fragment_reports_dashboard" />
 
     <dialog
         android:id="@+id/date_range_home_fragment"
