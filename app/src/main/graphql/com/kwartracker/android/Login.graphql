@@ -1,0 +1,14 @@
+mutation Login($signInCredentials: CredentialsInput!) {
+    signInWithEmail(input: {credentials: $signInCredentials}) {
+        token
+        user {
+            id
+            email
+            firstName
+            lastName
+            middleName
+            gender
+            age
+        }
+    }
+}

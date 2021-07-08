@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentAddWalletBinding
-import com.kwartracker.android.utils.clearCardViewConfiguration
-import com.kwartracker.android.utils.setVisible
+import com.kwartracker.android.utils.extension.clearCardViewConfiguration
+import com.kwartracker.android.utils.extension.setVisible
 import com.kwartracker.android.wallet.model.WalletType
 import com.kwartracker.android.wallet.ui.adapter.WalletTypeListAdapter
 
