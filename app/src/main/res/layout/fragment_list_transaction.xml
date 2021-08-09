@@ -3,164 +3,166 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/app_color"
-    tools:context=".profile.edit.ui.EditProfileFragment">
-
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round_bg_ripple_blue"
-        android:clickable="true"
-        android:elevation="30dp"
-        android:focusable="true"
-        android:padding="12dp"
-        android:src="@drawable/ic_btn_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:singleLine="true"
-        android:text="@string/title_transactions"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
-        app:layout_constraintEnd_toStartOf="@+id/btn_add"
-        app:layout_constraintStart_toEndOf="@+id/btn_back"
-        app:layout_constraintTop_toTopOf="@+id/btn_back" />
-
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/btn_add"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/round_bg_ripple_white"
-        android:clickable="true"
-        android:elevation="30dp"
-        android:focusable="true"
-        android:padding="12dp"
-        android:src="@drawable/ic_btn_plus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_title"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0sp"
-        android:layout_marginTop="24sp"
-        android:background="@drawable/bg_white_round_top"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_back"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="match_parent"
+        android:background="@color/app_color"
+        tools:context=".profile.edit.ui.EditProfileFragment">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_bg_ripple_blue"
+            android:clickable="true"
+            android:elevation="30dp"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/title_transactions"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toStartOf="@+id/btn_add"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_bg_ripple_white"
+            android:clickable="true"
+            android:elevation="30dp"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_btn_plus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/ll_transaction_filter"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45sp"
-            android:background="@drawable/border"
-            android:elevation="0sp"
-            android:orientation="horizontal">
+            android:layout_height="0sp"
+            android:layout_marginTop="24sp"
+            android:background="@drawable/bg_white_round_top"
+            android:orientation="vertical"
+            android:paddingTop="45sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_back"
+            app:layout_constraintVertical_bias="0.0">
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/ll_transaction_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0sp"
+                android:background="@drawable/border"
+                android:elevation="0sp"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/et_transaction_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/et_transaction_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginTop="0sp"
+                        android:layout_marginEnd="20sp"
+                        android:layout_marginBottom="20sp"
+                        android:autofillHints="Search"
+                        android:background="@drawable/edittext_bg_round_corner"
+                        android:elevation="10sp"
+                        android:ems="10"
+                        android:hint="@string/lbl_search"
+                        android:inputType="textEmailAddress"
+                        android:padding="14sp"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/ib_search"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="12sp"
+                        android:layout_marginEnd="35sp"
+                        android:background="@android:color/transparent"
+                        android:elevation="11sp"
+                        android:src="@drawable/ic_search"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/ib_filter"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
                     android:layout_marginStart="20sp"
                     android:layout_marginTop="0sp"
                     android:layout_marginEnd="20sp"
                     android:layout_marginBottom="20sp"
-                    android:autofillHints="Search"
-                    android:background="@drawable/edittext_bg_round_corner"
-                    android:elevation="10sp"
-                    android:ems="10"
-                    android:hint="@string/lbl_search"
-                    android:inputType="textEmailAddress"
-                    android:padding="14sp"
-                    android:textColor="@color/dark_gray"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/ib_search"
-                    android:layout_width="25sp"
-                    android:layout_height="25sp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="12sp"
-                    android:layout_marginEnd="35sp"
-                    android:elevation="11sp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_search"
+                    android:background="@drawable/roundsemi_teal"
+                    android:src="@drawable/ic_filter"
                     tools:ignore="ContentDescription" />
-            </RelativeLayout>
+            </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/ib_filter"
-                android:layout_width="50sp"
-                android:layout_height="50sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="0sp"
-                android:layout_marginEnd="20sp"
-                android:layout_marginBottom="20sp"
-                android:background="@drawable/roundsemi_teal"
-                android:src="@drawable/ic_filter"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transaction_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:scrollbars="none" />
+
+            <ImageView
+                android:id="@+id/iv_loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:src="@drawable/transaction_loader"
+                android:visibility="gone"
                 tools:ignore="ContentDescription" />
+
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_transaction_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
-            android:scrollbars="none" />
-
-        <ImageView
-            android:id="@+id/iv_loader"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_back_to_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:src="@drawable/transaction_loader"
-            android:visibility="gone"
+            android:layout_margin="16sp"
+            android:background="@color/app_color"
+            android:visibility="invisible"
+            app:backgroundTint="@color/app_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_arrow_up_24"
+            app:tint="@color/white"
             tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_back_to_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="16sp"
-        android:background="@color/app_color"
-        android:visibility="invisible"
-        app:backgroundTint="@color/app_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_arrow_up_24"
-        app:tint="@color/white"
-        tools:ignore="ContentDescription" />
-</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
