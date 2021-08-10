@@ -16,7 +16,7 @@ fun positionToGender(gender: String): GenderType {
     return GenderType.get(gender)
 }
 
-@BindingAdapter("onTexChanged")
-fun EditText.onTexChanged(textWatcher: TextWatcher) {
+@BindingAdapter("onValidateFields")
+fun EditText.onValidateFields(textWatcher: TextWatcher) {
     addTextChangedListener(textWatcher)
 }

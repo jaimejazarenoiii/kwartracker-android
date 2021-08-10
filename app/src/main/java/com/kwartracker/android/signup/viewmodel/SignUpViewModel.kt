@@ -1,15 +1,13 @@
 package com.kwartracker.android.signup.viewmodel
 
+import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kwartracker.android.R
 import com.kwartracker.android.signup.repository.SignupRepository
-import com.kwartracker.android.utils.GenderType
-import com.kwartracker.android.utils.StringValidator
-import com.kwartracker.android.utils.TexWatcherHelper
-import com.kwartracker.android.utils.ToastHelper
+import com.kwartracker.android.utils.*
 import com.kwartracker.android.utils.extension.get
 import com.kwartracker.android.utils.formstate.SignUpFormState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -32,7 +30,7 @@ class SignUpViewModel @Inject constructor(val repository: SignupRepository) :
 
     private val passwordValidator = StringValidator(R.string.lbl_password)
         .required()
-        .lengthRange(2, 50)
+        .lengthRange(8, 50)
 
     private val detailsValidator = StringValidator()
         .required()
@@ -130,7 +128,7 @@ class SignUpViewModel @Inject constructor(val repository: SignupRepository) :
         genderType.postValue(GenderType.MALE)
     }
 
-    fun validateFields() {
+    private fun validateFields() {
         val valid = listOf(
             validateEmail(),
             validatePassword(),
@@ -144,7 +142,21 @@ class SignUpViewModel @Inject constructor(val repository: SignupRepository) :
 
     fun signup() {
         if (!formState.get().isValid) return
-        ToastHelper.showText("Valid")
+        register.run()
+    }
+
+    val register = CoroutineTask {
+        val request = HashMap<String, Any>().apply {
+            put("email", emailAddress.get())
+            put("password", password.get())
+            put("passwordConfirmation", confpassword.get())
+            put("firstName", firstName.get())
+            put("lastName", lastName.get())
+            put("gender", genderType.get().raw)
+            put("age", age.get().toInt())
+            put("middleName", middleName.get())
+        }
+        repository.register(request)
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}

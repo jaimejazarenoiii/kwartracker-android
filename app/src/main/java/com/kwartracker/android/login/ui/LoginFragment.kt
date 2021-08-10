@@ -39,11 +39,11 @@ class LoginFragment : Fragment() {
         binding.tvSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
-        observers()
         handleApolloResponse(viewModel.userLogin) {
             findNavController().navigate(R.id.action_loginFragment_to_dashoardFragment)
         }
         bindLoadingView(binding.loadingSpinner, viewModel.userLogin)
+        observers()
     }
 
     override fun onResume() {
@@ -55,20 +55,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun observers() {
-        viewModel.emailAddress.observe(
-            viewLifecycleOwner,
-            {
-                viewModel.loginDataChanged()
-            }
-        )
-
-        viewModel.password.observe(
-            viewLifecycleOwner,
-            {
-                viewModel.loginDataChanged()
-            }
-        )
-
         viewModel.formState.observe(
             viewLifecycleOwner,
             {

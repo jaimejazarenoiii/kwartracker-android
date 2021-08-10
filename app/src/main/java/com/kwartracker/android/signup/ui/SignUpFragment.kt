@@ -13,6 +13,8 @@ import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentSignupBinding
 import com.kwartracker.android.signup.viewmodel.SignUpViewModel
 import com.kwartracker.android.utils.PopupDialogHelper.showMenu
+import com.kwartracker.android.utils.extension.bindLoadingView
+import com.kwartracker.android.utils.extension.handleApolloResponse
 import com.kwartracker.android.utils.extension.setBackgroundTint
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,14 +40,22 @@ class SignUpFragment : Fragment() {
         binding.tvSignin.setOnClickListener {
             findNavController().popBackStack(R.id.loginFragment, false)
         }
-        viewModel.formState.observe(viewLifecycleOwner) {
-            binding.btnSignup.setBackgroundTint(it.isValid)
+        handleApolloResponse(viewModel.register) {
+            findNavController().navigate(R.id.action_signupFragment_to_dashoardFragment)
         }
+        bindLoadingView(binding.loadingSpinner, viewModel.register)
         binding.tvGender.setOnClickListener { tv ->
             showMenu(tv, R.menu.menu_genders) { value ->
                 val texView = tv as TextView
                 texView.text = value
             }
+        }
+        observers()
+    }
+
+    private fun observers() {
+        viewModel.formState.observe(viewLifecycleOwner) {
+            binding.btnSignup.setBackgroundTint(it.isValid)
         }
     }
 }

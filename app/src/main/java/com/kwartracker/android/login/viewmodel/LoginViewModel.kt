@@ -8,6 +8,7 @@ import com.kwartracker.android.login.model.User
 import com.kwartracker.android.login.repository.LoginRepository
 import com.kwartracker.android.utils.CoroutineTask
 import com.kwartracker.android.utils.StringValidator
+import com.kwartracker.android.utils.TexWatcherHelper
 import com.kwartracker.android.utils.extension.get
 import com.kwartracker.android.utils.formstate.LoginFormState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,6 +20,11 @@ class LoginViewModel @Inject constructor(val repository: LoginRepository) :
     Observable {
 
     val formState = MutableLiveData(LoginFormState())
+
+    val textWatcherHelper = TexWatcherHelper {
+        loginDataChanged()
+    }
+
     val user = MutableLiveData<User>()
     private val emailValidator = StringValidator()
         .required()

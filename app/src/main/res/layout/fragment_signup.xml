@@ -114,7 +114,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tv_email"
                     app:layout_constraintTop_toBottomOf="@+id/tv_email"
-                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
+                    app:onValidateFields="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_first_name_label"
@@ -147,7 +147,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_email"
                     app:layout_constraintTop_toBottomOf="@+id/tv_first_name_label"
-                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
+                    app:onValidateFields="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_middle_name_label"
@@ -212,7 +212,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_email"
                     app:layout_constraintTop_toBottomOf="@+id/tv_last_name_label"
-                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
+                    app:onValidateFields="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_lbl_gender"
@@ -271,7 +271,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/tv_gender"
                     app:layout_constraintTop_toBottomOf="@+id/tv_lbl_age"
-                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
+                    app:onValidateFields="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_password"
@@ -302,7 +302,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/et_email"
                     app:layout_constraintStart_toStartOf="@+id/tv_password"
                     app:layout_constraintTop_toBottomOf="@+id/tv_password"
-                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
+                    app:onValidateFields="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_conf_password"
@@ -333,7 +333,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/et_email"
                     app:layout_constraintStart_toStartOf="@+id/tv_password"
                     app:layout_constraintTop_toBottomOf="@+id/tv_conf_password"
-                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
+                    app:onValidateFields="@{viewModel.textWatcherHelper}" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_signup"
@@ -435,6 +435,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
