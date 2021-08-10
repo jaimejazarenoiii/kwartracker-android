@@ -88,7 +88,10 @@ class StringValidator(@StringRes val x: Int? = null) : Validator<String>(x) {
     }
 
     fun email(): StringValidator {
-        return add({ PatternsCompat.EMAIL_ADDRESS.matcher(it).matches() }, R.string.validation_email) as StringValidator
+        return add(
+            { PatternsCompat.EMAIL_ADDRESS.matcher(it).matches() },
+            R.string.validation_email
+        ) as StringValidator
     }
 
     fun maxLength(max: Int): StringValidator {
@@ -108,6 +111,13 @@ class StringValidator(@StringRes val x: Int? = null) : Validator<String>(x) {
         return add(
             { it.isEmpty() || Patterns.PHONE.matcher(it).matches() },
             R.string.validation_tel
+        ) as StringValidator
+    }
+
+    fun validateAge(age: Int): StringValidator {
+        return add(
+            { it.toInt() >= age },
+            R.string.validation_age
         ) as StringValidator
     }
 }

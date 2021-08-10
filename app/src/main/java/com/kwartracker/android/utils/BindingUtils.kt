@@ -1,6 +1,10 @@
 @file:JvmName("BindingUtils")
+
 package com.kwartracker.android.utils
 
+import android.text.TextWatcher
+import android.widget.EditText
+import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseMethod
 
 @InverseMethod("positionToGender")
@@ -10,4 +14,9 @@ fun genderToPosition(gender: GenderType?): String? {
 
 fun positionToGender(gender: String): GenderType {
     return GenderType.get(gender)
+}
+
+@BindingAdapter("onTexChanged")
+fun EditText.onTexChanged(textWatcher: TextWatcher) {
+    addTextChangedListener(textWatcher)
 }

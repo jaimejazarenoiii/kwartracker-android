@@ -8,7 +8,7 @@
             name="viewModel"
             type="com.kwartracker.android.signup.viewmodel.SignUpViewModel" />
 
-        <import type="com.kwartracker.android.utils.BindingUtils"/>
+        <import type="com.kwartracker.android.utils.BindingUtils" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -108,11 +108,13 @@
                     android:hint="@string/hint_email"
                     android:inputType="textEmailAddress"
                     android:padding="14dp"
+                    android:text="@={viewModel.etEmailAddress}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tv_email"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_email"
+                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_first_name_label"
@@ -138,12 +140,14 @@
                     android:hint="@string/hint_enter_first_name"
                     android:inputType="textEmailAddress"
                     android:padding="14dp"
+                    android:text="@={viewModel.etFirstName}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_email"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_first_name_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_first_name_label"
+                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_middle_name_label"
@@ -162,13 +166,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="30dp"
-                    android:autofillHints="@string/hint_enter_lastname"
+                    android:autofillHints="@string/hint_enter_middle_name"
                     android:background="@drawable/edittext_bg_round_corner"
                     android:elevation="18dp"
                     android:ems="10"
                     android:hint="@string/hint_enter_middle_name"
                     android:inputType="textEmailAddress"
                     android:padding="14dp"
+                    android:text="@={viewModel.etMiddleName}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -200,12 +205,14 @@
                     android:hint="@string/hint_enter_lastname"
                     android:inputType="textEmailAddress"
                     android:padding="14dp"
+                    android:text="@={viewModel.etLastNamee}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_email"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_last_name_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_last_name_label"
+                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_lbl_gender"
@@ -227,11 +234,11 @@
                     android:hint="@string/hint_select_gender"
                     android:padding="16dp"
                     android:singleLine="true"
+                    android:text="@={BindingUtils.genderToPosition(viewModel.tvGenderType)}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
-                    android:text="@={BindingUtils.genderToPosition(viewModel.tvGenderType)}"
                     app:drawableEndCompat="@drawable/ic_arrow_down_gray_24"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_age"
+                    app:layout_constraintEnd_toStartOf="@+id/et_age"
                     app:layout_constraintStart_toStartOf="@+id/et_last_name"
                     app:layout_constraintTop_toBottomOf="@+id/tv_lbl_gender" />
 
@@ -240,11 +247,11 @@
                     style="@style/style_labels"
                     android:layout_marginTop="20dp"
                     android:text="@string/lbl_age"
-                    app:layout_constraintStart_toStartOf="@+id/tv_age"
+                    app:layout_constraintStart_toStartOf="@+id/et_age"
                     app:layout_constraintTop_toBottomOf="@id/et_last_name" />
 
                 <EditText
-                    android:id="@+id/tv_age"
+                    android:id="@+id/et_age"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -253,16 +260,18 @@
                     android:background="@drawable/edittext_bg_round_corner"
                     android:elevation="10dp"
                     android:hint="@string/hint_enter_age"
-                    android:padding="16dp"
                     android:inputType="number"
+                    android:maxLength="2"
+                    android:padding="16dp"
                     android:singleLine="true"
+                    android:text="@={viewModel.etAge}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="@+id/et_last_name"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/tv_gender"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_lbl_age" />
-
+                    app:layout_constraintTop_toBottomOf="@+id/tv_lbl_age"
+                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_password"
@@ -287,11 +296,13 @@
                     android:hint="@string/lbl_enter_password"
                     android:inputType="textPassword"
                     android:padding="14dp"
+                    android:text="@={viewModel.etPassword}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="@+id/et_email"
                     app:layout_constraintStart_toStartOf="@+id/tv_password"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_password" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_password"
+                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
 
                 <TextView
                     android:id="@+id/tv_conf_password"
@@ -313,14 +324,16 @@
                     android:background="@drawable/edittext_bg_round_corner"
                     android:elevation="18dp"
                     android:ems="10"
-                    android:hint="@string/lbl_enter_password"
+                    android:hint="@string/lbl_confirm_password"
                     android:inputType="textPassword"
                     android:padding="14dp"
+                    android:text="@={viewModel.etConfPassword}"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="@+id/et_email"
                     app:layout_constraintStart_toStartOf="@+id/tv_password"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_conf_password" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_conf_password"
+                    app:onTexChanged="@{viewModel.textWatcherHelper}" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_signup"
@@ -328,6 +341,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_bg_round_corner"
+                    android:onClick="@{()->viewModel.signup()}"
                     android:text="@string/lbl_sign_up"
                     android:textAllCaps="false"
                     android:textColor="@color/white"

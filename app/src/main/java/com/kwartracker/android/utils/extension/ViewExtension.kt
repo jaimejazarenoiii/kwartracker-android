@@ -1,7 +1,9 @@
 package com.kwartracker.android.utils.extension
 
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
@@ -104,7 +106,16 @@ fun <T : Any> Fragment.handleApolloResponse(
     }
 }
 
-// @BindingAdapter("setTextMax")
-// fun TextView.setText(genderType: GenderType) {
-//    this.text = getSgenderType.drawableResId
-// }
+fun Button.setBackgroundTint(isValid: Boolean) {
+    backgroundTintList = if (!isValid) {
+        ColorStateList.valueOf(
+            ContextCompat
+                .getColor(this.context, R.color.gray)
+        )
+    } else {
+        ColorStateList.valueOf(
+            ContextCompat
+                .getColor(this.context, R.color.app_color)
+        )
+    }
+}

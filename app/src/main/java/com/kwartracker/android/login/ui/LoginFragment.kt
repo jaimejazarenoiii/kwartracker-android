@@ -1,12 +1,10 @@
 package com.kwartracker.android.login.ui
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ScrollView
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -16,6 +14,7 @@ import com.kwartracker.android.databinding.FragmentLoginBinding
 import com.kwartracker.android.login.viewmodel.LoginViewModel
 import com.kwartracker.android.utils.extension.bindLoadingView
 import com.kwartracker.android.utils.extension.handleApolloResponse
+import com.kwartracker.android.utils.extension.setBackgroundTint
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -73,17 +72,7 @@ class LoginFragment : Fragment() {
         viewModel.formState.observe(
             viewLifecycleOwner,
             {
-                binding.btnSignIn.backgroundTintList = if (!it.isValid) {
-                    ColorStateList.valueOf(
-                        ContextCompat
-                            .getColor(requireActivity(), R.color.gray)
-                    )
-                } else {
-                    ColorStateList.valueOf(
-                        ContextCompat
-                            .getColor(requireActivity(), R.color.app_color)
-                    )
-                }
+                binding.btnSignIn.setBackgroundTint(it.isValid)
             }
         )
     }
