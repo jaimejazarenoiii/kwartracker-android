@@ -164,5 +164,15 @@
     <string name="validation_password">Please enter your password.</string>
     <string name="validation_email_required">Please enter your email address.</string>
     <string name="validation_email">Please enter a valid email address.</string>
+    <string name="hint_enter_first_name">Enter firstname</string>
+    <string name="hint_enter_lastname">Enter lastname</string>
+    <string name="lbl_middle_name">Middlename</string>
+    <string name="hint_enter_middle_name">Enter middlename</string>
+    <string name="lbl_gender">Gender</string>
+    <string name="hint_select_gender">Select gender</string>
+    <string name="lbl_age">Age</string>
+    <string name="hint_enter_age">Enter age</string>
+    <string name="menu_male">Male</string>
+    <string name="menu_female">Female</string>
 
 </resources>

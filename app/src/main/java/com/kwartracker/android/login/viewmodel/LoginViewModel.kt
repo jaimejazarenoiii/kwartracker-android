@@ -4,7 +4,7 @@ import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kwartracker.android.R
+import com.kwartracker.android.login.model.User
 import com.kwartracker.android.login.repository.LoginRepository
 import com.kwartracker.android.utils.CoroutineTask
 import com.kwartracker.android.utils.StringValidator
@@ -19,13 +19,13 @@ class LoginViewModel @Inject constructor(val repository: LoginRepository) :
     Observable {
 
     val formState = MutableLiveData(LoginFormState())
-
-    private val emailValidator = StringValidator(R.string.lbl_email)
+    val user = MutableLiveData<User>()
+    private val emailValidator = StringValidator()
         .required()
         .email()
         .lengthRange(2, 50)
 
-    private val passwordValidator = StringValidator(R.string.lbl_password)
+    private val passwordValidator = StringValidator()
         .required()
         .lengthRange(2, 50)
 
@@ -40,17 +40,17 @@ class LoginViewModel @Inject constructor(val repository: LoginRepository) :
         get() = password
 
     init {
-        emailAddress.postValue("")
-        password.postValue("")
+        emailAddress.postValue("joey@gmail.com")
+        password.postValue("12345678")
     }
 
-    fun validateEmail(): Boolean {
+    private fun validateEmail(): Boolean {
         return emailValidator.validate(emailAddress.get()) {
             formState.value = formState.get().copy(emailError = it)
         }
     }
 
-    fun validatePassword(): Boolean {
+    private fun validatePassword(): Boolean {
         return passwordValidator.validate(password.get()) {
             formState.value = formState.get().copy(passwordError = it)
         }
@@ -71,6 +71,10 @@ class LoginViewModel @Inject constructor(val repository: LoginRepository) :
 
     val userLogin = CoroutineTask {
         repository.logIn(email = emailAddress.get(), password = password.get())
+    }
+
+    override fun onCleared() {
+        super.onCleared()
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {}

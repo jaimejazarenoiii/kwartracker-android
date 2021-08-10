@@ -5,15 +5,24 @@ sealed class ViewState<T>(
     val throwable: Throwable? = null,
     val message: String? = null
 ) {
-    class Success<T>(val data: T) : ViewState<T>(data)
-    class Error<T>(message: String? = null, val t: Throwable) :
-        ViewState<T>(throwable = t, message = message)
+    open val isActive: Boolean = false
 
-    class Loading<T> : ViewState<T>()
+    class Success<T>(val data: T) : ViewState<T>(data) {
+        override val isActive = false
+    }
+
+    class Error<T>(message: String? = null, val t: Throwable? = null) :
+        ViewState<T>(throwable = t, message = message) {
+        override val isActive = false
+    }
+
+    class Loading<T> : ViewState<T>() {
+        override val isActive = true
+    }
 
     private fun onComplete(
         onSuccess: ((T) -> Unit)? = null,
-        onFailure: ((Throwable) -> Unit)? = null,
+        onFailure: ((Throwable?) -> Unit)? = null,
         onComplete: (() -> Unit)? = null
     ): ViewState<T> {
         return when (this) {
@@ -34,5 +43,5 @@ sealed class ViewState<T>(
     }
 
     fun onSuccess(handler: ((T) -> Unit)? = null): ViewState<T> = onComplete(onSuccess = handler)
-    fun onFailure(handler: (Throwable) -> Unit): ViewState<T> = onComplete(onFailure = handler)
+    fun onFailure(handler: (Throwable?) -> Unit): ViewState<T> = onComplete(onFailure = handler)
 }

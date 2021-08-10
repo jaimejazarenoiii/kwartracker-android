@@ -2,15 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.kwartracker.android.signup.viewmodel.SignUpViewModel" />
-
-        <import type="com.kwartracker.android.utils.BindingUtils"/>
-    </data>
-
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/cl_fragment_signup"
         android:layout_width="match_parent"
@@ -218,9 +209,9 @@
                 <TextView
                     android:id="@+id/tv_gender"
                     android:layout_width="0dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="5dp"
                     android:autofillHints="@string/hint_select_gender"
                     android:background="@drawable/edittext_bg_round_corner"
                     android:elevation="10dp"
@@ -229,9 +220,8 @@
                     android:singleLine="true"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
-                    android:text="@={BindingUtils.genderToPosition(viewModel.tvGenderType)}"
-                    app:drawableEndCompat="@drawable/ic_arrow_down_gray_24"
                     app:layout_constraintEnd_toStartOf="@+id/tv_age"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/et_last_name"
                     app:layout_constraintTop_toBottomOf="@+id/tv_lbl_gender" />
 
@@ -243,18 +233,17 @@
                     app:layout_constraintStart_toStartOf="@+id/tv_age"
                     app:layout_constraintTop_toBottomOf="@id/et_last_name" />
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_age"
+                    android:layout_marginStart="15dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
                     android:layout_marginTop="8dp"
                     android:autofillHints="@string/hint_enter_age"
                     android:background="@drawable/edittext_bg_round_corner"
                     android:elevation="10dp"
                     android:hint="@string/hint_enter_age"
                     android:padding="16dp"
-                    android:inputType="number"
                     android:singleLine="true"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp"
@@ -263,6 +252,21 @@
                     app:layout_constraintStart_toEndOf="@+id/tv_gender"
                     app:layout_constraintTop_toBottomOf="@+id/tv_lbl_age" />
 
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_round_light_gray"
+                    android:contentDescription="@string/lbl_birthdate"
+                    android:elevation="10dp"
+                    android:padding="15dp"
+                    android:rotation="-90"
+                    android:src="@drawable/ic_btn_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_gender"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_gender"
+                    app:layout_constraintTop_toTopOf="@+id/tv_gender"
+                    app:tint="@color/gray" />
 
                 <TextView
                     android:id="@+id/tv_password"
@@ -328,7 +332,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_bg_round_corner"
-                    android:text="@string/lbl_sign_up"
+                    android:text="@string/btn_sign_in"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:backgroundTint="@color/app_color"
@@ -423,5 +427,6 @@
         </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
+
 
 </layout>

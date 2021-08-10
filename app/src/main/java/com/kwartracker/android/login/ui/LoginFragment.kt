@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentLoginBinding
 import com.kwartracker.android.login.viewmodel.LoginViewModel
+import com.kwartracker.android.utils.extension.bindLoadingView
 import com.kwartracker.android.utils.extension.handleApolloResponse
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,7 +41,10 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
         observers()
-        handleApolloResponse(viewModel.userLogin)
+        handleApolloResponse(viewModel.userLogin) {
+            findNavController().navigate(R.id.action_loginFragment_to_dashoardFragment)
+        }
+        bindLoadingView(binding.loadingSpinner, viewModel.userLogin)
     }
 
     override fun onResume() {

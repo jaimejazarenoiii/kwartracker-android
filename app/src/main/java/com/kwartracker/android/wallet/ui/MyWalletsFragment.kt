@@ -184,7 +184,6 @@ class MyWalletsFragment : Fragment(), View.OnClickListener {
         binding.walletLayout.imageViewEditWallet.setOnClickListener(this)
         binding.walletLayout.tvEditWallet.setOnClickListener(this)
         binding.nestedScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
-
             if (scrollY > 0) {
                 binding.fabBackToTop.show()
             } else if (scrollY < 0) {
