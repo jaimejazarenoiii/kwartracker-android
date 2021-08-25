@@ -20,8 +20,10 @@ fun <T : Any> CoroutineScope.launchWithLiveData(
             task()
         }.onSuccess { res ->
             withContext(Dispatchers.Main) {
-                res?.let {
+                if (res != null) {
                     observer.value = ViewState.Success(res)
+                } else {
+                    observer.value = ViewState.Error("error", null)
                 }
             }
         }.onFailure { e ->
@@ -41,6 +43,7 @@ fun <T : Any> LifecycleOwner.bindLoadingView(loading: View, livedata: TaskLiveDa
         this,
         {
             it?.let {
+                loading.setVisible(it.isActive)
             }
         }
     )

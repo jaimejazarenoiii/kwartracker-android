@@ -159,10 +159,22 @@
     <string name="validation_required">Please enter %s.</string>
     <string name="validation_email_taken">Email already taken. Please try a different email.</string>
     <string name="validation_tel">Please enter a valid Tel number.</string>
+    <string name="validation_age">Age must be greater than 18.</string>
     <string name="validation_maxlength">%1$s has to be up to %2$d characters long.</string>
     <string name="validation_range">%1$s has to be from %2$d to %3$d characters long.</string>
     <string name="validation_password">Please enter your password.</string>
     <string name="validation_email_required">Please enter your email address.</string>
     <string name="validation_email">Please enter a valid email address.</string>
+    <string name="hint_enter_first_name">Enter firstname</string>
+    <string name="hint_enter_lastname">Enter lastname</string>
+    <string name="lbl_middle_name">Middlename</string>
+    <string name="hint_enter_middle_name">Enter middlename</string>
+    <string name="lbl_gender">Gender</string>
+    <string name="hint_select_gender">Select gender</string>
+    <string name="lbl_age">Age</string>
+    <string name="hint_enter_age">Enter age</string>
+    <string name="menu_male">Male</string>
+    <string name="menu_female">Female</string>
+    <string name="lbl_confirm_password">Confirm password</string>
 
 </resources>

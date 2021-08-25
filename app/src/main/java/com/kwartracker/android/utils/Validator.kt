@@ -6,7 +6,7 @@ import androidx.core.util.PatternsCompat
 import com.kwartracker.android.KwartrackerApplication
 import com.kwartracker.android.R
 
-open class Validator<T>(@StringRes val label: Int?) {
+open class Validator<T>(@StringRes val label: Int? = null) {
 
     private var validators: MutableList<(T) -> Boolean> = mutableListOf()
 
@@ -59,7 +59,7 @@ open class Validator<T>(@StringRes val label: Int?) {
     }
 }
 
-class StringValidator(@StringRes val x: Int?) : Validator<String>(x) {
+class StringValidator(@StringRes val x: Int? = null) : Validator<String>(x) {
 
     private fun checkData(value: Int?): Int {
         return when (value) {
@@ -111,6 +111,13 @@ class StringValidator(@StringRes val x: Int?) : Validator<String>(x) {
         return add(
             { it.isEmpty() || Patterns.PHONE.matcher(it).matches() },
             R.string.validation_tel
+        ) as StringValidator
+    }
+
+    fun validateAge(age: Int): StringValidator {
+        return add(
+            { it.toInt() >= age },
+            R.string.validation_age
         ) as StringValidator
     }
 }

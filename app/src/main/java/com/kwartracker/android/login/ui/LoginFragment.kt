@@ -1,12 +1,10 @@
 package com.kwartracker.android.login.ui
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ScrollView
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -14,7 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.kwartracker.android.R
 import com.kwartracker.android.databinding.FragmentLoginBinding
 import com.kwartracker.android.login.viewmodel.LoginViewModel
+import com.kwartracker.android.utils.extension.bindLoadingView
 import com.kwartracker.android.utils.extension.handleApolloResponse
+import com.kwartracker.android.utils.extension.setBackgroundTint
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,8 +39,11 @@ class LoginFragment : Fragment() {
         binding.tvSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
+        handleApolloResponse(viewModel.userLogin) {
+            findNavController().navigate(R.id.action_loginFragment_to_dashoardFragment)
+        }
+        bindLoadingView(binding.loadingSpinner, viewModel.userLogin)
         observers()
-        handleApolloResponse(viewModel.userLogin)
     }
 
     override fun onResume() {
@@ -52,34 +55,10 @@ class LoginFragment : Fragment() {
     }
 
     private fun observers() {
-        viewModel.emailAddress.observe(
-            viewLifecycleOwner,
-            {
-                viewModel.loginDataChanged()
-            }
-        )
-
-        viewModel.password.observe(
-            viewLifecycleOwner,
-            {
-                viewModel.loginDataChanged()
-            }
-        )
-
         viewModel.formState.observe(
             viewLifecycleOwner,
             {
-                binding.btnSignIn.backgroundTintList = if (!it.isValid) {
-                    ColorStateList.valueOf(
-                        ContextCompat
-                            .getColor(requireActivity(), R.color.gray)
-                    )
-                } else {
-                    ColorStateList.valueOf(
-                        ContextCompat
-                            .getColor(requireActivity(), R.color.app_color)
-                    )
-                }
+                binding.btnSignIn.setBackgroundTint(it.isValid)
             }
         )
     }

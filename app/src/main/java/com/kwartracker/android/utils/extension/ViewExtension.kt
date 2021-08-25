@@ -1,12 +1,15 @@
 package com.kwartracker.android.utils.extension
 
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -93,9 +96,26 @@ fun <T : Any> Fragment.handleApolloResponse(
     task: CoroutineTask<T>,
     handler: ((T?) -> Unit)? = null
 ) {
-    task.observe(this) {
-        onSuccess {
-            handler?.invoke(it)
+    task.observe(viewLifecycleOwner) {
+        if (viewLifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
+            onSuccess {
+                handler?.invoke(it)
+            }
+            onFailure {}
         }
+    }
+}
+
+fun Button.setBackgroundTint(isValid: Boolean) {
+    backgroundTintList = if (!isValid) {
+        ColorStateList.valueOf(
+            ContextCompat
+                .getColor(this.context, R.color.gray)
+        )
+    } else {
+        ColorStateList.valueOf(
+            ContextCompat
+                .getColor(this.context, R.color.app_color)
+        )
     }
 }
